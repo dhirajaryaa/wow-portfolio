@@ -2,14 +2,32 @@ import Section from "@/components/common/Section";
 import SocialLinks from "@/components/common/SocialLinks";
 import { Button } from "@/components/ui/button";
 import { profileInfo } from "@/config/about";
-import { Sun, Moon, FileText, Send } from "lucide-react";
+import { FileText, Send } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Globe } from "lucide-react";
+import { GithubIcon } from "lucide-react";
+import ProjectCard from "@/components/projects/ProjectCard";
 
 export default function Home() {
   return (
     <>
       <main className="w-full h-full p-4">
+        {/* hero  */}
         <section id="hero" className="container flex flex-col gap-2 mt-8">
           {/* hero img  */}
           <div className="w-full h-full">
@@ -151,6 +169,13 @@ export default function Home() {
           {/* social links  */}
           <SocialLinks socialLinks={profileInfo.socialLinks} />
         </section>
+        {/* projects  */}
+        <Section title={"Projects"} hintText={"my proof-of-work✨"}>
+          <div className="grid  grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            {/* project card  */}
+            <ProjectCard />
+          </div>
+        </Section>
       </main>
     </>
   );
