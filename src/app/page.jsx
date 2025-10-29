@@ -2,12 +2,22 @@ import Section from "@/components/common/Section";
 import SocialLinks from "@/components/common/SocialLinks";
 import { Button } from "@/components/ui/button";
 import { profileInfo } from "@/config/about";
-import { FileText, Send } from "lucide-react";
+import { FileText, Send, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/config/project";
 import GithubActivity from "@/components/common/GithubActivity";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item"
+import { ArrowRight } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 export default function Home() {
   return (
@@ -174,6 +184,41 @@ export default function Home() {
         <Section title={"GitHub Activity"} hintText={"my coding journey💻"}>
           <div className="border border-dashed border-foreground/60 my-6 p-6 rounded-xl">
             <GithubActivity username={profileInfo.githubUsername} />
+          </div>
+        </Section>
+        {/* my setup  */}
+        <Section title={"Setup"} hintText={'my coding launchpad🚀'}>
+          <div className="space-y-4 my-6">
+            {/* gears  */}
+            <Item variant="muted" className={'rounded-xl'} asChild>
+              <Link href="/setup/gears">
+                <ItemMedia variant="icon">
+                  <Settings />
+                </ItemMedia>
+                <ItemContent className={'gap-0'}>
+                  <ItemTitle>Gear used</ItemTitle>
+                  <ItemDescription className={'text-xs'}>Gears I use to stay productive.</ItemDescription>
+                </ItemContent>
+                <ItemActions >
+                  <ArrowRight size={16} />
+                </ItemActions>
+              </Link>
+            </Item>
+            {/* vscode  */}
+            <Item variant="muted" className={'rounded-xl'} asChild>
+              <Link href="/setup/vscode-setup">
+                <ItemMedia variant="icon">
+                  <Code2 />
+                </ItemMedia>
+                <ItemContent className={'gap-0'}>
+                  <ItemTitle>VS Code Setup</ItemTitle>
+                  <ItemDescription className={'text-xs'}>My VS Code setup, optimized for coding and a clean dev experience.</ItemDescription>
+                </ItemContent>
+                <ItemActions >
+                  <ArrowRight size={16} />
+                </ItemActions>
+              </Link>
+            </Item>
           </div>
         </Section>
       </main>
