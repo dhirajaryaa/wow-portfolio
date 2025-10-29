@@ -166,7 +166,7 @@ export default function Home() {
           <SocialLinks socialLinks={profileInfo.socialLinks} />
         </section>
         {/* projects  */}
-        <Section title={"Projects"} hintText={"my proof-of-work✨"}>
+        <Section title={"Projects"} hintText={"my proof-of-work✨"} className={"mt-18"}>
           <div className="grid  grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
@@ -181,14 +181,14 @@ export default function Home() {
           </div>
         </Section>
         {/* github contribution  */}
-        <Section title={"GitHub Activity"} hintText={"my coding journey💻"}>
+        <Section title={"GitHub Activity"} hintText={"my coding journey💻"} className={"mt-18"}>
           <div className="border border-dashed border-foreground/60 my-6 p-6 rounded-xl">
             <GithubActivity username={profileInfo.githubUsername} />
           </div>
         </Section>
         {/* my setup  */}
-        <Section title={"Setup"} hintText={'my coding launchpad🚀'}>
-          <div className="space-y-4 my-6">
+        <Section title={"Setup"} hintText={'my coding launchpad🚀'} className={'mt-18'}>
+          <div className="space-y-4 mt-6">
             {/* gears  */}
             <Item variant="muted" className={'rounded-xl'} asChild>
               <Link href="/setup/gears">

@@ -2,7 +2,7 @@ function Section({ title, hintText, children, className, ...prams }) {
   return (
     <section
       id="project"
-      className={`container flex flex-col gap-2 my-18 ${className}`}
+      className={`container flex flex-col gap-2 ${className}`}
       {...prams}
     >
       <div className="space-y-1" id="section-title">
