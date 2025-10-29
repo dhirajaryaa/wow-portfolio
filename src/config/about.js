@@ -9,6 +9,7 @@ import {
 
 export const profileInfo = {
   tagline: "a self-taught developer",
+  githubUsername: "dhirajaryaa",
   resumeLink:
     "https://drive.google.com/file/d/1YvXHm4HrH2RnR0n8UjHwZxZxZxZxZxZx/view?usp=share_link",
   socialLinks: [

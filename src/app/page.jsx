@@ -5,24 +5,9 @@ import { profileInfo } from "@/config/about";
 import { FileText, Send } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Globe } from "lucide-react";
-import { GithubIcon } from "lucide-react";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/config/project";
+import GithubActivity from "@/components/common/GithubActivity";
 
 export default function Home() {
   return (
@@ -183,6 +168,12 @@ export default function Home() {
                 Show More
               </Link>
             </Button>
+          </div>
+        </Section>
+        {/* github contribution  */}
+        <Section title={"GitHub Activity"} hintText={"my coding journey💻"}>
+          <div className="border border-dashed border-foreground/60 my-6 p-6 rounded-xl">
+            <GithubActivity username={profileInfo.githubUsername} />
           </div>
         </Section>
       </main>
