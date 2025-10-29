@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
-function SocialLinks({socialLinks}) {
+function SocialLinks({socialLinks,className}) {
   return (
-     <div className="flex flex-wrap text-foreground/40 gap-3 mt-8">
+     <div className={`flex flex-wrap text-foreground/40 gap-3 mt-8 ${className}`}>
             {socialLinks?.map((link, idx) => (
               <Button variant={"secondary"} size="sm" key={idx} asChild>
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
