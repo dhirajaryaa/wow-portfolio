@@ -22,6 +22,7 @@ import {
 import { Globe } from "lucide-react";
 import { GithubIcon } from "lucide-react";
 import ProjectCard from "@/components/projects/ProjectCard";
+import { projects } from "@/config/project";
 
 export default function Home() {
   return (
@@ -172,8 +173,16 @@ export default function Home() {
         {/* projects  */}
         <Section title={"Projects"} hintText={"my proof-of-work✨"}>
           <div className="grid  grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            {/* project card  */}
-            <ProjectCard />
+            {projects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+          <div className="w-full flex justify-center items-center mt-8">
+            <Button size={"lg"} variant={'outline'} asChild>
+              <Link href="/pow">
+                Show More
+              </Link>
+            </Button>
           </div>
         </Section>
       </main>
