@@ -1,4 +1,4 @@
-import { myGadgets, myPc } from '@/config/gears'
+import { myGadgets, myPc, myWebExtensions } from '@/config/gears'
 import Section from './section'
 
 function page() {
@@ -14,6 +14,8 @@ function page() {
                 <Section title='PC' gears={myPc} />
                 {/* Gadgets section  */}
                 <Section title='Gadgets' gears={myGadgets} />
+                {/* web Extension section  */}
+                <Section title='Web Extensions' gears={myWebExtensions} />
 
             </div>
         </main>

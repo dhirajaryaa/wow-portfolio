@@ -9,38 +9,33 @@ import {
   Headphones,
   Smartphone,
   BatteryCharging,
+  Puzzle,
 } from "lucide-react";
 
 export const myPc = [
   {
     name: "CPU – Intel Core i5-3470",
     icon: Cpu,
-    category: "Component",
   },
   {
     name: "Memory – 16GB RAM",
     icon: MemoryStick,
-    category: "Component",
   },
   {
     name: "Storage – 256GB SSD",
     icon: HardDrive,
-    category: "Component",
   },
   {
     name: "Primary Monitor (1600×900)",
     icon: Monitor,
-    category: "Monitor",
   },
   {
     name: "Secondary Monitor (1400×1050)",
     icon: Monitor,
-    category: "Monitor",
   },
   {
     name: "Frontech Mars-725 UPS",
     icon: BatteryCharging,
-    category: "Power",
   },
 ];
 
@@ -48,27 +43,54 @@ export const myGadgets = [
   {
     name: "Punta Rainbow Keyboard",
     icon: Keyboard,
-    category: "Peripheral",
   },
   {
     name: "Dell MS116-BK Wired Mouse",
     icon: Mouse,
-    category: "Peripheral",
   },
   {
     name: "Lapcare Webcam",
     icon: Webcam,
-    category: "Peripheral",
   },
   {
     name: "Logitech Headphones",
     icon: Headphones,
-    category: "Peripheral",
   },
   {
     name: "Vivo V19 (128GB)",
     icon: Smartphone,
-    category: "Mobile Device",
   },
 ];
 
+export const myWebExtensions = [
+  {
+    name: "AdGuard AdBlocker",
+    url: "https://adguard.com/en/adguard-browser-extension/overview.html",
+    icon: Puzzle,
+  },
+  {
+    name: "uBlock Origin",
+    url: "https://ublockorigin.com/",
+    icon: Puzzle,
+  },
+  {
+    name: "React Developer Tools",
+    url: "https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",
+    icon: Puzzle,
+  },
+  {
+    name: "Redux DevTools",
+    url: "https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd",
+    icon: Puzzle,
+  },
+  {
+    name: "Goal Countdown [owned]",
+    url: "https://addons.mozilla.org/en-US/firefox/addon/goal-countdown/",
+    icon: Puzzle,
+  },
+  {
+    name: "Screely",
+    url: "https://screely.com",
+    icon: Puzzle,
+  },
+];
