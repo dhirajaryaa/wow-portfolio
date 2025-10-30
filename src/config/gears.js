@@ -34,7 +34,7 @@ export const myPc = [
     icon: Monitor,
   },
   {
-    name: "Frontech Mars-725 UPS",
+    name: "UPS – Frontech Mars725",
     icon: BatteryCharging,
   },
 ];

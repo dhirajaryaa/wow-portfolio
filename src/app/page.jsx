@@ -206,7 +206,7 @@ export default function Home() {
             </Item>
             {/* vscode  */}
             <Item variant="muted" className={'rounded-xl'} asChild>
-              <Link href="/setup/vscode-setup">
+              <Link href="/setup/vscode">
                 <ItemMedia variant="icon">
                   <Code2 />
                 </ItemMedia>

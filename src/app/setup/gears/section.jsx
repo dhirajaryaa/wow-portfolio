@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 function Section({ title, gears }) {
     return <div className='space-y-4 mt-8'>
-        <h2 className='text-2xl font-semibold'>{title}</h2>
+        <h2 className='text-2xl font-semibold my-4'>{title}</h2>
         {gears.map((item, idx) => (
             <div key={idx} className='flex items-center gap-2 text-muted-foreground'>
                 <Button type="button" variant="outline" size="icon-sm" className={'size-7'}>
