@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Moon, Sun } from "lucide-react";
+import ToggleTheme from "./ToggleTheme";
 
 function Header() {
   return (
@@ -22,9 +21,7 @@ function Header() {
             >
               pow
             </Link>
-            <Button size={"icon"} variant={"outline"} className={"ml-1"}>
-              {true ? <Sun /> : <Moon />}
-            </Button>
+            <ToggleTheme />
           </div>
         </nav>
       </header>

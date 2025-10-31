@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import Quotes from "@/components/common/Quotes";
+import { ThemeProvider } from "@/components/common/ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,14 +20,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className} antialiased`}>
-        <div className="w-full mx-auto max-w-3xl scroll-smooth relative">
-          <Header />
-          {children}
-          <Quotes />
-          <Footer />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="w-full mx-auto max-w-3xl scroll-smooth relative">
+            <Header />
+            {children}
+            <Quotes />
+            <Footer />
+          </div>
+        </ThemeProvider>
         {/* clarity code  */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
