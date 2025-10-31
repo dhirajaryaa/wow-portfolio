@@ -3,10 +3,10 @@ import { useTheme } from 'next-themes'
 import GitHubCalendar from 'react-github-calendar'
 
 function GithubActivity({ username }) {
-  const {theme} = useTheme();
+  const {resolvedTheme} = useTheme();
   return (
     <GitHubCalendar username={username}
-    colorScheme={theme}
+    colorScheme={resolvedTheme || 'light'}
       year={new Date().getFullYear()}
       fontSize={12}
     />

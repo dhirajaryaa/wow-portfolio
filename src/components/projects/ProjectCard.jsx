@@ -46,7 +46,7 @@ function ProjectCard({ project }) {
                     <div className={'flex items-center gap-3'}>
                         <Tooltip>
                             <TooltipTrigger asChild>
-                                <a href={project.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-foreground/40">
+                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-foreground/40">
                                     <Globe size={22} />
                                 </a>
                             </TooltipTrigger>
@@ -68,7 +68,7 @@ function ProjectCard({ project }) {
                 </div>
                 <CardDescription className={'line-clamp-4 capitalize mb-4'}>{project.description}</CardDescription>
                 {project.technologies.map((tech, idx) => (
-                    <Badge key={idx} variant={"outline"} className={'text-xs capitalize mb-1'}>{tech}</Badge>
+                    <Badge key={idx} variant={'outline'}  className={'text-xs capitalize mb-1 mr-1 bg-background/50'}>{tech}</Badge>
                 ))}
             </CardContent>
             <CardFooter className={'justify-between'}>
