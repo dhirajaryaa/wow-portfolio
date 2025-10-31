@@ -1,16 +1,17 @@
-'use client'
+"use client"
 import { Button } from "@/components/ui/button"
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 function ToggleTheme() {
-    const { setTheme, theme } = useTheme();
+    const { setTheme,resolvedTheme } = useTheme();
+    
     const changeTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark")
-    }
+        setTheme(resolvedTheme === "dark" ? "light" : "dark")};
+
     return (
-        <Button size={"icon"} variant={"outline"} onClick={changeTheme} className={"ml-1"}>
-            {true ? <Sun /> : <Moon />}
+        <Button size="icon" variant="outline" onClick={changeTheme} className="ml-1">
+            {resolvedTheme === "dark" ? <Sun /> : <Moon />}
         </Button>
     )
 }

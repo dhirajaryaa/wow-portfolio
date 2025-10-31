@@ -3,7 +3,7 @@
 export const projects = [
   {
     name: "QuickFormX",
-    link: "https://quickformx.dhirajarya.xyz/forms",
+    link: "https://quickformx.dhirajarya.xyz/login",
     repoLink: "https://github.com/dhirajaryaa/quickFormx",
     image: "/projects/quickformx.jpg",
     description:
