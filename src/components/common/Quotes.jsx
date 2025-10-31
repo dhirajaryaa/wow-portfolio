@@ -1,9 +1,21 @@
+'use client'
+
 import { Quote } from "lucide-react"
 import { quotes } from "@/config/quotes"
+import { useEffect, useState } from "react";
 
 function Quotes() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const showQuote = quotes[randomIndex];
+    const [quote, setQuote] = useState(null);
+
+    useEffect(()=>{
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        setQuote(quotes[randomIndex]);
+    },[]);
+
+    if (!quote) {
+        return null;
+    }
+
     return (
         <section className="w-full h-full px-4 my-18">
             <div className="bg-muted p-8 relative w-full h-full rounded-2xl border">
@@ -12,8 +24,8 @@ function Quotes() {
                     stroke='none'
                     size={100} />
                 <div className="flex flex-col gap-2">
-                    <p className="text-lg text-foreground/50 wrap-break-word">"{showQuote.quote}"</p>
-                    <p className="text-lg font-medium text-right text-foreground">— {showQuote.author}</p>
+                    <p className="text-lg text-foreground/50 wrap-break-word">"{quote.quote}"</p>
+                    <p className="text-lg font-medium text-right text-foreground">— {quote.author}</p>
                 </div>
             </div>
         </section>
