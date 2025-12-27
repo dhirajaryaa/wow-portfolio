@@ -14,7 +14,7 @@ export const profileInfo = {
     "https://drive.google.com/file/d/1YvXHm4HrH2RnR0n8UjHwZxZxZxZxZxZx/view?usp=share_link",
   socialLinks: [
     {
-      url: "https://github.com/dhirajarya",
+      url: "https://github.com/dhirajaryaa",
       icon: Github,
       label: "github",
     },
