@@ -11,13 +11,13 @@ function Header() {
           <div className="flex gap-2 sm:gap-4 items-center">
             <Link
               href={"/blog"}
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground hover:underline"
             >
               Blog
             </Link>
             <Link
               href={"/pow"}
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground hover:underline"
             >
               pow
             </Link>
