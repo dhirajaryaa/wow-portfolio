@@ -28,12 +28,12 @@ function HeroSection() {
       </div>
       {/* heading  */}
       <strong className="text-2xl font-semibold text-foreground/90">
-        {"Hii, I'm"}
+        Hii, I'm
       </strong>
       <h1 className="text-4xl font-semibold text-foreground/90">
         Dhiraj Arya
         <span className="text-foreground/50 text-3xl font-medium">
-          {" — "} {profileInfo.tagline}
+          — {profileInfo.tagline}
         </span>
       </h1>
       {/* about me  */}
