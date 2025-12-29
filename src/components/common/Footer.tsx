@@ -1,5 +1,5 @@
-import { profileInfo } from "../../config/about";
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "@/components/common/SocialLinks";
+import { profileInfo } from "@/config/about";
 
 function Footer() {
   return (

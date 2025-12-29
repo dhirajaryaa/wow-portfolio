@@ -1,3 +1,4 @@
+import DevMessage from "@/components/common/DevMessage";
 import React from "react";
 
 function ContactPage() {

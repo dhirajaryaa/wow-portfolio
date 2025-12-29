@@ -1,8 +1,8 @@
 "use client";
 
+import { quotes } from "@/config/quotes";
 import { Quote } from "lucide-react";
 import { useEffect, useState } from "react";
-import { quotes } from "../../config/quotes";
 
 function Quotes() {
   const [quote, setQuote] = useState<any>(null);

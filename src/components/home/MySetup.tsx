@@ -5,10 +5,10 @@ import {
   ItemDescription,
   ItemMedia,
   ItemTitle,
-} from ".";
+} from "@/components/ui/item";
 import Link from "next/link";
-import { Settings, ArrowRight, Code2 } from "lucide-react";
-import Section from "../common/Section";
+import { Settings, ArrowRight } from "lucide-react";
+import Section from "@/components/common/Section";
 
 function MySetup() {
   return (

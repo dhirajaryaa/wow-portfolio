@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
 function Section({ title, gears }: any) {

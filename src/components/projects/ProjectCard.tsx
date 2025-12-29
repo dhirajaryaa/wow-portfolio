@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Globe, GithubIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 function ProjectCard({ project }: any) {

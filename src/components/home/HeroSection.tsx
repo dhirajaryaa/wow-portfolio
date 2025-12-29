@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
-import { FileText } from "lucide-react";
+import { FileText,Send } from "lucide-react";
 import Link from "next/link";
-import { Send } from "lucide-react";
-import SocialLinks from "../common/SocialLinks";
-import { SkillBadge } from "./SkillBadge";
-import { profileInfo } from "../../config/about";
+import { profileInfo } from "@/config/about";
+import { SkillBadge } from "@/components/home/SkillBadge";
+import { Button } from "@/components/ui/button";
+import SocialLinks from "@/components/common/SocialLinks";
 
 function HeroSection() {
   return (

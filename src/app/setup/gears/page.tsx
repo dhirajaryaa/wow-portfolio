@@ -1,4 +1,5 @@
 
+import { myGadgets, myPc, myWebExtensions } from "@/config/gears";
 import Section from "./section";
 
 function page() {

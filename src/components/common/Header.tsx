@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ToggleTheme from "./ToggleTheme";
+import ToggleTheme from "@/components/common/ToggleTheme";
 
 function Header() {
   return (
