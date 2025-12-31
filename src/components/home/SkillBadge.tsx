@@ -3,9 +3,9 @@ import Image from "next/image";
 
 function SkillBadge({ icon, name, className, iconClassName }: any) {
   return (
-    <div
+    <span
       className={cn(
-        "inline-flex gap-1 bg-muted text-foreground px-2 rounded border border-foreground/50 border-dashed py-0.5",
+        "inline-flex whitespace-nowrap gap-1 bg-muted text-foreground px-2 rounded border border-foreground/50 border-dashed py-0.5 text-[13px]",
         className
       )}
     >
@@ -16,8 +16,8 @@ function SkillBadge({ icon, name, className, iconClassName }: any) {
         height={14}
         className={iconClassName}
       />
-      <p className=" ml-1 text-[13px]">{name}</p>
-    </div>
+      {name}
+    </span>
   );
 }
 
