@@ -2,13 +2,9 @@ import GithubActivity from "@/components/home/GithubActivity";
 import Section from "@/components/common/Section";
 import HeroSection from "@/components/home/HeroSection";
 import MySetup from "@/components/home/MySetup";
-import ProjectCard from "@/components/projects/ProjectCard";
-import { Button } from "@/components/ui/button";
-import { profileInfo } from "@/config/about";
-import { projects } from "@/config/project";
-import Link from "next/link";
 import ProjectList from "@/components/home/ProjectList";
-
+import { profileInfo } from "@/config/about";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -18,7 +14,7 @@ export default function Home() {
         <HeroSection />
 
         {/* projects  */}
-       <ProjectList />
+        <ProjectList />
 
         {/* github contribution  */}
         <Section
@@ -27,7 +23,16 @@ export default function Home() {
           className={"mt-18"}
         >
           <div className="border border-dashed border-foreground/60 my-6 p-4 rounded-xl flex items-center justify-center">
-            <GithubActivity username={profileInfo.githubUsername} />
+            <Suspense
+              fallback={
+                <GithubActivity
+                  username={profileInfo.githubUsername}
+                  loading={true}
+                />
+              }
+            >
+              <GithubActivity username={profileInfo.githubUsername} />
+            </Suspense>
           </div>
         </Section>
 
