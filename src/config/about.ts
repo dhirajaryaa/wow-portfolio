@@ -1,10 +1,11 @@
+import { type LucideIcon } from 'lucide-react';
 import {
     Linkedin,
     Youtube,
     Mail,
     Instagram,
     Github,
-    Twitter,
+    Twitter
 } from "lucide-react";
 
 interface ProfileInfo {
@@ -13,13 +14,13 @@ interface ProfileInfo {
     resumeLink: string;
     socialLinks: {
         url: string;
-        icon: any;
+        icon: LucideIcon;
         label: string;
     }[];
 }
 
 export const profileInfo: ProfileInfo = {
-    tagline: "a self-taught developer",
+    tagline: "Self-taught developer",
     githubUsername: "dhirajaryaa",
     resumeLink:
         "https://drive.google.com/file/d/1YvXHm4HrH2RnR0n8UjHwZxZxZxZxZxZx/view?usp=share_link",
