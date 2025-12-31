@@ -10,12 +10,13 @@ function Footer() {
           className={"items-center justify-center"}
         />
       </nav>
+
       <p className="text-muted-foreground text-sm">
-        &copy;{" "}
-        {(new Date().getUTCFullYear() !== 2025 ? "2025 - " : "") +
-          new Date().getFullYear()}{" "}
+        &copy; 2025
+        {new Date().getFullYear() > 2025 && ` - ${new Date().getFullYear()}`}{" "}
         All rights reserved.
       </p>
+
       <div className="text-muted-foreground/20 font-extrabold text-6xl sm:text-[8rem] md:text-[10rem] w-fit select-none pointer-events-none">
         Portfolio
       </div>
