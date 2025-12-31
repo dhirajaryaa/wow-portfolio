@@ -7,12 +7,15 @@ interface socialLinks {
   icon: LucideIcon;
   label: string;
 }
+
 function SocialLinks({
   socialLinks,
   className,
+  iconOnly = false,
 }: {
   socialLinks: socialLinks[];
   className?: string;
+  iconOnly?: boolean;
 }) {
   return (
     <div
@@ -30,7 +33,13 @@ function SocialLinks({
         >
           <a href={link.url} target="_blank" rel="noopener noreferrer">
             {<link.icon />}
-            <span className="capitalize font-normal">{link.label}</span>
+            <span
+              className={`font-normal capitalize ${
+                iconOnly && `sr-only sm:not-sr-only`
+              }`}
+            >
+              {link.label}
+            </span>
           </a>
         </Button>
       ))}

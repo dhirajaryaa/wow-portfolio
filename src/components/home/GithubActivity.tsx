@@ -10,6 +10,7 @@ function GithubActivity({ username }: { username: string }) {
       colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
       year={new Date().getFullYear()}
       fontSize={12}
+      blockSize={9}
     />
   );
 }

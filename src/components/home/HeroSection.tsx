@@ -82,7 +82,7 @@ function HeroSection() {
         </Button>
       </div>
       {/* social links  */}
-      <SocialLinks socialLinks={profileInfo.socialLinks} />
+      <SocialLinks socialLinks={profileInfo.socialLinks} iconOnly={true} />
     </section>
   );
 }

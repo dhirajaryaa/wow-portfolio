@@ -1,4 +1,4 @@
-import GithubActivity from "@/components/common/GithubActivity";
+import GithubActivity from "@/components/home/GithubActivity";
 import Section from "@/components/common/Section";
 import HeroSection from "@/components/home/HeroSection";
 import MySetup from "@/components/home/MySetup";
@@ -40,7 +40,7 @@ export default function Home() {
           hintText={"my coding journey💻"}
           className={"mt-18"}
         >
-          <div className="border border-dashed border-foreground/60 my-6 p-6 rounded-xl">
+          <div className="border border-dashed border-foreground/60 my-6 p-4 rounded-xl flex items-center justify-center">
             <GithubActivity username={profileInfo.githubUsername} />
           </div>
         </Section>
