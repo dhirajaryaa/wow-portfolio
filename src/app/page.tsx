@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { profileInfo } from "@/config/about";
 import { projects } from "@/config/project";
 import Link from "next/link";
+import ProjectList from "@/components/home/ProjectList";
 
 
 export default function Home() {
@@ -17,22 +18,7 @@ export default function Home() {
         <HeroSection />
 
         {/* projects  */}
-        <Section
-          title={"Projects"}
-          hintText={"my proof-of-work✨"}
-          className={"mt-18"}
-        >
-          <div className="grid grid-cols-1 min-[600px]:grid-cols-2  gap-4 mt-4">
-            {projects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
-          <div className="w-full flex justify-center items-center mt-8">
-            <Button size={"lg"} variant={"outline"} asChild>
-              <Link href="/pow">Show More</Link>
-            </Button>
-          </div>
-        </Section>
+       <ProjectList />
 
         {/* github contribution  */}
         <Section
