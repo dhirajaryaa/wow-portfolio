@@ -1,6 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
-import { Poppins } from "next/font/google";
+import { Poppins, Just_Another_Hand,Dynalight} from "next/font/google";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import Header from "@/components/common/Header";
 import Quotes from "@/components/common/Quotes";
@@ -8,10 +8,18 @@ import Footer from "@/components/common/Footer";
 import type { Metadata } from "next";
 import { getMetaData } from "@/config/meta";
 
-const poppins = Poppins({
+export const geistSans = Poppins({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
+  variable: "--font-geist-sans", // 🔥 KEEP shadcn default
+});
+
+export const handFont = Dynalight({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-handwriting",
 });
 
 export const metadata: Metadata = getMetaData("/");
@@ -23,7 +31,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className} antialiased`}>
+      <body
+        className={` 
+         ${geistSans.variable}
+    ${handFont.variable}
+           antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
