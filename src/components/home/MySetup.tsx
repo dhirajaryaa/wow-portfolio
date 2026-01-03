@@ -20,7 +20,7 @@ function MySetup() {
       <div className="space-y-4 mt-6">
         {/* gears  */}
         <Item variant="muted" className={"rounded-xl"} asChild>
-          <Link href="/setup/gears">
+          <Link href="/gears">
             <ItemMedia variant="icon">
               <Settings />
             </ItemMedia>

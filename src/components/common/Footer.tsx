@@ -1,5 +1,5 @@
 import SocialLinks from "@/components/common/SocialLinks";
-import { profileInfo } from "@/config/about";
+import { profileInfo } from "@/config/profile";
 
 function Footer() {
   return (
@@ -13,7 +13,8 @@ function Footer() {
 
       <p className="text-muted-foreground text-sm">
         &copy; 2025
-        {new Date().getFullYear() > 2025 && ` - ${new Date().getFullYear()}`}{" "}
+        {new Date().getFullYear() > 2025 &&
+          ` - ${new Date().getFullYear()}`}{" "}
         All rights reserved.
       </p>
 
