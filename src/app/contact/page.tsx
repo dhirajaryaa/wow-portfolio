@@ -22,7 +22,7 @@ function ContactPage() {
             className="w-full flex items-center justify-center gap-2 border px-4 py-2  rounded-lg bg-accent/60"
           >
             <contact.icon size={18} />
-            <span className="text-sm sm:text-base">{contact.value}</span>
+            <span className="text-sm">{contact.value}</span>
           </div>
         ))}
       </section>
