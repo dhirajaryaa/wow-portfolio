@@ -1,4 +1,4 @@
-import { myGadgets, myPc, myWebExtensions } from "@/config/gears";
+import { myGadgets, myPc, myWebExtensions } from "@/data/devtool/gears";
 import Section from "./section";
 import { Metadata } from "next";
 

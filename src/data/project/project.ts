@@ -1,4 +1,4 @@
-// status must be : "completed👍","ongoing🏗️","started🚀","discontinue🛑"
+// status must be : "completed👍","ongoing🏗️","started🚀","discontinue⚠️"
 
 interface Project  {
     name: string;
@@ -30,7 +30,7 @@ export const projects: Project[] = [
         image: "/projects/resucraft.jpg",
         description:
             "AI-powered resume builder that helps you create a professional, standout resume in minutes. Leverage AI-driven suggestions, customizable templates, AI-assisted content suggestions and real-time feedback to land your dream job.",
-        status: "completed👍",
+        status: "discontinue⚠️",
         slug: "resucraft",
         technologies: ["React", "Firebase", "React Form Hook", "Tailwindcss"],
     },

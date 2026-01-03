@@ -24,7 +24,7 @@ function ProjectCard({ project }: any) {
         return "bg-green-200 text-green-800";
       case "started🚀":
         return "bg-blue-200 text-blue-800";
-      case "discontinue🛑":
+      case "discontinue⚠️":
         return "bg-rose-200 text-rose-800";
       default:
         return "bg-yellow-200 text-yellow-800";

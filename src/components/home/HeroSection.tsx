@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FileText, Send } from "lucide-react";
 import Link from "next/link";
-import { profileInfo } from "@/config/about";
+import { profileInfo } from "@/data/profile/profile";
 import { SkillBadge } from "@/components/home/SkillBadge";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/common/SocialLinks";

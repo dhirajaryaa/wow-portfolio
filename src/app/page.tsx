@@ -3,7 +3,7 @@ import Section from "@/components/common/Section";
 import HeroSection from "@/components/home/HeroSection";
 import MySetup from "@/components/home/MySetup";
 import ProjectList from "@/components/home/ProjectList";
-import { profileInfo } from "@/config/about";
+import { profileInfo } from "@/data/profile/profile";
 import { Suspense } from "react";
 
 export default function Home() {
