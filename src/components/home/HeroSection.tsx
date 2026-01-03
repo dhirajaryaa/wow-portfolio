@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FileText, Send } from "lucide-react";
 import Link from "next/link";
-import { profileInfo } from "@/data/profile/profile";
+import { profileInfo } from "@/config/profile";
 import { SkillBadge } from "@/components/home/SkillBadge";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/common/SocialLinks";
@@ -77,7 +77,7 @@ function HeroSection() {
         </Button>
         <Button asChild>
           <Link href={"/contact"}>
-            <Send /> Get In Touch
+            <Send /> Hire me
           </Link>
         </Button>
       </div>

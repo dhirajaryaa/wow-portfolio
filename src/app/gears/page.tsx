@@ -1,12 +1,9 @@
-import { myGadgets, myPc, myWebExtensions } from "@/data/devtool/gears";
+import { myGadgets, myPc, myWebExtensions } from "@/config/gears";
 import Section from "./section";
 import { Metadata } from "next";
+import { getMetaData } from "@/config/meta";
 
-export const metadata: Metadata = {
-  title: "Gears",
-  description:
-    "Explore the PC setup, gadgets, and web extensions I use daily as a full-stack developer to build fast, modern web applications.",
-};
+export const metadata: Metadata = getMetaData("/gears");
 
 function page() {
   return (

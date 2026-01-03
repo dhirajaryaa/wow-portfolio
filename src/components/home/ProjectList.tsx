@@ -1,5 +1,5 @@
 import Section from "@/components/common/Section";
-import { projects } from "@/data/project/project";
+import { projects } from "@/config/project";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
