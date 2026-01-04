@@ -44,7 +44,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="py-8" onSubmit={handleFormSubmit}>
+    <form className="py-8" onSubmit={handleFormSubmit} ref={formRef}>
       <FieldGroup>
         <FieldSet>
           <FieldLegend>Send me a message</FieldLegend>
