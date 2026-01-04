@@ -41,7 +41,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          enableSystem={false}
           disableTransitionOnChange
         >
           <div className="w-full mx-auto max-w-3xl scroll-smooth relative">

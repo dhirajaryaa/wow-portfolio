@@ -11,12 +11,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { sendMessage } from "@/action/contact";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -26,13 +27,16 @@ const ContactForm = () => {
     try {
       setIsLoading(true);
       const res = await sendMessage(formData);
-      console.log(res);
-      
-      toast.success("Message sent successfully!🎉", {
-        description: new Date().toUTCString(),
+
+      if (!res.success) {
+        throw new Error(res.error);
+      };
+      toast.success(res.message, {
+        description: "Thank you for reaching out. I will get back to you soon.👋",
       });
+      formRef.current?.reset();
     } catch (error) {
-      console.error(`Contact Form Error: ${error}`);
+      console.error(`Contact Form Error: ${error.message}`);
       toast.error("Something went wrong. Please try again.⚠️");
     } finally {
       setIsLoading(false);
