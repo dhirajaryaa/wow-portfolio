@@ -1,6 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
-import { Poppins, Just_Another_Hand,Dynalight} from "next/font/google";
+import { Poppins, Dynalight } from "next/font/google";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import Header from "@/components/common/Header";
 import Quotes from "@/components/common/Quotes";
@@ -58,6 +58,19 @@ export default function RootLayout({
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ty0etl4nzb");
           `}
+        </Script>
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-F7KTJ9FCBK`}
+        ></Script>
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-F7KTJ9FCBK');`}
         </Script>
       </body>
     </html>
