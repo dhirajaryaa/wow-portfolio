@@ -54,7 +54,7 @@ ${data.message.trim()}
 
         // rate limiter 
         const ip = await getClientIp();
-        await rateLimiter.consume(ip);
+        await rateLimiter.consume(ip, 1);
         // send on telegram 
         const response = await fetch(telegramApiUrl, {
             method: "POST",
