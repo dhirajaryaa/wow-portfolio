@@ -27,7 +27,7 @@ function Quotes() {
         />
 
         <div className="flex flex-col gap-3">
-          <p className="text-sm sm:text-lg text-foreground/70 wrap-break-word">
+          <p className="text-sm sm:text-[17px] text-foreground/70 wrap-break-word">
             &quot;{quote.quote}&quot;
           </p>
 

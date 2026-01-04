@@ -14,37 +14,53 @@ import { Button } from "@/components/ui/button";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { sendMessage } from "@/action/contact";
+import { ContactSchema } from "@/lib/schema";
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+
+export interface ContactFormProps {
+  name: string;
+  phone: string;
+  email: string;
+  message: string
+  submitted?: string
+};
+
 
 const ContactForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // get data
-    const formData = new FormData(event.currentTarget);
-    formData.append("submitted", new Date().toLocaleString());
-    try {
-      setIsLoading(true);
-      const res = await sendMessage(formData);
+  const { register, formState: { errors }, reset, handleSubmit } = useForm<ContactFormProps>({
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    },
+    resolver: zodResolver(ContactSchema),
+  })
 
-      if (!res.success) {
-        throw new Error(res.error);
-      };
+  const handleFormSubmit = async (data: ContactFormProps, event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    const res = await sendMessage({ ...data, submitted: new Date().toLocaleString() });
+    if (res.success) {
       toast.success(res.message, {
         description: "Thank you for reaching out. I will get back to you soon.👋",
       });
-      formRef.current?.reset();
-    } catch (error) {
-      console.error(`Contact Form Error: ${error.message}`);
-      toast.error("Something went wrong. Please try again.⚠️");
-    } finally {
-      setIsLoading(false);
+
+    } else {
+      console.error(`Contact Form Error: ${res.error}`);
+      toast.error(res.error || "Something went wrong. Please try again.⚠️");
     }
+    reset();
+    setIsLoading(false);
   };
 
   return (
-    <form className="py-8" onSubmit={handleFormSubmit} ref={formRef}>
+    <form className="py-8" ref={formRef} onSubmit={handleSubmit(handleFormSubmit)}>
       <FieldGroup>
         <FieldSet>
           <FieldLegend>Send me a message</FieldLegend>
@@ -56,17 +72,18 @@ const ContactForm = () => {
             <div className="grid grid-col-1 sm:grid-cols-2 gap-4">
               <Field>
                 <FieldLabel htmlFor="name">Name</FieldLabel>
-                <Input id="name" name="name" placeholder="Suraj Roy" required />
+                <Input id="name" {...register("name")} placeholder="Suraj Roy" aria-invalid={errors.name ? "true" : "false"} />
+                {errors.name && <p className="text-destructive text-xs">{errors.name.message}</p>}
               </Field>
               <Field>
                 <FieldLabel htmlFor="phone">Phone No</FieldLabel>
                 <Input
-                  type="tel"
                   id="phone"
-                  name="phone"
+                  {...register("phone")}
                   placeholder="+91 12xxxxxx90"
-                  required
+                  aria-invalid={errors.phone ? "true" : "false"}
                 />
+                {errors.phone && <p className="text-destructive text-xs">{errors.phone.message}</p>}
               </Field>
             </div>
             <Field>
@@ -74,20 +91,22 @@ const ContactForm = () => {
               <Input
                 type="email"
                 id="email"
-                name="email"
+                {...register("email")}
                 placeholder="suraj@example.com"
-                required
+                aria-invalid={errors.email ? "true" : "false"}
               />
+              {errors.email && <p className="text-destructive text-xs">{errors.email.message}</p>}
             </Field>
             <Field>
               <FieldLabel htmlFor="message">Message</FieldLabel>
               <Textarea
                 id="message"
-                name="message"
+                {...register("message")}
                 placeholder="I want to hire ..."
-                required
                 className="h-22"
+                aria-invalid={errors.message ? "true" : "false"}
               />
+              {errors.message && <p className="text-destructive text-xs">{errors.message.message}</p>}
             </Field>
             <Field orientation="horizontal">
               <Button type="submit" className="w-full h-10">
