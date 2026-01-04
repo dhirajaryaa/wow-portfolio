@@ -18,7 +18,7 @@ import { ContactSchema } from "@/lib/schema";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 
-export interface ContactFormProps  {
+export interface ContactFormProps {
   name: string;
   phone: string;
   email: string;
@@ -43,23 +43,20 @@ const ContactForm = () => {
 
   const handleFormSubmit = async (data: ContactFormProps, event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    try {
-      setIsLoading(true);
-      const res = await sendMessage({ ...data, submitted: new Date().toLocaleString() });
+    setIsLoading(true);
 
-      if (!res.success) {
-        throw new Error(res.error);
-      };
+    const res = await sendMessage({ ...data, submitted: new Date().toLocaleString() });
+    if (res.success) {
       toast.success(res.message, {
         description: "Thank you for reaching out. I will get back to you soon.👋",
       });
-      formRef.current?.reset();
-    } catch (error) {
-      console.error(`Contact Form Error: ${error.message}`);
-      toast.error("Something went wrong. Please try again.⚠️");
-    } finally {
-      setIsLoading(false);
+
+    } else {
+      console.error(`Contact Form Error: ${res.error}`);
+      toast.error(res.error || "Something went wrong. Please try again.⚠️");
     }
+    reset();
+    setIsLoading(false);
   };
 
   return (
