@@ -1,13 +1,13 @@
 import "./globals.css";
 import Script from "next/script";
 import { Poppins, Dynalight } from "next/font/google";
-import { ThemeProvider } from "@/components/common/ThemeProvider";
 import Header from "@/components/common/Header";
 import Quotes from "@/components/common/Quotes";
 import Footer from "@/components/common/Footer";
 import type { Metadata } from "next";
 import { getMetaData } from "@/config/meta";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "next-themes";
 
 export const geistSans = Poppins({
   subsets: ["latin"],
@@ -40,10 +40,9 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange>
           <div className="w-full mx-auto max-w-3xl scroll-smooth relative">
             <Header />
             {children}

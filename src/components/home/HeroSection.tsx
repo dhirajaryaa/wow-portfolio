@@ -77,7 +77,7 @@ function HeroSection() {
         </Button>
         <Button asChild>
           <Link href={"/contact"}>
-            <Send /> Hire me
+            <Send /> Get in Touch
           </Link>
         </Button>
       </div>
