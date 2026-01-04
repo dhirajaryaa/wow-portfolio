@@ -7,6 +7,7 @@ import Quotes from "@/components/common/Quotes";
 import Footer from "@/components/common/Footer";
 import type { Metadata } from "next";
 import { getMetaData } from "@/config/meta";
+import { Toaster } from "@/components/ui/sonner";
 
 export const geistSans = Poppins({
   subsets: ["latin"],
@@ -50,6 +51,9 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+
+        <Toaster position="top-center" richColors={true} closeButton={true} />
+
         {/* clarity code  */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
