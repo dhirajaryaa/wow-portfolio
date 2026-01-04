@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { toast } from "sonner";
+import { sendMessage } from "@/action/contact";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,10 +22,12 @@ const ContactForm = () => {
     event.preventDefault();
     // get data
     const formData = new FormData(event.currentTarget);
-    const formDataEntries = Object.fromEntries([...formData.entries()]);
-    setIsLoading(true);
+    formData.append("submitted", new Date().toLocaleString());
     try {
-      console.log(formDataEntries);
+      setIsLoading(true);
+      const res = await sendMessage(formData);
+      console.log(res);
+      
       toast.success("Message sent successfully!🎉", {
         description: new Date().toUTCString(),
       });
