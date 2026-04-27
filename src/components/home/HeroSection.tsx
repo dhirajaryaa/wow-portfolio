@@ -16,6 +16,7 @@ function HeroSection() {
         </strong>
         <div className="flex items-center gap-2 sm:gap-4 sm:flex-row flex-row-reverse">
           <Image
+        priority
             src="/assets/hero.webp"
             alt="Dhiraj Arya"
             width={100}
