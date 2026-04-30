@@ -75,6 +75,11 @@ export const myGadgets:Gears[] = [
 
 export const myWebExtensions: WebExtensions[] = [
     {
+        name: "SmartForm – AI Form Filler",
+        url: "https://github.com/dhirajaryaa/smartform",
+        icon: Puzzle,
+    },
+    {
         name: "AdGuard AdBlocker",
         url: "https://adguard.com/en/adguard-browser-extension/overview.html",
         icon: Puzzle,
