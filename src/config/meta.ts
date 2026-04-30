@@ -47,7 +47,7 @@ export const pageMetadata: Record<string, PageMeta> = {
             'web development',
             'projects',
         ],
-        ogImage: '/og/hero.webp',
+        ogImage: '/og/home.webp',
         twitterCard: 'summary_large_image',
     },
     // Gears page
