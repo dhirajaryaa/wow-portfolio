@@ -2,6 +2,8 @@
 /* @import "tw-animate-css"; */
 /* @plugin "tailwindcss-animate"; */
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-primary: var(--color-neutral-800);
   --color-secondary: var(--color-neutral-500);

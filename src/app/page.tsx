@@ -2,8 +2,8 @@ import Container from "@/components/Container";
 
 export default function Home() {
   return (
+      <Container className="min-h-[400vh] p-4 md:p-8">
     <main>
-      <Container>
         <h1 className="text-primary text-2xl font-bold tracking-tighter md:text-4xl">
           Dhiraj Arya.
         </h1>
@@ -11,7 +11,7 @@ export default function Home() {
           A portfolio website showcasing the projects and skills of Dhiraj Arya,
           a software developer specializing in web development and design.
         </p>
-      </Container>
     </main>
+      </Container>
   );
 }
