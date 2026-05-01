@@ -7,6 +7,9 @@
 @theme inline {
   --color-primary: var(--color-neutral-800);
   --color-secondary: var(--color-neutral-500);
+  --shadow-base:
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
 
 .dark {

@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const navLinks = [
@@ -14,16 +15,43 @@ export default function Navbar() {
   ];
 
   const [hovered, setHovered] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    console.log("Page scroll: ", latest);
+    if (latest > 20) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  });
+
   return (
-    <Container>
-      <nav className="flex w-full items-center justify-between p-3">
+    <Container className="relative">
+      <motion.nav
+        animate={{
+          boxShadow: scrolled ? "var(--shadow-base)" : "none",
+          y: scrolled ? 14 : 0,
+          scale: scrolled ? 0.94 : 1,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 200,
+          damping: 25,
+        }}
+        className="fixed inset-x-0 top-0 z-10 mx-auto flex w-[92%] items-center justify-between rounded-3xl bg-white/50 p-2 backdrop-blur-sm sm:w-[85%] md:w-[75%] lg:max-w-4xl dark:bg-black/50"
+      >
         <Link href={"/"}>
           <Image
             src={"/logo.webp"}
+            loading="eager"
             width={"50"}
             height={"50"}
             alt="avatar"
-            className="size-9 rounded-lg object-cover"
+            className={cn(
+              "size-7 rounded-full border-yellow-700 object-cover transition-all duration-400 ease-in-out md:size-9",
+            )}
           />
         </Link>
         {/* links  */}
@@ -32,7 +60,7 @@ export default function Navbar() {
             <Link
               key={idx}
               href={link.href}
-              className="relative cursor-pointer px-2 py-1 text-sm sm:px-3"
+              className="relative cursor-pointer px-2 py-1 text-sm sm:px-3 md:text-base"
               onMouseEnter={() => setHovered(idx)}
               onMouseLeave={() => setHovered(null)}
             >
@@ -43,14 +71,14 @@ export default function Navbar() {
                     ease: "easeInOut",
                   }}
                   layoutId="hovered-span"
-                  className="absolute inset-0 h-full w-full rounded-md bg-neutral-100 dark:bg-neutral-800"
+                  className="absolute inset-0 z-40 h-full w-full rounded-lg bg-neutral-100 shadow backdrop-blur-lg dark:bg-neutral-800"
                 />
               )}
-              <span className="relative z-10">{link.name}</span>
+              <span className="relative z-50">{link.name}</span>
             </Link>
           ))}
         </div>
-      </nav>
+      </motion.nav>
     </Container>
   );
 }
