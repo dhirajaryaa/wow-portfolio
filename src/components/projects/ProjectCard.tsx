@@ -16,40 +16,27 @@ import { Globe, GithubIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Project } from "@/config/project";
 
-function ProjectCard({ project }: any) {
+function ProjectCard({ project }: {project:Project}) {
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "completed👍":
-        return "bg-green-200 text-green-800";
+        return "bg-green-100 border border-green-200 text-green-800";
       case "started🚀":
-        return "bg-blue-200 text-blue-800";
+        return "bg-blue-100 border border-blue-200 text-blue-800";
       case "discontinue⚠️":
-        return "bg-rose-200 text-rose-800";
+        return "bg-rose-100 border border-rose-200 text-rose-800";
       default:
-        return "bg-yellow-200 text-yellow-800";
+        return "bg-yellow-100 border border-yellow-200 text-yellow-800";
     }
   };
   return (
-    <Card className={"bg-muted pt-0 pb-4"}>
-      <CardHeader
-        className={
-          "p-0 gap-0 aspect-video rounded-tl-xl rounded-tr-xl overflow-hidden"
-        }
-      >
-        <Image
-          src={project.image}
-          loading="lazy"
-          width={1280}
-          height={720}
-          alt={`${project.name} Preview`}
-          className="w-full h-full object-cover"
-        />
-      </CardHeader>
+    <Card className={"gap-4 hover:scale-99 duration-200 transition-all"}>
       <CardContent>
         <div className="flex items-center gap-2 justify-between mb-4">
           <Link href="/pow/quickformx">
-            <h3 className={"text-xl font-bold"}>{project.name}</h3>
+            <h3 className={"text-xl font-semibold"}>{project.name}</h3>
           </Link>
           <div className={"flex items-center gap-3"}>
             <Tooltip>
@@ -82,14 +69,14 @@ function ProjectCard({ project }: any) {
             </Tooltip>
           </div>
         </div>
-        <CardDescription className={"line-clamp-4 capitalize mb-4"}>
+        <CardDescription className={"line-clamp-4 text-[13px] capitalize mb-4"}>
           {project.description}
         </CardDescription>
         {project.technologies.map((tech: string, idx: number) => (
           <Badge
             key={idx}
-            variant={"outline"}
-            className={"text-xs capitalize mb-1 mr-1 bg-background/50"}
+            variant="secondary"
+            className={"text-[10px] font-medium mb-1 mr-1"}
           >
             {tech}
           </Badge>

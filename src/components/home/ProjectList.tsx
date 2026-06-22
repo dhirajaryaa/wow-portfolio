@@ -11,7 +11,7 @@ function ProjectList() {
       hintText={"my proof-of-work✨"}
       className={"mt-18"}
     >
-      <div className="grid grid-cols-1 min-[600px]:grid-cols-2  gap-4 mt-4">
+      <div className="grid grid-cols-1 gap-4 mt-4">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
