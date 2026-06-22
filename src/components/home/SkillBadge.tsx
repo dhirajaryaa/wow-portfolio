@@ -5,7 +5,7 @@ function SkillBadge({ icon, name, className, iconClassName }: any) {
   return (
     <span
       className={cn(
-        "inline-flex whitespace-nowrap gap-1 bg-muted text-foreground px-2 rounded border border-foreground/50 border-dashed py-0.5 text-[13px] items-center justify-center",
+        "inline-flex items-center justify-center mx-1 gap-1 px-1.5 py-1 border border-dashed border-foreground rounded-sm text-[13px] leading-0 text-foreground bg-secondary ",
         className
       )}
     >
@@ -14,7 +14,7 @@ function SkillBadge({ icon, name, className, iconClassName }: any) {
         alt={name}
         width={14}
         height={14}
-        className={cn("h-auto", iconClassName)}
+        className={cn("size-3", iconClassName)}
       />
       {name}
     </span>

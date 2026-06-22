@@ -32,7 +32,7 @@ function ProjectCard({ project }: {project:Project}) {
     }
   };
   return (
-    <Card className={"gap-4 hover:scale-99 duration-200 transition-all"}>
+    <Card className={"gap-4 hover:scale-100 scale-101 duration-200 transition-all  bg-muted/20 hover:bg-muted/40"}>
       <CardContent>
         <div className="flex items-center gap-2 justify-between mb-4">
           <Link href="/pow/quickformx">
