@@ -37,7 +37,7 @@ function HeroSection() {
       </div>
 
       {/* about  */}
-      <p className="mt-4 text-[15px] text-foreground/60 whitespace-break-spaces tracking-wide">
+      <p className="mt-4 text-[15px] text-foreground/60 whitespace-break-spaces tracking-wide leading-7">
         I build modern web applications with
         <SkillBadge
           name="Next.js"
