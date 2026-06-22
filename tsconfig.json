@@ -13,7 +13,7 @@
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -25,7 +25,9 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"]
+      "@/*": [
+        "*"
+      ]
     },
     "plugins": [
       {
@@ -38,8 +40,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
-, "next.config.mjs"  ],
+    ".next/dev/types/**/*.ts",
+    "next.config.mjs"
+  ],
   "exclude": [
     "node_modules",
     ".next"
