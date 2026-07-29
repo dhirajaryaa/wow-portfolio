@@ -2,6 +2,7 @@ import { myGadgets, myPc, myWebExtensions } from "@/config/gears";
 import { Metadata } from "next";
 import { getMetaData } from "@/config/meta";
 import GearsSection from "@/components/common/GearsSection";
+import Heading from "@/components/common/Heading";
 
 export const metadata: Metadata = getMetaData("/gears");
 

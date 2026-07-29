@@ -1,5 +1,6 @@
 import { MapPin, Calendar, GraduationCap, Briefcase } from "lucide-react";
-import SectionHeading from "./SectionHeading";
+import Heading from "@/components/common/Heading";
+import Card from "@/components/common/Card";
 
 const highlights = [
   {
@@ -27,25 +28,21 @@ const highlights = [
 function AboutSection() {
   return (
     <section className="flex flex-col mt-24">
-      <SectionHeading subtitle="about me 👋" title="Behind the Code"/>
-      <div className="mt-6 flex flex-col gap-6">
+      <Heading hint="about me 👋" title="Behind the Code" as="h2" />
+      <div className="flex flex-col gap-6">
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        {highlights.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={item.label}
-              className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-muted/30 hover:bg-muted/60 transition-colors duration-300"
-            >
-              <Icon className="size-5 text-muted-foreground/60" />
-              <span className="text-xs text-muted-foreground/60">
-                {item.label}
-              </span>
-              <span className="text-sm font-semibold">{item.value}</span>
-            </div>
-          );
-        })}
+        {highlights.map((item) => (
+          <Card
+            key={item.label}
+            icon={item.icon}
+            title={item.value}
+            description={item.label}
+            center
+            variant="muted"
+            className="rounded-xl"
+          />
+        ))}
       </div>
 
       <p className="text-[15px] text-muted-foreground leading-relaxed max-w-3xl">

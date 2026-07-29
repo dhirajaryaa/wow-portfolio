@@ -1,6 +1,7 @@
 import { projects } from "@/config/project";
 import { Globe, Github } from "lucide-react";
-import SectionHeading from "./SectionHeading";
+import Heading from "@/components/common/Heading";
+import Card from "@/components/common/Card";
 
 const statusColors: Record<string, string> = {
   "completed👍": "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
@@ -12,13 +13,10 @@ const statusColors: Record<string, string> = {
 function ProjectList() {
   return (
     <section className="flex flex-col mt-16">
-      <SectionHeading title="Projects" subtitle="my proof-of-work ✨"/>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+      <Heading hint="my proof-of-work ✨" title="Projects" as="h2" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {projects.map((project) => (
-          <div
-            key={project.slug}
-            className="flex flex-col gap-1.5 p-4 rounded-lg border bg-card"
-          >
+          <Card key={project.slug} className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-semibold">{project.name}</h3>
               <div className="flex items-center gap-2">
@@ -48,7 +46,7 @@ function ProjectList() {
             <p className="text-xs text-muted-foreground/60 line-clamp-2 leading-relaxed">
               {project.description}
             </p>
-          </div>
+          </Card>
         ))}
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { Film } from "lucide-react";
 import Heading from "@/components/common/Heading";
-import MediaCard from "@/components/common/MediaCard";
+import Card from "@/components/common/Card";
 
 const movies = [
   {
@@ -34,7 +34,7 @@ export default function MoviesPage() {
 
       <div className="flex flex-col gap-3">
         {movies.map((movie, idx) => (
-          <MediaCard
+          <Card
             key={idx}
             icon={Film}
             title={movie.title}

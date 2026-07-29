@@ -1,6 +1,6 @@
-import { Settings, BookOpen, Monitor, Code, Terminal, Film } from "lucide-react";
-import Link from "next/link";
-import SectionHeading from "./SectionHeading";
+import { Settings, BookOpen, Terminal, Film } from "lucide-react";
+import Heading from "@/components/common/Heading";
+import Card from "@/components/common/Card";
 
 const interests = [
   {
@@ -32,26 +32,17 @@ const interests = [
 function InterestsSection() {
   return (
     <section className="flex flex-col mt-16">
-      <SectionHeading subtitle="interests 🎯" title="Beyond the Code" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ">      
-        {interests.map((item) => {
-          const Icon = item.icon;
-          return (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="flex items-center gap-3 p-4 rounded-lg border bg-card hover:bg-muted/20 transition-colors group"
-            >
-              <Icon className="size-5 text-muted-foreground/50 shrink-0" />
-              <div className="flex flex-col min-w-0">
-                <span className="text-sm font-medium">{item.label}</span>
-                <span className="text-xs text-muted-foreground/50">
-                  {item.description}
-                </span>
-              </div>
-            </Link>
-          );
-        })}
+      <Heading hint="interests 🎯" title="Beyond the Code" as="h2" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+        {interests.map((item) => (
+          <Card
+            key={item.label}
+            icon={item.icon}
+            title={item.label}
+            description={item.description}
+            href={item.href}
+          />
+        ))}
       </div>
     </section>
   );

@@ -7,17 +7,21 @@ interface HeadingProps {
 
 function Heading({ title, description, hint, as: Tag = "h1" }: HeadingProps) {
   return (
-    <div className="space-y-0.5 mb-8">
+    <div className="space-y-0.5 mb-6">
       {hint && (
         <p className="text-muted-foreground/40 font-mono text-xs tracking-wider uppercase">
           {hint}
         </p>
       )}
-      <Tag className="text-xl sm:text-2xl font-semibold tracking-tight">
+      <Tag className="text-xl sm:text-2xl font-medium tracking-tight">
         {title}
       </Tag>
       {description && (
+        <>
         <p className="text-sm text-muted-foreground/50 pt-1">{description}</p>
+        <div className="w-full h-2 bg-transparent border-b border-dashed border-muted  mt-4"/>
+        </>
+        
       )}
     </div>
   );

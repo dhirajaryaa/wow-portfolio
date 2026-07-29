@@ -9,7 +9,7 @@ function Header() {
         <div className="flex items-center gap-6">
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight text-foreground hover:opacity-70 transition-opacity"
+            className="text-sm font-serif font-bold tracking-tight text-foreground hover:opacity-70 transition-opacity border bg-muted rounded-full p-1"
           >
             DA
           </Link>

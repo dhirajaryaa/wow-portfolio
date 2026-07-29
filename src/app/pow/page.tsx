@@ -2,6 +2,7 @@ import { projects } from "@/config/project";
 import Image from "next/image";
 import { Globe, Github } from "lucide-react";
 import Heading from "@/components/common/Heading";
+import Card from "@/components/common/Card";
 
 const statusColors: Record<string, string> = {
   "completed👍": "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
@@ -21,9 +22,9 @@ function ProjectPage() {
 
       <div className="flex flex-col gap-4">
         {projects.map((project) => (
-          <div
+          <Card
             key={project.slug}
-            className="flex flex-col sm:flex-row gap-4 p-4 rounded-lg border bg-card"
+            className="flex flex-col sm:flex-row gap-4"
           >
             {project.image && (
               <div className="relative w-full sm:w-48 h-32 rounded-md overflow-hidden border shrink-0 bg-muted/30">
@@ -52,7 +53,7 @@ function ProjectPage() {
                 {project.technologies.slice(0, 5).map((tech) => (
                   <span
                     key={tech}
-                    className="text-[10px] px-1.5 py-0.5 rounded bg-muted/30 text-muted-foreground/60"
+                    className="text-[10px] px-1.5 py-0.5 rounded bg-muted/50 border  text-muted-foreground/60"
                   >
                     {tech}
                   </span>
@@ -69,21 +70,21 @@ function ProjectPage() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-muted-foreground/50 hover:text-foreground transition-colors flex items-center gap-1"
+                  className="text-sm text-muted-foreground/50 hover:text-foreground transition-colors flex items-center gap-1"
                 >
-                  <Globe className="size-3" /> Live
+                  <Globe className="size-4" /> Live
                 </a>
                 <a
                   href={project.repoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-muted-foreground/50 hover:text-foreground transition-colors flex items-center gap-1"
+                  className="text-sm text-muted-foreground/50 hover:text-foreground transition-colors flex items-center gap-1"
                 >
-                  <Github className="size-3" /> Code
+                  <Github className="size-4" /> Code
                 </a>
               </div>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
     </main>

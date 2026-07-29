@@ -1,4 +1,5 @@
 import Heading from "@/components/common/Heading";
+import Card from "@/components/common/Card";
 import ContactForm from "@/components/contact/ContactForm";
 import { getMetaData } from "@/config/meta";
 import { profileInfo } from "@/config/profile";
@@ -15,13 +16,13 @@ function ContactPage() {
       />
       <section className="w-full py-8 gap-4 flex items-center justify-evenly flex-col sm:flex-row">
         {profileInfo.contact.map((contact, index) => (
-          <div
+          <Card
             key={index}
-            className="w-full flex items-center justify-center gap-2 border px-4 py-2 rounded-lg bg-accent/60"
-          >
-            <contact.icon size={18} />
-            <span className="text-sm">{contact.value}</span>
-          </div>
+            icon={contact.icon}
+            title={contact.value}
+            variant="accent"
+            className="w-full justify-center gap-2 px-4 py-2"
+          />
         ))}
       </section>
       <ContactForm />
