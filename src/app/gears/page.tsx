@@ -14,7 +14,7 @@ function GearsPage() {
         title="Gears"
         description="The tools and tech that help me bring my ideas to life."
       />
-      <section className="w-full py-8">
+      <section className="w-full">
         <GearsSection title="PC" items={myPc} />
         <GearsSection title="Gadgets" items={myGadgets} />
         <GearsSection title="Web Extensions" items={myWebExtensions} />

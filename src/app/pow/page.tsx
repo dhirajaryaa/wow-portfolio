@@ -5,10 +5,10 @@ import Heading from "@/components/common/Heading";
 import Card from "@/components/common/Card";
 
 const statusColors: Record<string, string> = {
-  "completed👍": "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
-  "ongoing🏗️": "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-500/20",
-  "started🚀": "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-  "discontinue⚠️": "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
+  "completed": "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
+  "ongoing": "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-500/20",
+  "started": "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+  "discontinue": "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
 };
 
 function ProjectPage() {
@@ -27,21 +27,21 @@ function ProjectPage() {
             className="flex flex-col sm:flex-row gap-4"
           >
             {project.image && (
-              <div className="relative w-full sm:w-48 h-32 rounded-md overflow-hidden border shrink-0 bg-muted/30">
+              <div className="relative w-full sm:w-48 h-32 rounded-md overflow-hidden border shrink-0 bg-muted/30 transition-transform duration-300 group-hover:scale-[1.02]">
                 <Image
                   src={project.image}
                   alt={project.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             )}
 
             <div className="flex flex-col gap-2 flex-1 min-w-0">
               <div className="flex items-center justify-between gap-2">
-                <h2 className="text-base font-semibold">{project.name}</h2>
+                <h2 className="text-base font-semibold transition-colors duration-200 text-foreground/80 group-hover:text-foreground">{project.name}</h2>
                 <span className={`text-[10px] px-1.5 py-0.5 rounded border shrink-0 ${statusColors[project.status] || ""}`}>
-                  {project.status.replace(/[👍🏗️🚀⚠️]/g, "").trim()}
+                  {project.status.trim()}
                 </span>
               </div>
 

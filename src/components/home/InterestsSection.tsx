@@ -33,7 +33,7 @@ function InterestsSection() {
   return (
     <section className="flex flex-col mt-16">
       <Heading hint="interests 🎯" title="Beyond the Code" as="h2" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {interests.map((item) => (
           <Card
             key={item.label}

@@ -47,9 +47,9 @@ function Card({
   const isAuto = !children;
 
   const baseClasses = cn(
-    "p-4 rounded-lg border",
+    "group p-4 rounded-lg border transition-all duration-200",
     variantStyles[variant],
-    hover && "hover:bg-muted/20 transition-colors",
+    hover && "hover:bg-muted/20 hover:border-muted-foreground/10 hover:shadow-sm",
     isAuto && (center
       ? "flex flex-col items-center gap-2 text-center"
       : "flex items-center gap-3"),
@@ -58,14 +58,24 @@ function Card({
 
   const body = isAuto ? (
     <>
-      {Icon && <Icon className="size-5 shrink-0 text-muted-foreground/50" />}
+      {Icon && (
+        <Icon className={cn(
+          "size-5 shrink-0 text-muted-foreground/50 transition-all duration-200",
+          center
+            ? "group-hover:scale-110 group-hover:text-foreground"
+            : "group-hover:-translate-y-0.5 group-hover:text-foreground"
+        )} />
+      )}
       {image && (
         <Image
           src={image}
           alt={imageAlt}
           width={28}
           height={28}
-          className={cn("size-7 object-contain", imageClassName)}
+          className={cn(
+            "size-7 object-contain transition-transform duration-200 group-hover:scale-110",
+            imageClassName
+          )}
         />
       )}
       {(title || subtitle || description) && (

@@ -19,7 +19,7 @@ export const projects: Project[] = [
         image: "/projects/querymate.jpg",
         description:
             "AI-powered database assistant that lets users chat with PostgreSQL, MySQL, SQLite, and MongoDB using natural language. QueryMate generates optimized SQL queries, provides schema-aware responses, manages database connections securely, and helps developers, analysts, and teams explore data faster without writing complex queries manually.",
-        status: "completed👍",
+        status: "completed",
         slug: "querymate",
         technologies: [
             "Next.js",
@@ -40,7 +40,7 @@ export const projects: Project[] = [
         description:
             "An AI-powered Chrome extension that automatically fills web forms with relevant user information in a single click. SmartForm intelligently detects form fields, generates context-aware values, and helps users save time while completing registrations, applications, surveys, and repetitive online forms.",
 
-        status: "completed👍",
+        status: "completed",
         slug: "smartform",
         technologies: [
             "TypeScript",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
         image: "/projects/quickformx.jpg",
         description:
             "A fast and flexible form builder that lets you create, customize, and manage forms in minutes. With drag-and-drop simplicity, smart validation, and seamless API integration, it's perfect for creating responsive and reusable form solutions.",
-        status: "completed👍",
+        status: "completed",
         slug: "quickformx",
         technologies: [
             "MERN",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
         image: "/projects/resucraft.jpg",
         description:
             "AI-powered resume builder that helps users create professional resumes with customizable templates, smart content suggestions, and real-time feedback to improve their chances of landing interviews.",
-        status: "discontinue⚠️",
+        status: "discontinue",
         slug: "resucraft",
         technologies: [
             "React",

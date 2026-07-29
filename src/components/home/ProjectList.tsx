@@ -4,10 +4,10 @@ import Heading from "@/components/common/Heading";
 import Card from "@/components/common/Card";
 
 const statusColors: Record<string, string> = {
-  "completed👍": "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
-  "ongoing🏗️": "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-500/20",
-  "started🚀": "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-  "discontinue⚠️": "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
+  "completed": "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
+  "ongoing": "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-500/20",
+  "started": "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+  "discontinue": "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
 };
 
 function ProjectList() {
@@ -39,7 +39,7 @@ function ProjectList() {
                   <Github className="size-3.5" />
                 </a>
                 <span className={`text-[10px] px-1.5 py-0.5 rounded border ${statusColors[project.status] || ""}`}>
-                  {project.status.replace(/[👍🏗️🚀⚠️]/g, "").trim()}
+                  {project.status.trim()}
                 </span>
               </div>
             </div>
