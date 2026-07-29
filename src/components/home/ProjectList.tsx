@@ -1,5 +1,6 @@
 import { projects } from "@/config/project";
-import { Globe, Github } from "lucide-react";
+import { Globe, Github, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import Heading from "@/components/common/Heading";
 import Card from "@/components/common/Card";
 
@@ -10,12 +11,14 @@ const statusColors: Record<string, string> = {
   "discontinue": "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
 };
 
+const MAX_PROJECTS = 4;
+
 function ProjectList() {
   return (
     <section className="flex flex-col mt-16">
       <Heading hint="my proof-of-work ✨" title="Projects" as="h2" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {projects.map((project) => (
+        {projects.slice(0, MAX_PROJECTS).map((project) => (
           <Card key={project.slug} className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-semibold">{project.name}</h3>
@@ -49,6 +52,14 @@ function ProjectList() {
           </Card>
         ))}
       </div>
+      {projects.length > MAX_PROJECTS && (
+        <Link
+          href="/pow"
+          className="mt-4 text-xs text-muted-foreground/50 hover:text-foreground transition-colors flex items-center gap-1 self-end"
+        >
+          Show all projects <ArrowRight className="size-3" />
+        </Link>
+      )}
     </section>
   );
 }

@@ -13,7 +13,7 @@ const interests = [
     label: "Setup",
     description: "VSCode config, terminal & workflow",
     icon: Terminal,
-    href: "/gears",
+    href: "/setup",
   },
   {
     label: "Books",

@@ -1,0 +1,145 @@
+{
+  "editor.linkedEditing": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "expand",
+  "workbench.colorTheme": "Min Dark",
+  "update.mode": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.renderWhitespace": "boundary",
+  "editor.mouseWheelZoom": true,
+  "editor.fontFamily": "'Victor Mono', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "500",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 24,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.letterSpacing": 0.2,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.hover.enabled": "on",
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "files.autoSave": "afterDelay",
+  "workbench.startupEditor": "none",
+  "terminal.integrated.mouseWheelZoom": true,
+  "git.confirmSync": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "code-runner.runInTerminal": true,
+  "explorer.confirmDragAndDrop": false,
+  "cSpell.userWords": [
+    "aurchitration",
+    "blogdrop",
+    "dbtype",
+    "Inngest",
+    "labelledby",
+    "querymate",
+    "sqllite"
+  ],
+  "git.openRepositoryInParentFolders": "never",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "typescript": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "update.showReleaseNotes": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    ".env*": "dotenv"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Italic",
+        "scope": [
+          "markup.italic",
+          "punctuation.definition.italic",
+          "comment",
+          "string.comment",
+          "comment.block.documentation",
+          "comment.block",
+          "keyword",
+          "keyword.operator.type.asserts",
+          "keyword.operator.expression",
+          "keyword.operator.new",
+          "variable.language",
+          "markup.quote",
+          "markup.inserted",
+          "markup.deleted",
+          "markup.changed",
+          "storage",
+          "constant.language",
+          "entity.name.class",
+          "entity.other.attribute-name"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "No Italic",
+        "scope": [
+          "keyword.operator",
+          "keyword.other.unit",
+          "support.type.property-name",
+          "keyword.other.special-method",
+          "entity.name.tag"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "dotenv.cloakColor": "#ffffff",
+  "dotenv.enableAutocloaking": false,
+  "terminal.integrated.fontSize": 16,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "roo-cline.debug": false,
+  "roo-cline.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show",
+    "node",
+    "node --version",
+    "pnpm",
+    "pnpm --version",
+    "npm install react-dropzone browser-image-compression --no-fund --no-audit"
+  ],
+  "roo-cline.deniedCommands": [],
+  "workbench.editor.autoLockGroups": {
+    "workbench.editor.chatSession": true
+  },
+  "workbench.sideBar.location": "right",
+  "terminal.integrated.fontWeightBold": "bold",
+  "window.menuBarVisibility": "compact",
+  "editor.formatOnPaste": true,
+  "material-icon-theme.activeIconPack": "react",
+  "chat.viewSessions.orientation": "stacked",
+  "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+  "chat.restoreLastPanelSession": true,
+  "terminal.integrated.initialHint": false,
+  "claudeCode.preferredLocation": "panel",
+  "git.autofetch": true
+}

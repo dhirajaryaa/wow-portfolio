@@ -1,5 +1,3 @@
-// status must be : "completed👍","ongoing🏗️","started🚀","discontinue⚠️"
-
 export type Project = {
     name: string;
     link: string;
@@ -13,10 +11,37 @@ export type Project = {
 
 export const projects: Project[] = [
     {
+        name: "BlogDrop",
+        link: "https://blogdrop.dhirajarya.in",
+        repoLink: "https://github.com/dhirajaryaa/blogdrop",
+        image: "/projects/blogdrop1.png",
+        description:
+            "An AI-powered engineering blog aggregator that helps developers discover high-quality technical content from official engineering blogs, open-source projects, and trusted publications in one place. BlogDrop automatically collects articles from 100+ sources, extracts clean content, generates AI-powered summaries, key takeaways, and tags, filters promotional posts, and delivers a personalized reading experience so developers spend less time searching and more time learning.",
+        status: "ongoing",
+        slug: "blogdrop",
+        technologies: [
+            "Next.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Drizzle ORM",
+            "Inngest",
+            "Gemini AI",
+            "TailwindCSS",
+            "Shadcn UI",
+            "Better Auth",
+            "React Query",
+            "Zustand",
+            "Cheerio",
+            "Readability.js",
+            "RSS",
+            "Vercel",
+        ],
+    },
+    {
         name: "QueryMate",
         link: "https://querymate.dhirajarya.in",
         repoLink: "https://github.com/dhirajaryaa/querymate",
-        image: "/projects/querymate.jpg",
+        image: "/projects/querymate.png",
         description:
             "AI-powered database assistant that lets users chat with PostgreSQL, MySQL, SQLite, and MongoDB using natural language. QueryMate generates optimized SQL queries, provides schema-aware responses, manages database connections securely, and helps developers, analysts, and teams explore data faster without writing complex queries manually.",
         status: "completed",
@@ -36,7 +61,7 @@ export const projects: Project[] = [
         name: "SmartForm",
         link: "https://www.youtube.com/watch?v=Wan9QWfXF-Y",
         repoLink: "https://github.com/dhirajaryaa/smartform",
-        image: "/projects/smartform.jpg",
+        image: "/projects/smartform.png",
         description:
             "An AI-powered Chrome extension that automatically fills web forms with relevant user information in a single click. SmartForm intelligently detects form fields, generates context-aware values, and helps users save time while completing registrations, applications, surveys, and repetitive online forms.",
 

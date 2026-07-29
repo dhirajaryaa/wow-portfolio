@@ -66,6 +66,21 @@ export const pageMetadata: Record<string, PageMeta> = {
         ogImage: '/og/gears.png',
         twitterCard: 'summary_large_image',
     },
+    // Setup page
+    '/setup': {
+        title: 'Setup - Dev Environment',
+        description:
+            'My VSCode configuration, terminal setup, and developer environment preferences.',
+        keywords: [
+            'setup',
+            'vscode',
+            'developer environment',
+            'code editor',
+            'terminal',
+        ],
+        ogImage: '/og/gears.png',
+        twitterCard: 'summary_large_image',
+    },
     // Contact page
     '/contact': {
         title: 'Contact - Get in Touch',

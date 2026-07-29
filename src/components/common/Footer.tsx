@@ -25,6 +25,7 @@ function Footer() {
         <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
         <a href={profileInfo.resumeLink} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Resume</a>
         <Link href="/gears" className="hover:text-foreground transition-colors">Gears</Link>
+        <Link href="/setup" className="hover:text-foreground transition-colors">Setup</Link>
         <a href="/rss.xml" className="hover:text-foreground transition-colors">RSS</a>
       </nav>
       <p className="text-center text-xs text-muted-foreground/40 mt-4">

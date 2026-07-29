@@ -10,6 +10,14 @@ import {
     Smartphone,
     BatteryCharging,
     Puzzle,
+    Code,
+    Palette,
+    Terminal,
+    FileText,
+    Layout,
+    GitBranch,
+    PuzzleIcon,
+    Eye,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
