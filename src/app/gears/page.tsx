@@ -1,30 +1,25 @@
 import { myGadgets, myPc, myWebExtensions } from "@/config/gears";
-import Section from "./section";
 import { Metadata } from "next";
 import { getMetaData } from "@/config/meta";
-import Heading from "@/components/common/Heading";
+import GearsSection from "@/components/common/GearsSection";
 
 export const metadata: Metadata = getMetaData("/gears");
 
-function page() {
+function GearsPage() {
   return (
-    <main className="w-full h-full p-4">
-      {/* heading  */}
+    <main className="w-full h-full px-4 py-8">
       <Heading
+        hint="my setup ⚙️"
         title="Gears"
         description="The tools and tech that help me bring my ideas to life."
       />
-      {/* content  */}
       <section className="w-full py-8">
-        {/* pc section  */}
-        <Section title="PC" gears={myPc} />
-        {/* Gadgets section  */}
-        <Section title="Gadgets" gears={myGadgets} />
-        {/* web Extension section  */}
-        <Section title="Web Extensions" gears={myWebExtensions} />
+        <GearsSection title="PC" items={myPc} />
+        <GearsSection title="Gadgets" items={myGadgets} />
+        <GearsSection title="Web Extensions" items={myWebExtensions} />
       </section>
     </main>
   );
 }
 
-export default page;
+export default GearsPage;

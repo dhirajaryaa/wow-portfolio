@@ -1,16 +1,25 @@
-import React from "react";
-
 interface HeadingProps {
   title: string;
-  description: string;
+  description?: string;
+  hint?: string;
+  as?: "h1" | "h2" | "h3" | "h4";
 }
 
-function Heading({ title, description }: HeadingProps): React.ReactElement {
+function Heading({ title, description, hint, as: Tag = "h1" }: HeadingProps) {
   return (
-    <section className="w-full text-center sm:py-16 py-10 border-b space-y-1">
-      <h1 className="text-4xl sm:text-5xl font-semibold">{title}</h1>
-      <p className="text-muted-foreground text-sm sm:text-lg">{description}</p>
-    </section>
+    <div className="space-y-0.5 mb-8">
+      {hint && (
+        <p className="text-muted-foreground/40 font-mono text-xs tracking-wider uppercase">
+          {hint}
+        </p>
+      )}
+      <Tag className="text-xl sm:text-2xl font-semibold tracking-tight">
+        {title}
+      </Tag>
+      {description && (
+        <p className="text-sm text-muted-foreground/50 pt-1">{description}</p>
+      )}
+    </div>
   );
 }
 

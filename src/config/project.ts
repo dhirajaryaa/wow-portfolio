@@ -19,15 +19,13 @@ export const projects: Project[] = [
         image: "/projects/querymate.jpg",
         description:
             "AI-powered database assistant that lets users chat with PostgreSQL, MySQL, SQLite, and MongoDB using natural language. QueryMate generates optimized SQL queries, provides schema-aware responses, manages database connections securely, and helps developers, analysts, and teams explore data faster without writing complex queries manually.",
-        status: "ongoing🏗️",
+        status: "completed👍",
         slug: "querymate",
         technologies: [
             "Next.js",
             "TypeScript",
             "Drizzle ORM",
             "PostgreSQL",
-            "OpenAI",
-            "Gemini AI",
             "Groq",
             "TailwindCSS",
             "Shadcn UI",

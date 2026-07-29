@@ -2,7 +2,6 @@ import "./globals.css";
 import Script from "next/script";
 import { Poppins, Dynalight } from "next/font/google";
 import Header from "@/components/common/Header";
-import Quotes from "@/components/common/Quotes";
 import Footer from "@/components/common/Footer";
 import type { Metadata } from "next";
 import { getMetaData } from "@/config/meta";
@@ -13,7 +12,7 @@ export const geistSans = Poppins({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
-  variable: "--font-geist-sans", // 🔥 KEEP shadcn default
+  variable: "--font-geist-sans",
 });
 
 export const handFont = Dynalight({
@@ -33,27 +32,23 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={` 
-         ${geistSans.variable}
-    ${handFont.variable}
-           antialiased`}
+        className={`${geistSans.variable} ${handFont.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange>
-          <div className="w-full mx-auto max-w-3xl scroll-smooth relative">
+          disableTransitionOnChange
+        >
+          <div className="w-full mx-auto max-w-3xl">
             <Header />
             {children}
-            <Quotes />
             <Footer />
           </div>
         </ThemeProvider>
 
         <Toaster position="top-center" richColors={true} closeButton={true} />
 
-        {/* clarity code  */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -62,18 +57,17 @@ export default function RootLayout({
     })(window, document, "clarity", "script", "ty0etl4nzb");
           `}
         </Script>
-        {/* Google tag (gtag.js) */}
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=G-F7KTJ9FCBK`}
-        ></Script>
+        />
         <Script id="google-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
-            gtag('config', 'G-F7KTJ9FCBK');`}
+            gtag('config', 'G-F7KTJ9FCBK');
+          `}
         </Script>
       </body>
     </html>

@@ -1,28 +1,39 @@
 import Link from "next/link";
 import ToggleTheme from "@/components/common/ToggleTheme";
+import { profileInfo } from "@/config/profile";
 
 function Header() {
   return (
-    <header className="w-full sticky top-0 left-0 right-0 backdrop-blur-sm z-50 bg-background/50 px-4">
-      <nav className="flex items-center justify-between w-full max-w-4xl py-3 mx-auto">
-        <Link href={"/"} className="underline text-3xl font-medium font-hand tracking-wider">
-          Dhiraj Arya
-        </Link>
-        <div className="flex gap-2 sm:gap-4 items-center">
+    <header className="w-full sticky top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+      <nav className="flex items-center justify-between w-full max-w-3xl py-3 px-4 mx-auto">
+        <div className="flex items-center gap-6">
           <Link
-            href={"/blog"}
-            className="text-muted-foreground hover:text-foreground hover:underline"
+            href="/"
+            className="text-lg font-bold tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
-            Blog
+            DA
           </Link>
-          <Link
-            href={"/pow"}
-            className="text-muted-foreground hover:text-foreground hover:underline"
-          >
-            pow
-          </Link>
-          <ToggleTheme />
+          <div className="flex gap-4 sm:gap-5 items-center text-sm">
+            <Link href="/pow" className="text-muted-foreground hover:text-foreground transition-colors">
+              Work
+            </Link>
+            <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
+              Blog
+            </Link>
+            <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              Contact
+            </Link>
+            <a
+              href={profileInfo.resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Resume
+            </a>
+          </div>
         </div>
+        <ToggleTheme />
       </nav>
     </header>
   );

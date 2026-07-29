@@ -11,16 +11,17 @@ import {
     BatteryCharging,
     Puzzle,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface Gears {
     name: string;
-    icon: any;
+    icon: LucideIcon;
 };
 
 interface WebExtensions {
     name: string;
     url: string;
-    icon: any;
+    icon: LucideIcon;
 }
 
 export const myPc: Gears[] = [

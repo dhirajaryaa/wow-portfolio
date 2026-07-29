@@ -28,7 +28,7 @@ export const profileInfo: ProfileInfo = {
     tagline: "Self-taught developer",
     githubUsername: "dhirajaryaa",
     resumeLink:
-        "https://drive.google.com/file/d/1YvXHm4HrH2RnR0n8UjHwZxZxZxZxZxZx/view?usp=share_link",
+        "https://drive.google.com/file/d/1ClHy3E1LAc4mVUurzYGVTI5IXY3mTY26/view",
     socialLinks: [
         {
             url: "https://github.com/dhirajaryaa",

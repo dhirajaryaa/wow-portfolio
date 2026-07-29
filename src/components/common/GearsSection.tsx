@@ -1,11 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-function Section({ title, gears }: any) {
+interface GearItem {
+  name: string;
+  icon: LucideIcon;
+  url?: string;
+}
+
+interface GearsSectionProps {
+  title: string;
+  items: GearItem[];
+}
+
+function GearsSection({ title, items }: GearsSectionProps) {
   return (
     <div className="space-y-4 mt-8">
       <h2 className="text-xl font-semibold my-4">{title}</h2>
-      {gears.map((item: any, idx: number) => (
+      {items.map((item, idx) => (
         <div
           key={idx}
           className="flex items-center gap-2 text-muted-foreground"
@@ -14,7 +26,7 @@ function Section({ title, gears }: any) {
             type="button"
             variant="outline"
             size="icon-sm"
-            className={"size-7"}
+            className="size-7"
           >
             <item.icon />
           </Button>
@@ -23,7 +35,7 @@ function Section({ title, gears }: any) {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base flex gap-2 item-center"
+              className="text-base flex gap-2 items-center"
             >
               {item.name} <ArrowUpRight className="size-4 mt-1" />
             </a>
@@ -36,4 +48,4 @@ function Section({ title, gears }: any) {
   );
 }
 
-export default Section;
+export default GearsSection;

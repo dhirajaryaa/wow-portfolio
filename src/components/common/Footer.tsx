@@ -1,37 +1,21 @@
-import SocialLinks from "@/components/common/SocialLinks";
+import Link from "next/link";
 import { profileInfo } from "@/config/profile";
 
 function Footer() {
   return (
-    <div className="w-full flex flex-col gap-4 items-center justify-center border-t mb-16">
-      <nav className="flex items-center justify-center px-4 w-full mb-8">
-        <SocialLinks
-          socialLinks={profileInfo.socialLinks}
-          className={"items-center justify-center"}
-        />
+    <footer className="w-full border-t mt-20 py-8">
+      <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground/60 justify-center">
+        <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
+        <Link href="/pow" className="hover:text-foreground transition-colors">Work</Link>
+        <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
+        <a href={profileInfo.resumeLink} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Resume</a>
+        <Link href="/gears" className="hover:text-foreground transition-colors">Gears</Link>
+        <a href="/rss.xml" className="hover:text-foreground transition-colors">RSS</a>
       </nav>
-
-      <p className="text-muted-foreground text-sm">
-        &copy; 2025
-        {new Date().getFullYear() > 2025 &&
-          ` - ${new Date().getFullYear()}`}{" "}
-        All rights reserved.
+      <p className="text-center text-xs text-muted-foreground/40 mt-4">
+        &copy; {new Date().getFullYear()} Dhiraj Arya. All rights reserved.
       </p>
-
-      <div className="text-muted-foreground/20 font-extrabold text-6xl sm:text-[8rem] md:text-[10rem] w-fit select-none pointer-events-none">
-        Portfolio
-      </div>
-
-      <p className="text-muted-foreground text-sm">
-        Crafted with <span className="font-semibold">❤️</span> by{" "}
-        <a
-          href="https://github.com/dhirajaryaa"
-          className="underline cursor-pointer"
-        >
-          Dhiraj Arya
-        </a>
-      </p>
-    </div>
+    </footer>
   );
 }
 
