@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { profileInfo } from "@/config/profile";
+import { profileInfo, lastSiteUpdate } from "@/config/profile";
 import { quotes } from "@/config/quotes";
 import { Quote } from "lucide-react";
 
@@ -30,6 +30,9 @@ function Footer() {
       </nav>
       <p className="text-center text-xs text-muted-foreground/40 mt-4">
         &copy; {new Date().getFullYear()} Dhiraj Arya. All rights reserved.
+      </p>
+      <p className="text-center text-[11px] text-muted-foreground/30 mt-2">
+        Last updated — {lastSiteUpdate}
       </p>
     </footer>
   );

@@ -69,3 +69,9 @@ export const profileInfo: ProfileInfo = {
         value: "dhirajarya.ptn@gmail.com"
     }]
 };
+
+export const lastSiteUpdate = new Date("2026-07-29").toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+})

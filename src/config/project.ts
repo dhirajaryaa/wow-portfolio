@@ -14,7 +14,7 @@ export const projects: Project[] = [
         name: "BlogDrop",
         link: "https://blogdrop.dhirajarya.in",
         repoLink: "https://github.com/dhirajaryaa/blogdrop",
-        image: "/projects/blogdrop1.png",
+        image: "/projects/blogdrop.png",
         description:
             "An AI-powered engineering blog aggregator that helps developers discover high-quality technical content from official engineering blogs, open-source projects, and trusted publications in one place. BlogDrop automatically collects articles from 100+ sources, extracts clean content, generates AI-powered summaries, key takeaways, and tags, filters promotional posts, and delivers a personalized reading experience so developers spend less time searching and more time learning.",
         status: "ongoing",
