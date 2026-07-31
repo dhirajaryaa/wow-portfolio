@@ -219,24 +219,19 @@ function ProjectCard({ project }: { project: Project }) {
           </div>
         </div>
 
-        <DialogFooter className="px-6 py-4 border-t bg-background/95 backdrop-blur">
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="gap-1.5">
-              <Globe className="size-3.5" /> Live
-            </Button>
-          </a>
-          <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="gap-1.5">
-              <Github className="size-3.5" /> Code
-            </Button>
-          </a>
-          {project.demoVideo && (
-            <a href={project.demoVideo} target="_blank" rel="noopener noreferrer">
+        <DialogFooter className="px-6 py-4 border-t bg-background/95 backdrop-blur flex-row items-center justify-between">
+          <div className="w-fit flex gap-2 ">
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="sm" className="gap-1.5">
-                <Video className="size-3.5" /> Demo
+                <Globe className="size-3.5" /> Live
               </Button>
             </a>
-          )}
+            <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" className="gap-1.5">
+                <Github className="size-3.5" /> Code
+              </Button>
+            </a>
+          </div>
           <DialogClose asChild>
             <Button variant="outline" size="sm" className="ml-auto font-semibold">
               Close
