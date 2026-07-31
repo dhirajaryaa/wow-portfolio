@@ -1,24 +1,11 @@
 import Link from "next/link";
 import { profileInfo, lastSiteUpdate } from "@/config/profile";
-import { quotes } from "@/config/quotes";
-import { Quote } from "lucide-react";
+import FooterQuote from "@/components/common/FooterQuote";
 
 function Footer() {
-  const quote = quotes.length ? quotes[Math.floor(Math.random() * quotes.length)] : null;
-
   return (
     <footer className="w-full border-t mt-20 py-8">
-      {quote && (
-        <div className="max-w-lg mx-auto mb-8 px-4">
-          <div className="flex items-start gap-2 text-center justify-center">
-            <Quote className="size-6 text-muted-foreground/20 mt-0.5 shrink-0" />
-            <p className="text-xs text-muted-foreground/40 leading-relaxed italic">
-              &ldquo;{quote.quote}&rdquo;
-              <span className="text-muted-foreground/30 not-italic"> — {quote.author}</span>
-            </p>
-          </div>
-        </div>
-      )}
+      <FooterQuote />
       <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground/60 justify-center">
         <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
         <Link href="/pow" className="hover:text-foreground transition-colors">Work</Link>

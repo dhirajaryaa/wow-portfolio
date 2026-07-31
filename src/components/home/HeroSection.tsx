@@ -10,7 +10,7 @@ function HeroSection() {
     <section className="flex flex-col gap-4 my-8 md:my-16">
       <p className="text-muted-foreground text-xl flex items-center gap-2">
         Hi
-        <span className="inline-block animate-[wave_2s_ease-in-out_infinite] origin-[70%_70%] text-2xl mb-1">
+        <span className="inline-block animate-[wave_0.5s_ease-in-out_infinite] origin-[70%_70%] text-2xl mb-1.5">
           👋
         </span>
       </p>
