@@ -7,7 +7,6 @@ import { Quote } from "lucide-react";
 type QuoteItem = (typeof quotes)[number];
 
 export default function FooterQuote() {
-  if(!window) return null;
   
   const [quote] = useState<QuoteItem>(() => {
     return quotes[Math.floor(Math.random() * quotes.length)];
