@@ -3,7 +3,6 @@ import { ArrowUpRight, Calendar } from "lucide-react";
 import { getMetaData } from "@/config/meta";
 import { getAllPosts } from "@/lib/blog";
 import Heading from "@/components/common/Heading";
-import GoBackButton from "@/components/common/GoBackButton";
 
 export const metadata = getMetaData("/blog");
 
@@ -21,7 +20,6 @@ function BlogPage() {
 
   return (
     <main className="w-full h-full px-4 py-8">
-      <GoBackButton />
       <Heading
         hint="articles & learnings ✍️"
         title="Blog"
