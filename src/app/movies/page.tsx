@@ -1,6 +1,7 @@
 import { Film } from "lucide-react";
 import Heading from "@/components/common/Heading";
 import Card from "@/components/common/Card";
+import GoBackButton from "@/components/common/GoBackButton";
 
 const movies = [
   {
@@ -26,6 +27,7 @@ const movies = [
 export default function MoviesPage() {
   return (
     <main className="w-full h-full px-4 py-8">
+      <GoBackButton />
       <Heading
         hint="recommendations 🎬"
         title="Movies"

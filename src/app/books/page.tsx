@@ -1,6 +1,7 @@
 import { BookOpen } from "lucide-react";
 import Heading from "@/components/common/Heading";
 import Card from "@/components/common/Card";
+import GoBackButton from "@/components/common/GoBackButton";
 
 const books = [
   {
@@ -21,6 +22,7 @@ const statusStyles: Record<string, string> = {
 export default function BooksPage() {
   return (
     <main className="w-full h-full px-4 py-8">
+      <GoBackButton />
       <Heading
         hint="reading list 📚"
         title="Books"

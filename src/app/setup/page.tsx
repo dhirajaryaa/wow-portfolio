@@ -5,12 +5,14 @@ import Heading from "@/components/common/Heading";
 import VSCodeSettings from "@/components/common/VSCodeSettings";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import GoBackButton from "@/components/common/GoBackButton";
 
 export const metadata: Metadata = getMetaData("/setup");
 
 function SetupPage() {
   return (
     <main className="w-full h-full px-4 py-8">
+      <GoBackButton />
       <Heading
         hint="dev environment 🖥️"
         title="Setup"

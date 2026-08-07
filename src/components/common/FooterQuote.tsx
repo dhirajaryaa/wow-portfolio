@@ -1,25 +1,29 @@
 "use client";
 
+import { useState } from "react";
 import { quotes } from "@/config/quotes";
 import { Quote } from "lucide-react";
 
-const dayIndex = Math.floor(Date.now() / 86_400_000);
-const randomQuote = quotes[dayIndex % quotes.length];
+type QuoteItem = (typeof quotes)[number];
 
-function FooterQuote() {
-  if (!randomQuote) return null;
+export default function FooterQuote() {
+  if(!window) return null;
+  
+  const [quote] = useState<QuoteItem>(() => {
+    return quotes[Math.floor(Math.random() * quotes.length)];
+  });
+
 
   return (
     <div className="max-w-lg mx-auto mb-8 px-4">
       <div className="flex items-start gap-2 text-center justify-center">
         <Quote className="size-6 text-muted-foreground/20 mt-0.5 shrink-0" />
         <p className="text-xs text-muted-foreground/40 leading-relaxed italic">
-          &ldquo;{randomQuote.quote}&rdquo;
-          <span className="text-muted-foreground/30 not-italic"> — {randomQuote.author}</span>
+          &ldquo;{quote.quote}&rdquo;
+          <span className="text-muted-foreground/30 not-italic"> — {quote.author}</span>
         </p>
       </div>
     </div>
   );
 }
 
-export default FooterQuote;
