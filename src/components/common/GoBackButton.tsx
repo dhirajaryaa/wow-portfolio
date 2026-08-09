@@ -12,7 +12,7 @@ function GoBackButton() {
             variant="ghost"
             className="h-7 text-xs text-muted-foreground/50 hover:text-foreground/80 transition-colors mb-4"
         >
-            <ArrowLeft className="size-3" /> Back to blog
+            <ArrowLeft className="size-3" /> Go Back
         </Button>
 
     )
