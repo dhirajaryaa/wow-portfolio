@@ -60,12 +60,12 @@ export const projects: Project[] = [
         description:
             "BlogDrop is an AI-powered engineering blog platform that aggregates technical articles from official engineering blogs, open-source projects, and trusted publications. It automatically fetches articles from 100+ sources, extracts clean readable content, generates AI summaries, key takeaways, tags, filters promotional posts, and provides a personalized reading experience for developers.",
 
-        link: "https://blogdrop.dhirajarya.in",
+        link: "https://blogdrop.in",
         repoLink: "https://github.com/dhirajaryaa/blogdrop",
 
         status: "ongoing",
         year: "2026",
-        duration: "3+ Months",
+        duration: "1+ Months",
         role: "Full Stack Developer",
         teamSize: "Solo",
 
