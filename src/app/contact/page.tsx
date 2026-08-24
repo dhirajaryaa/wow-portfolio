@@ -14,14 +14,14 @@ function ContactPage() {
         title="Get in Touch"
         description="Get in touch for collaborations, projects, or opportunities."
       />
-      <section className="w-full py-8 gap-4 flex items-center justify-evenly flex-col sm:flex-row">
+      <section className="w-full py-8 gap-4 flex flex-wrap">
         {profileInfo.contact.map((contact, index) => (
           <Card
             key={index}
             icon={contact.icon}
             title={contact.value}
             variant="accent"
-            className="w-full justify-center gap-2 px-4 py-2"
+            className="flex-1  justify-center gap-2 px-4 py-3"
           />
         ))}
       </section>

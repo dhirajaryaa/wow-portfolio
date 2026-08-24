@@ -62,8 +62,8 @@ export const profileInfo: ProfileInfo = {
         },
     ],
     contact: [{
-        value: "dhirajkum4580@gmail.com",
-        icon: Mail,
+        value: "+91 6201753993",
+        icon: Smartphone,
     }, {
         icon: Mail,
         value: "dhirajarya.ptn@gmail.com"
