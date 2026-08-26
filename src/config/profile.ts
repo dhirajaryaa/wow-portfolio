@@ -70,7 +70,7 @@ export const profileInfo: ProfileInfo = {
     }]
 };
 
-export const lastSiteUpdate = new Date("2026-07-29").toLocaleDateString("en-US", {
+export const lastSiteUpdate = new Date("2026-08-26").toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",

@@ -1,5 +1,6 @@
 import { siteMeta } from "@/config/meta";
 import { projects } from "@/config/project";
+import { tools } from "@/config/tools";
 import { getAllPosts } from "@/lib/blog";
 
 function escapeXml(s: string) {
@@ -39,6 +40,18 @@ export async function GET() {
     )
     .join("");
 
+  const toolItems = tools
+    .map(
+      (t) => `
+    <item>
+      <title>${escapeXml(t.name)}</title>
+      <link>${siteUrl}/tools</link>
+      <description>${escapeXml(t.description)}</description>
+      <guid isPermaLink="false">${siteUrl}/tools#${escapeXml(t.slug)}</guid>
+    </item>`
+    )
+    .join("");
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -50,6 +63,7 @@ export async function GET() {
     <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
     ${postItems}
     ${projectItems}
+    ${toolItems}
   </channel>
 </rss>`;
 

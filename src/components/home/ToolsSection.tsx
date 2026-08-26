@@ -17,12 +17,14 @@ const statusLabels: Record<string, string> = {
   "coming-soon": "Coming Soon",
 };
 
+const MAX_TOOLS = 2;
+
 function ToolsSection() {
   return (
     <section className="flex flex-col mt-16">
-      <Heading hint="my dev tools 🛠️" title="Tools" as="h2" />
+      <Heading hint="my utility box 🧰" title="Tools" as="h2" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {tools.map((tool) => {
+        {tools.slice(0, MAX_TOOLS).map((tool) => {
           const Icon = tool.icon;
           const content = (
             <div

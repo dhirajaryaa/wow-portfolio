@@ -1,0 +1,72 @@
+# Dhiraj Arya — Self-Taught Full-Stack Developer
+
+A portfolio summary optimized for Large Language Models (LLMs) and search crawlers.
+
+## Contact & Socials
+- **Email:** dhirajarya.ptn@gmail.com / dhirajkum4580@gmail.com
+- **Website:** https://dhirajarya.xyz
+- **GitHub:** https://github.com/dhirajaryaa
+- **Twitter:** https://twitter.com/dhirajarya01
+- **LinkedIn:** https://linkedin.com/in/dhirajarya01
+- **YouTube:** https://youtube.com/@dhirajaryaa
+- **Instagram:** https://instagram.com/dhirajarya01
+
+---
+
+## Core Tech Stack
+- **Languages:** JavaScript, TypeScript, SQL, HTML, CSS
+- **Frontend:** React, Next.js (App Router), Tailwind CSS, Shadcn UI, Zustand, React Query, WXT (Chrome Extensions)
+- **Backend & Database:** Node.js, Express, PostgreSQL, MongoDB, Firebase, Drizzle ORM, Better Auth, Inngest
+- **Tools & Platforms:** Vercel, Git, GitHub Actions, Bun
+
+---
+
+## Live Tools
+Small, useful developer utility web applications:
+
+### 1. Temp Mail
+- **URL:** https://tempmail.dhirajarya.in
+- **Description:** Disposable temporary email address generator for quick, hassle-free sign-ups. Features real-time inbox monitoring.
+- **Key Features:** Instant email generation, real-time inbox viewer, no sign-up required.
+
+### 2. Compressly
+- **URL:** https://compressly.dhirajarya.in
+- **Description:** Smart file and image compression tool maintaining excellent quality.
+- **Key Features:** Drag-and-drop experience, multiple formats supported (PNG, JPG, WebP, PDF).
+
+### 3. Snapshot (Coming Soon)
+- **Description:** Beautify screenshots into share-ready graphics with client-side processed custom backgrounds, frames, and shadows.
+
+---
+
+## Real-World Projects & Proof of Work (POW)
+
+### 1. BlogDrop (Active / Ongoing)
+- **URL:** https://blogdrop.in
+- **Repository:** https://github.com/dhirajaryaa/blogdrop
+- **Description:** AI-powered engineering blog aggregator fetching and reading articles from 100+ top engineering blogs.
+- **Tech Stack:** Next.js, TypeScript, PostgreSQL, Drizzle ORM, Gemini AI, Inngest, Better Auth, React Query, Zustand, TailwindCSS, Shadcn UI, Cheerio
+
+### 2. QueryMate (Completed)
+- **URL:** https://querymate.dhirajarya.in
+- **Repository:** https://github.com/dhirajaryaa/querymate
+- **Description:** Natural language AI assistant that translates conversational text into optimized SQL queries for PostgreSQL, MySQL, SQLite, and MongoDB.
+- **Tech Stack:** Next.js, TypeScript, PostgreSQL, Drizzle ORM, Groq AI, Vercel AI SDK, TailwindCSS, Shadcn UI
+
+### 3. SmartForm (Completed)
+- **Repository:** https://github.com/dhirajaryaa/smartform
+- **Description:** AI Chrome extension built with WXT that auto-fills complex online application forms using contextual AI generation.
+- **Tech Stack:** TypeScript, React, Chrome Extension APIs, WXT, Gemini AI, TailwindCSS, Zod
+
+### 4. QuickFormX (Completed)
+- **URL:** https://quickformx.dhirajarya.in
+- **Repository:** https://github.com/dhirajaryaa/quickFormx
+- **Description:** Interactive drag-and-drop form builder featuring custom components, schema validation, and API integrations.
+- **Tech Stack:** MERN Stack, React DnD, TailwindCSS, Gemini AI, Zod
+
+---
+
+## Development Environment & Setup
+- **OS:** Arch Linux (Hyprland window manager)
+- **Editor:** VSCode (Vim emulation, customized dark theme)
+- **Terminal:** Kitty / Alacritty

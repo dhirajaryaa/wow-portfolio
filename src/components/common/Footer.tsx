@@ -10,10 +10,11 @@ function Footer() {
         <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
         <Link href="/pow" className="hover:text-foreground transition-colors">Work</Link>
         <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
-        <a href={profileInfo.resumeLink} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Resume</a>
+        <Link href="/tools" className="hover:text-foreground transition-colors">Tools</Link>
         <Link href="/gears" className="hover:text-foreground transition-colors">Gears</Link>
         <Link href="/setup" className="hover:text-foreground transition-colors">Setup</Link>
         <a href="/rss.xml" className="hover:text-foreground transition-colors">RSS</a>
+        <a href="/llm.txt" className="hover:text-foreground transition-colors">LLM</a>
       </nav>
       <p className="text-center text-xs text-muted-foreground/40 mt-4">
         &copy; {new Date().getFullYear()} Dhiraj Arya. All rights reserved.

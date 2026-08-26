@@ -12,7 +12,7 @@ function ToolsPage() {
     <main className="w-full h-full px-4 py-8">
       <GoBackButton />
       <Heading
-        hint="my dev tools 🛠️"
+        hint="my utility box 🧰"
         title="Tools"
         description="Small, useful web utilities I build and maintain — free to use."
       />
