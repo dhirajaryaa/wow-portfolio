@@ -90,7 +90,25 @@ export const pageMetadata: Record<string, PageMeta> = {
         ogImage: '/og/contact.webp',
         twitterCard: 'summary',
     },
-    //blog page 
+    // Books page
+    '/books': {
+        title: 'Books – My Reading List',
+        description:
+            'A curated list of books that have shaped my thinking, developer philosophy, and life perspectives.',
+        keywords: ['books', 'reading list', 'recommendations', 'personal development', 'philosophy'],
+        ogImage: '/og/home.webp',
+        twitterCard: 'summary_large_image',
+    },
+    // Movies page
+    '/movies': {
+        title: 'Movies – Film Recommendations',
+        description:
+            'A selection of films and documentaries that left an impression on me, covering tech, space, and life.',
+        keywords: ['movies', 'films', 'recommendations', 'documentaries', 'favorites'],
+        ogImage: '/og/home.webp',
+        twitterCard: 'summary_large_image',
+    },
+    //blog page
     '/blog': {
         title: 'Blog – Articles & Learnings',
         description:

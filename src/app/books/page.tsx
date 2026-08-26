@@ -2,6 +2,10 @@ import { BookOpen } from "lucide-react";
 import Heading from "@/components/common/Heading";
 import Card from "@/components/common/Card";
 import GoBackButton from "@/components/common/GoBackButton";
+import { Metadata } from "next";
+import { getMetaData } from "@/config/meta";
+
+export const metadata: Metadata = getMetaData("/books");
 
 const books = [
   {
