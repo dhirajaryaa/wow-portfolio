@@ -64,10 +64,11 @@ export const tools: Tool[] = [
   {
     name: "Snapshot",
     slug: "snapshot",
+    link: "https://snapshot.dhirajarya.in",
     tagline: "Turn screenshots into beautiful, share-ready visuals",
     description:
       "Create polished, attention-grabbing visuals from your screenshots. Add beautiful backgrounds, frames, shadows, text, and more — all processed directly in your browser.",
-    status: "coming-soon",
+    status: "live",
     icon: Image,
     features: [
       { icon: Image, label: "Beautiful screenshot styling" },
