@@ -20,7 +20,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 
 export interface ContactFormProps {
   name: string;
-  phone: string;
+  phone?: string;
   email: string;
   message: string
   submitted?: string
@@ -76,7 +76,7 @@ const ContactForm = () => {
                 {errors.name && <p className="text-destructive text-xs">{errors.name.message}</p>}
               </Field>
               <Field>
-                <FieldLabel htmlFor="phone">Phone No</FieldLabel>
+                <FieldLabel htmlFor="phone">Phone No <span className="text-muted-foreground/40 text-xs font-normal">(optional)</span></FieldLabel>
                 <Input
                   id="phone"
                   {...register("phone")}

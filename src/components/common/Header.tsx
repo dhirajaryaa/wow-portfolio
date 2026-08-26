@@ -1,6 +1,5 @@
 import Link from "next/link";
 import ToggleTheme from "@/components/common/ToggleTheme";
-import { profileInfo } from "@/config/profile";
 
 function Header() {
   return (
@@ -20,17 +19,12 @@ function Header() {
             <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
               Blog
             </Link>
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground transition-colors">
+              Tools
+            </Link>
             <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
-            <a
-              href={profileInfo.resumeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Resume
-            </a>
           </div>
         </div>
         <ToggleTheme />

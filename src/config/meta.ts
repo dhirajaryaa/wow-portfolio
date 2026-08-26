@@ -138,7 +138,23 @@ export const pageMetadata: Record<string, PageMeta> = {
         ogImage: '/og/pow.webp',
         twitterCard: 'summary_large_image',
     },
-    // not found 
+    // Tools page
+    '/tools': {
+        title: 'Tools – Free Dev Utilities',
+        description:
+            'Small, useful web utilities built by Dhiraj Arya — temporary email generator, file compression, and more developer tools.',
+        keywords: [
+            'developer tools',
+            'web utilities',
+            'temp mail',
+            'file compression',
+            'free tools',
+            'online tools',
+        ],
+        ogImage: '/og/home.webp',
+        twitterCard: 'summary_large_image',
+    },
+    // not found
     '/invalid': {
         title: '404 – Page Not Found',
         description:

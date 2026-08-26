@@ -9,12 +9,11 @@ export const ContactSchema = z.object({
     }),
     phone: z
         .string()
-        .min(10, {
-            message: 'Phone number must be at least 10 characters.',
-        })
-        .regex(/^[\+]?[1-9][\d]{0,15}$/, {
-            message: 'Please enter a valid phone number.',
-        }),
+        .optional()
+        .refine(
+            (val) => !val || /^[\+]?[1-9][\d]{9,15}$/.test(val),
+            { message: 'Please enter a valid phone number.' }
+        ),
     message: z
         .string()
         .min(10, {
