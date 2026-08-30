@@ -4,7 +4,7 @@ A portfolio summary optimized for Large Language Models (LLMs) and search crawle
 
 ## Contact & Socials
 - **Email:** dhirajarya.ptn@gmail.com / dhirajkum4580@gmail.com
-- **Website:** https://dhirajarya.xyz
+- **Website:** https://dhirajarya.in
 - **GitHub:** https://github.com/dhirajaryaa
 - **Twitter:** https://twitter.com/dhirajarya01
 - **LinkedIn:** https://linkedin.com/in/dhirajarya01

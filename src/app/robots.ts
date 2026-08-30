@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://dhirajarya.xyz/sitemap.xml",
+    sitemap: "https://dhirajarya.in/sitemap.xml",
   };
 }
