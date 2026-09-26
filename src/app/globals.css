@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /* for dark mode  */
-@custom-variant dark (&:where(.dark, .dark *)); 
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --breakpoint-xs: 30rem;
-  --font-brand : var(--font-schibsted-grotesk);
+  --font-brand: var(--font-schibsted-grotesk);
+  --text-foreground : var(--color-neutral-900)
   --color-primary: var(--color-neutral-800);
   --color-secondary: var(--color-neutral-500);
   --shadow-base:
@@ -14,7 +14,8 @@
     0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
 
-.dark {
+/* .dark {
   --color-primary: var(--color-neutral-100);
   --color-secondary: var(--color-neutral-400);
-}
+  --text-foreground : var(--color-neutral-200)
+} */
