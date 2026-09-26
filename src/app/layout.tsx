@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import {Inter } from "next/font/google";
+import { Inter, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 
 export const metadata: Metadata = {
   title: "Dhiraj Arya's Portfolio",
@@ -15,18 +10,23 @@ export const metadata: Metadata = {
     "A portfolio website showcasing the projects and skills of Dhiraj Arya, a software developer specializing in web development and design.",
 };
 
+// font setup 
+const schibstedGrotesk = Schibsted_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-schibsted-grotesk"
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className} antialiased light`}>
-      <body className="min-h-screen w-full bg-neutral-100 relative">
-        <Navbar />
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn("w-full min-h-screen font-brand", schibstedGrotesk.variable)}>
         {children}
-        <Footer />
-        </body>
+      </body>
     </html>
   );
 }

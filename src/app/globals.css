@@ -1,12 +1,12 @@
 @import "tailwindcss";
-/* @import "tw-animate-css"; */
-/* @plugin "tailwindcss-animate"; */
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* for dark mode  */
+@custom-variant dark (&:where(.dark, .dark *)); 
 
 
 @theme inline {
   --breakpoint-xs: 30rem;
+  --font-brand : var(--font-schibsted-grotesk);
   --color-primary: var(--color-neutral-800);
   --color-secondary: var(--color-neutral-500);
   --shadow-base:
