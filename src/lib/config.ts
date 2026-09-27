@@ -1,4 +1,4 @@
-import { Camera, FileText , FileArchive, type LucideIcon, Mail, Aperture } from "lucide-react";
+import { FileText , FileArchive, type LucideIcon, Mail, Aperture } from "lucide-react";
 
 type Status = "Ongoing" | "Completed" | "Archived";
 
@@ -21,20 +21,6 @@ export type Tool = {
     line: string;
     note?: string;
     icon: LucideIcon;
-};
-
-export type GalleryEntry = {
-    name: string;
-    caption: string;
-    href?: string;
-    description: string;
-    note?: string;
-    image?: {
-        src: string;
-        alt: string;
-        width: number;
-        height: number;
-    };
 };
 
 export const profile = {

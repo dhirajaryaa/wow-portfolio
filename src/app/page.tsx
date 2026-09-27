@@ -1,4 +1,5 @@
 import { Container } from "@/components/common/container";
+import { Footer } from "@/components/common/footer";
 import { AboutSection } from "@/components/home/about";
 import { FeatureProject } from "@/components/home/feature-project";
 import { FeatureTool } from "@/components/home/feature-tool";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <hr />
       <GithubActivity />
       <hr />
+      <Footer />
     </Container>
   )
 }
