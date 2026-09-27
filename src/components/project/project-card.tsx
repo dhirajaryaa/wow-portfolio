@@ -30,8 +30,8 @@ export const ProjectCard = ({
                     <Image
                         alt={project.name}
                         src={project.banner}
-                        fill
-                        sizes="100vw"
+                        width={1200}
+                        height={720}
                         className="rounded-md object-cover"
                     />
                 </div>
