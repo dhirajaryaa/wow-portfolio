@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ThemeToggle } from "@/components/common/theme-toggle";
 import { CurvedArrow } from "@/components/home/arrow";
-import { intro, profile } from "@/lib/config";
+import { profile } from "@/lib/config";
 
 export const HeroSection = () => {
     return <section className="flex flex-col gap-4 sm:gap-6 relative">
