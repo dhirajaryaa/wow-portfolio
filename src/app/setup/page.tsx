@@ -1,8 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
-import { QuoteBlock } from "@/components/common/quote";
 import { SectionHeading } from "@/components/common/section-heading";
-import { quotes, setupGroups } from "@/lib/config";
+import { setupGroups } from "@/lib/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -65,11 +64,6 @@ export default function SetupPage() {
                 </div>
             ))}
 
-            <hr />
-
-            <QuoteBlock quote={quotes.setup} />
-
-            <hr />
 
         </Container>
     );

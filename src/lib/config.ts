@@ -186,6 +186,9 @@ export const quotes = {
         text: "The mind acts like an enemy for those who do not control it.",
         author: "Bhagavad Gita",
     },
+};
+
+export const legacyQuotes = {
     projects: {
         text: "All that we are is the result of what we have thought.",
         author: "Gautama Buddha",

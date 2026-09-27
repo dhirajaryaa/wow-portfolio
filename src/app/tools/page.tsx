@@ -1,11 +1,10 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { SectionHeading } from "@/components/common/section-heading";
-import { QuoteBlock } from "@/components/common/quote";
 import { Button } from "@/components/ui/button";
 import { ToolCard } from "@/components/tool/tool-card";
 import { ArrowUpRight } from "lucide-react";
-import { pdfanyTools, quotes, tools } from "@/lib/config";
+import { pdfanyTools, tools } from "@/lib/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -139,10 +138,6 @@ export default function ToolsPage() {
                     If one breaks, that is genuinely on me.
                 </p>
             </section>
-
-            <hr />
-
-            <QuoteBlock quote={quotes.tools} />
         </Container>
     );
 }

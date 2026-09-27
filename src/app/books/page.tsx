@@ -1,8 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
-import { QuoteBlock } from "@/components/common/quote";
 import { SectionHeading } from "@/components/common/section-heading";
-import { books, quotes } from "@/lib/config";
+import { books} from "@/lib/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -84,13 +83,6 @@ export default function BooksPage() {
                     More coming — the list grows slowly, which is the point.
                 </p>
             </section>
-
-            <hr />
-
-            <QuoteBlock quote={quotes.books} />
-
-            <hr />
-
         </Container>
     );
 }

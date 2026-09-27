@@ -1,8 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
-import { QuoteBlock } from "@/components/common/quote";
 import { SectionHeading } from "@/components/common/section-heading";
-import { movies, quotes } from "@/lib/config";
+import { movies} from "@/lib/config";
 import { Clapperboard } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -69,12 +68,6 @@ export default function MoviesPage() {
                     ))}
                 </ul>
             </section>
-
-            <hr />
-
-            <QuoteBlock quote={quotes.movies} />
-
-            <hr />
 
         </Container>
     );

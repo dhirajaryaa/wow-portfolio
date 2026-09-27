@@ -1,9 +1,8 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { SectionHeading } from "@/components/common/section-heading";
-import { QuoteBlock } from "@/components/common/quote";
 import { ProjectDetailCard } from "@/components/project/project-detail-card";
-import { projects, quotes } from "@/lib/config";
+import { projects} from "@/lib/config";
 import { techStack } from "@/lib/tech-stack";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -115,9 +114,6 @@ export default function ProjectsPage() {
                 </p>
             </section>
 
-            <hr />
-
-            <QuoteBlock quote={quotes.projects} />
         </Container>
     );
 }
