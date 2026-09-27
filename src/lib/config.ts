@@ -27,12 +27,12 @@ export type TechKey =
 export type Project = {
     name: string;
     href?: string;
-    repo?: string;
+    repo: string;
     line: string;
     note?: string;
     tech: TechKey[];
     blurb?: string;
-    glyph?: LucideIcon;
+    glyph: LucideIcon;
 };
 
 export type Tool = {
@@ -127,10 +127,6 @@ export const projects: Project[] = [
         glyph: Blocks,
     },
 ];
-
-export const cards = projects.filter(
-    (project) => project.glyph && project.blurb && project.href,
-);
 
 export const tools: Tool[] = [
     {
