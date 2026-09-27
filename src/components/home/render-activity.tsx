@@ -3,19 +3,24 @@
 import { ActivityCalendar } from "react-activity-calendar";
 import { useIsSmallScreen } from "@/hooks/use-mobile";
 import { GitHubContribution } from "@/lib/fetch-activity";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 
+const subscribe = () => () => {};
+
+const useIsMounted = () =>
+    useSyncExternalStore(
+        subscribe,
+        () => true,
+        () => false,
+    );
 
 export const RenderActivity = ({ contribution }: { contribution: GitHubContribution[] }) => {
     const isSmallScreen = useIsSmallScreen();
 
-    const [mounted, setMounted] = useState(false);
+    const mounted = useIsMounted();
     const { resolvedTheme } = useTheme();
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
     if (!mounted) {
         return (
             <div className="h-28 w-full animate-pulse rounded-lg bg-muted" />

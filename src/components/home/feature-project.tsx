@@ -11,7 +11,7 @@ export const FeatureProject = () => {
             <div className="flex flex-row items-center justify-between gap-4">
                 <div className="flex gap-2 items-center">
                     <h2 className="text-foreground font-medium font-serif text-lg"># Feature Projects</h2>
-                    <p className="text-muted-foreground text-xs pl-2 tracking-wider hidden md:block">a few things i've built and shipped.</p>
+                    <p className="text-muted-foreground text-xs pl-2 tracking-wider hidden md:block">a few things i&rsquo;ve built and shipped.</p>
                 </div>
                 <Button
                     variant={"link"}
@@ -25,7 +25,7 @@ export const FeatureProject = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.slice(0, 2).map((project: Project) => (
-                    <ProjectCard key={project.name} project={project} />
+                    <ProjectCard key={project.slug} project={project} />
                 ))}
             </div>
         </section>

@@ -31,9 +31,9 @@ export const GithubActivity = async () => {
         </div>
         <Button
           variant={"link"}
-          className="hover:text-foreground text-muted-foreground"
+          className="hover:text-foreground text-muted-foreground truncate"
         >
-          {data.total[currentYear] ?? 0} contributions in {currentYear}
+          {data.total[currentYear] ?? 0} contr. on {currentYear}
         </Button>
       </div>
       <div className="w-full overflow-x-auto">
