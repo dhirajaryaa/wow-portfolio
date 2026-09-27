@@ -1,4 +1,5 @@
 import { Container } from "@/components/common/container";
+import { AboutSection } from "@/components/home/about";
 import { HeroSection } from "@/components/home/hero";
 
 export default function HomePage() {
@@ -6,6 +7,7 @@ export default function HomePage() {
     <Container className="py-12 sm:py-20">
       
      <HeroSection />
+     <AboutSection />
     </Container>
   )
 }

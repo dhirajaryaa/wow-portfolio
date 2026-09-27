@@ -18,7 +18,7 @@ export const ThemeToggle = () => {
 
     return (
         <div className="flex items-center gap-2">
-            <div className="text-xs px-1.5 py-0.5 bg-muted  ring ring-foreground/40 rounded-sm">D</div>
+            <div className="text-[10px] px-1.5 py-0.5 bg-muted  ring ring-foreground/40 rounded-sm">D</div>
             <Button
                 variant="ghost"
                 size="icon"
