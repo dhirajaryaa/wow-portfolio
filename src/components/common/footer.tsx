@@ -32,7 +32,7 @@ export const Footer = () => {
             </div>
             <CurvedArrow className="text-muted-foreground/50 absolute top-0 left-0 hidden w-14 rotate-12 md:block md:w-fit" />
             {/* links  */}
-            <div className="mt-23">
+            <div className="mt-14 md:mt-23">
                 {/* nav links  */}
                 <nav className="text-muted-foreground/60 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm ">
                     {navLinks.map(({ href, label, external }) =>
