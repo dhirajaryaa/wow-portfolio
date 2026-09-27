@@ -2,6 +2,7 @@ import { Container } from "@/components/common/container";
 import { AboutSection } from "@/components/home/about";
 import { FeatureProject } from "@/components/home/feature-project";
 import { FeatureTool } from "@/components/home/feature-tool";
+import { GithubActivity } from "@/components/home/github-activity";
 import { HeroSection } from "@/components/home/hero";
 
 export default function HomePage() {
@@ -14,6 +15,8 @@ export default function HomePage() {
      <FeatureProject />
       <hr />
       <FeatureTool />
+      <hr />
+      <GithubActivity />
       <hr />
     </Container>
   )
