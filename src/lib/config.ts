@@ -182,28 +182,19 @@ export const site = {
 export type Quote = { text: string; author: string };
 
 /**
- * Social preview image. PNG first: some scrapers and networks still choke on
- * webp, and a missing preview is worse than a heavier file. WebP is listed
- * second for the scrapers that prefer the smaller download. Spread into every
- * page's own openGraph block, because a page-level openGraph replaces the
- * layout one wholesale instead of merging with it.
+ * Social preview image. PNG only, on purpose: some scrapers and networks
+ * still choke on webp, and a missing preview is worse than a heavier file.
+ * Kept as an array because that is what Next.js `images` expects. Spread into
+ * every page's own openGraph block, because a page-level openGraph replaces
+ * the layout one wholesale instead of merging with it.
  */
-const ogAlt = `${site.name} — ${site.role.toLowerCase()}`;
-
 export const ogImages = [
     {
         url: "/og/og.png",
         width: 1200,
         height: 630,
         type: "image/png",
-        alt: ogAlt,
-    },
-    {
-        url: "/og/og.webp",
-        width: 1200,
-        height: 630,
-        type: "image/webp",
-        alt: ogAlt,
+        alt: `${site.name} — ${site.role.toLowerCase()}`,
     },
 ] as const;
 
