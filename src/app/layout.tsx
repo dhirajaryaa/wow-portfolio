@@ -7,56 +7,57 @@ import { ThemeShortcut } from "@/components/common/theme-shortcut";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Footer } from "@/components/common/footer";
 import { ogImages, profile, site, socials } from "@/lib/config";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-    metadataBase: new URL(site.url),
-    title: {
-        default: site.title,
-        template: `%s | ${site.shortTitle}`,
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.title,
+    template: `%s | ${site.shortTitle}`,
+  },
+  description: site.description,
+  applicationName: site.name,
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
+  keywords: [...site.keywords],
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": `${site.url}/rss.xml`,
+      "text/plain": `${site.url}/llm.txt`,
     },
-    description: site.description,
-    applicationName: site.name,
-    authors: [{ name: site.name, url: site.url }],
-    creator: site.name,
-    publisher: site.name,
-    keywords: [...site.keywords],
-    alternates: {
-        canonical: "/",
-        types: {
-            "application/rss+xml": `${site.url}/rss.xml`,
-            "text/plain": `${site.url}/llm.txt`,
-        },
+  },
+  openGraph: {
+    type: "website",
+    locale: site.locale,
+    url: site.url,
+    siteName: site.name,
+    title: site.title,
+    description: site.shortDescription,
+    images: [...ogImages],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.shortDescription,
+    creator: site.twitter,
+    images: ["/og/og.png", "/og/og.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    openGraph: {
-        type: "website",
-        locale: site.locale,
-        url: site.url,
-        siteName: site.name,
-        title: site.title,
-        description: site.shortDescription,
-        images: [...ogImages],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: site.title,
-        description: site.shortDescription,
-        creator: site.twitter,
-        images: ["/og/og.png", "/og/og.webp"],
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-        },
-    },
-    category: "technology",
+  },
+  category: "technology",
 };
 
 // font setup
@@ -124,6 +125,26 @@ export default function RootLayout({
             }}
           />
         </ThemeProvider>
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ty0etl4nzb");
+          `}
+        </Script>
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-F7KTJ9FCBK`}
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F7KTJ9FCBK');
+          `}
+        </Script>
       </body>
     </html>
   );
