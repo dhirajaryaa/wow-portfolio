@@ -11,7 +11,7 @@ export const ThemeShortcut = () => {
     useEffect(() => {
         const onKeyDown = (event: KeyboardEvent) => {
             if (event.metaKey || event.ctrlKey || event.altKey) return;
-            if (event.repeat || event.key.toLowerCase() !== "d") return;
+            if (event.repeat || event.key.toLowerCase() !== "t") return;
 
             const target = event.target as HTMLElement | null;
             if (target && (FORM_TAGS.has(target.tagName) || target.isContentEditable)) return;
