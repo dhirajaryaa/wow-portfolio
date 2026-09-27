@@ -1,3 +1,5 @@
+import { Camera, DonutIcon, FileArchive, type LucideIcon, Mail } from "lucide-react";
+
 type Status = "Ongoing" | "Completed" | "Archived";
 
 export type Project = {
@@ -18,6 +20,7 @@ export type Tool = {
     href?: string;
     line: string;
     note?: string;
+    icon: LucideIcon;
 };
 
 export type GalleryEntry = {
@@ -141,22 +144,26 @@ export const projects: Project[] = [
 export const tools: Tool[] = [
     {
         name: "Temp Mail",
+        icon: Mail,
         href: "https://tempmail.dhirajarya.in",
         line: "Disposable temporary email, with a live inbox and no sign-up.",
     },
     {
         name: "Compressly",
+        icon: FileArchive,
         href: "https://compressly.dhirajarya.in",
         line: "Drag-and-drop image and file compression that keeps quality high.",
     },
     {
         name: "LowPDF",
+        icon: DonutIcon,
         href: "https://lowpdf.dhirajarya.in",
         line: "Client-side PDF compression. Nothing is uploaded, ever.",
     },
     {
         name: "Snapshot",
+        icon: Camera,
         line: "Turn screenshots into share-ready graphics with custom backgrounds and frames.",
-        note: "Coming soon.",
+        href: "https://snapshot.dhirajarya.in",
     },
 ];
