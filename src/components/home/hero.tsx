@@ -10,7 +10,7 @@ export const HeroSection = () => {
         {/* avatar + intro + theme  */}
         <div className="flex items-center justify-between h-fit flex-1 relative" >
             <div className="flex gap-4 items-center relative">
-                <div className="flex items-center justify-center size-14 md:size-18 p-0.5 ring-2 ring-primary rounded-2xl overflow-hidden">
+                <div className="flex items-center justify-center size-14 md:size-18 p-0.5 ring-2 ring-primary rounded-2xl overflow-hidden grayscale-0 md:grayscale-100 hover:grayscale-0 duration-300 transition-all">
                     <Image
                         src={"/logo.webp"}
                         alt="Logo - Dhraj Arya"

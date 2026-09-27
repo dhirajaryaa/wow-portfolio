@@ -1,4 +1,4 @@
-import { Camera, DonutIcon, FileArchive, type LucideIcon, Mail } from "lucide-react";
+import { Camera, FileText , FileArchive, type LucideIcon, Mail, Aperture } from "lucide-react";
 
 type Status = "Ongoing" | "Completed" | "Archived";
 
@@ -156,13 +156,13 @@ export const tools: Tool[] = [
     },
     {
         name: "LowPDF",
-        icon: DonutIcon,
+        icon: FileText ,
         href: "https://lowpdf.dhirajarya.in",
         line: "Client-side PDF compression. Nothing is uploaded, ever.",
     },
     {
         name: "Snapshot",
-        icon: Camera,
+        icon: Aperture ,
         line: "Turn screenshots into share-ready graphics with custom backgrounds and frames.",
         href: "https://snapshot.dhirajarya.in",
     },
