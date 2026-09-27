@@ -4,8 +4,9 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ThemeShortcut } from "@/components/common/theme-shortcut";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: "Dhiraj Arya's Portfolio",
@@ -39,7 +40,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <TooltipProvider >{children}</TooltipProvider>
           <ThemeShortcut />
         </ThemeProvider>
       </body>

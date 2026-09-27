@@ -1,38 +1,16 @@
-import { Blocks, Database, Rss, TextCursorInput } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
-export type TechKey =
-    | "react"
-    | "next"
-    | "typescript"
-    | "tailwind"
-    | "node"
-    | "express"
-    | "postgresql"
-    | "mongodb"
-    | "drizzle"
-    | "firebase"
-    | "auth"
-    | "inngest"
-    | "zustand"
-    | "reactquery"
-    | "shadcn"
-    | "chrome"
-    | "bun"
-    | "docker"
-    | "git"
-    | "actions"
-    | "vercel";
+type Status = "Ongoing" | "Completed" | "Archived";
 
 export type Project = {
     name: string;
-    href?: string;
-    repo: string;
     line: string;
-    note?: string;
-    tech: TechKey[];
-    blurb?: string;
-    glyph: LucideIcon;
+    banner: string;
+    video?: string;
+    tags: string[];
+    links: {
+        live?: string;
+        repo?: string;
+    };
+    status: Status;
 };
 
 export type Tool = {
@@ -64,8 +42,6 @@ export const profile = {
     site: "https://dhirajarya.in",
 };
 
-
-
 export const socials = {
     github: "https://github.com/dhirajaryaa",
     x: "https://twitter.com/dhirajarya01",
@@ -89,42 +65,76 @@ export const contact = {
     ] as const,
 };
 
+export const statusStyles: Record<Status, string> = {
+    Ongoing: "bg-blue-400 text-blue-700",
+    Completed: "bg-green-400 text-green-700",
+    Archived: "bg-gray-400 text-gray-600",
+};
+
 export const projects: Project[] = [
     {
         name: "BlogDrop",
-        href: "https://blogdrop.in",
-        repo: "https://github.com/dhirajaryaa/blogdrop",
         line: "Engineering blog aggregator that fetches and reads 100+ top engineering blogs, then summarises them.",
-        note: "Ongoing.",
-        blurb:
-            "Fetches and reads articles from 100+ engineering blogs, summarises them with Gemini, and keeps the whole thing on a schedule with Inngest.",
-        tech: ["next", "typescript", "postgresql", "drizzle"],
-        glyph: Rss,
+        banner: "/projects/blogdrop/banner.webp",
+        video: "/projects/blogdrop/demo.mp4",
+
+        tags: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle"],
+
+        links: {
+            live: "https://blogdrop.in",
+            repo: "https://github.com/dhirajaryaa/blogdrop",
+        },
+
+        status: "Ongoing",
     },
+
     {
         name: "QueryMate",
-        href: "https://querymate.dhirajarya.in",
-        repo: "https://github.com/dhirajaryaa/querymate",
         line: "Natural-language database querying. Plain English in, optimized SQL out.",
-        blurb:
-            "Turns conversational questions into optimized SQL for PostgreSQL, MySQL, SQLite and MongoDB, so you can query a database without remembering the syntax.",
-        tech: ["next", "typescript", "drizzle", "tailwind"],
-        glyph: Database,
+        banner: "/projects/querymate/banner.webp",
+        video: "/projects/querymate/demo.mp4",
+
+        tags: ["Next.js", "TypeScript", "Drizzle", "Tailwind"],
+
+        links: {
+            live: "https://querymate.dhirajarya.in",
+            repo: "https://github.com/dhirajaryaa/querymate",
+        },
+
+        status: "Completed",
     },
+
     {
         name: "SmartForm",
-        repo: "https://github.com/dhirajaryaa/smartform",
         line: "Chrome extension that fills long application forms with contextual AI.",
-        tech: ["typescript", "react", "chrome", "tailwind"],
-        glyph: TextCursorInput,
+
+        banner: "/projects/smartform/banner.webp",
+        video: "/projects/smartform/demo.mp4",
+
+        tags: ["TypeScript", "React", "Chrome Extension", "Tailwind"],
+
+        links: {
+            repo: "https://github.com/dhirajaryaa/smartform",
+        },
+
+        status: "Completed",
     },
+
     {
         name: "QuickFormX",
-        href: "https://quickformx.dhirajarya.in",
-        repo: "https://github.com/dhirajaryaa/quickFormx",
         line: "Drag-and-drop form builder with custom components, schema validation and API integrations.",
-        tech: ["react", "mongodb", "node", "tailwind"],
-        glyph: Blocks,
+
+        banner: "/projects/quickformx/banner.webp",
+        video: "/projects/quickformx/demo.mp4",
+
+        tags: ["React", "MongoDB", "Node.js", "Tailwind"],
+
+        links: {
+            live: "https://quickformx.dhirajarya.in",
+            repo: "https://github.com/dhirajaryaa/quickFormx",
+        },
+
+        status: "Completed",
     },
 ];
 
