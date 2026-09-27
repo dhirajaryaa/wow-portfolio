@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ThemeShortcut } from "@/components/common/theme-shortcut";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Footer } from "@/components/common/footer";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -42,6 +43,10 @@ export default function RootLayout({
         >
           <TooltipProvider >{children}</TooltipProvider>
           <ThemeShortcut />
+          <div className="mx-auto w-full max-w-3xl px-10 pb-10">
+            <hr />
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
