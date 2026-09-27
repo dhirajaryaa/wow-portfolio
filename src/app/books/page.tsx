@@ -1,7 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { SectionHeading } from "@/components/common/section-heading";
-import { books} from "@/lib/config";
+import { books, ogImages } from "@/lib/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
         description:
             "Books that shaped how I think — a short reading list of the ones worth your time.",
         url: "/books",
+        images: [...ogImages],
     },
 };
 

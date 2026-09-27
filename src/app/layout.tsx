@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { ThemeShortcut } from "@/components/common/theme-shortcut";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Footer } from "@/components/common/footer";
-import { profile, site, socials } from "@/lib/config";
+import { ogImages, profile, site, socials } from "@/lib/config";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -36,12 +36,14 @@ export const metadata: Metadata = {
         siteName: site.name,
         title: site.title,
         description: site.shortDescription,
+        images: [...ogImages],
     },
     twitter: {
         card: "summary_large_image",
         title: site.title,
         description: site.shortDescription,
         creator: site.twitter,
+        images: ["/og/og.png", "/og/og.webp"],
     },
     robots: {
         index: true,

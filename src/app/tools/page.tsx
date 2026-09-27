@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
 import { ToolCard } from "@/components/tool/tool-card";
 import { ArrowUpRight } from "lucide-react";
-import { pdfanyTools, tools } from "@/lib/config";
+import { ogImages, pdfanyTools, tools } from "@/lib/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
         description:
             "Small, useful web utilities I build and maintain — free to use, no sign-up.",
         url: "/tools",
+        images: [...ogImages],
     },
 };
 

@@ -1,7 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { SectionHeading } from "@/components/common/section-heading";
-import { movies} from "@/lib/config";
+import { movies, ogImages } from "@/lib/config";
 import { Clapperboard } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
         title: "Movies — Dhiraj Arya",
         description: "Films that left an impression on me.",
         url: "/movies",
+        images: [...ogImages],
     },
 };
 

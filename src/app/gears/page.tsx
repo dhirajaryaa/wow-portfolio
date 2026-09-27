@@ -1,7 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { GearSection } from "@/components/gear/gear-section";
-import { gearGroups, profile} from "@/lib/config";
+import { gearGroups, ogImages, profile } from "@/lib/config";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
         description:
             "PC setup, gadgets & tools I use daily — the hardware and extensions behind the work.",
         url: "/gears",
+        images: [...ogImages],
     },
 };
 

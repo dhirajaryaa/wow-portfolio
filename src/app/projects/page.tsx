@@ -2,7 +2,7 @@ import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { SectionHeading } from "@/components/common/section-heading";
 import { ProjectDetailCard } from "@/components/project/project-detail-card";
-import { projects} from "@/lib/config";
+import { ogImages, projects } from "@/lib/config";
 import { techStack } from "@/lib/tech-stack";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
         description:
             "Real-world projects built with Next.js, the MERN stack and modern web technologies.",
         url: "/projects",
+        images: [...ogImages],
     },
 };
 

@@ -1,7 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { SectionHeading } from "@/components/common/section-heading";
-import { setupGroups } from "@/lib/config";
+import { ogImages, setupGroups } from "@/lib/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
         description:
             "My VSCode configuration and dev environment preferences.",
         url: "/setup",
+        images: [...ogImages],
     },
 };
 
