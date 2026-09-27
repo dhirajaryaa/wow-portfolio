@@ -1,13 +1,22 @@
-import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { ActivityShow } from "@/components/common/activity";
-import { GitHubCalendar } from "react-github-calendar";
+import { getGitHubActivity } from "@/lib/fetch-activity";
+import { ActivityCalendar } from "react-activity-calendar";
+import { RenderActivity } from "./render-activity";
 
-export const ActivityLoader = () => {
-  return <GitHubCalendar loading={true} username={"dhirajaryaa"} />;
-};
 
-export const GithubActivity = () => {
+
+
+
+export const GithubActivity = async () => {
+  const data = await getGitHubActivity("dhirajaryaa");
+
+  const currentYear = new Date().getFullYear();
+
+  const currentYearActivity = data.contributions.filter((item) =>
+    item.date.startsWith(String(currentYear)),
+  );
+
+
   return (
     <section className="flex flex-col justify-center gap-6 py-10 md:py-14">
       {/* heading  */}
@@ -24,12 +33,12 @@ export const GithubActivity = () => {
           variant={"link"}
           className="hover:text-foreground text-muted-foreground"
         >
-          1180 commit on last year.
+          {data.total[currentYear] ?? 0} contributions in {currentYear}
         </Button>
       </div>
-      {/*<Suspense fallback={<ActivityLoader />}>*/}
-        <ActivityShow />
-      {/*</Suspense>*/}
+      <div className="w-full overflow-x-auto">
+        <RenderActivity contribution={data.contributions} />
+      </div>
     </section>
   );
 };

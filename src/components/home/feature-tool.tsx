@@ -51,7 +51,7 @@ export const FeatureTool = () => {
                     </Link>
                 </Button>
             </div>
-            <div className="grid grid-cols-1 gap-6 ">
+            <div className="grid grid-cols-1 gap-2 ">
                 {tools.slice(0, 4).map((tool) => {
                     return (
                         <a key={tool.name} href={tool.href} target="_blank" >
