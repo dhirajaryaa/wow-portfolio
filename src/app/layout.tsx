@@ -3,6 +3,7 @@ import { Schibsted_Grotesk, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { ThemeShortcut } from "@/components/common/theme-shortcut";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -28,17 +29,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
       <body
         className={cn(
-          "font-brand min-h-screen bg-primary text-foreground w-full relative",
+          "font-brand min-h-screen w-full relative bg-background text-foreground",
           schibstedGrotesk.variable,
         )}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
           {children}
+          <ThemeShortcut />
         </ThemeProvider>
       </body>
     </html>
