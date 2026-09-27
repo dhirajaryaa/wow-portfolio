@@ -86,7 +86,6 @@ export const AboutSection = () => {
       </div>
 
       <p className="text-muted-foreground mt-2">~ still learning...</p>
-      <hr className="mt-4"/>
     </section>
   );
 };

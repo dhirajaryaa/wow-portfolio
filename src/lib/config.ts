@@ -90,7 +90,7 @@ export const projects: Project[] = [
 
     {
         name: "QueryMate",
-        line: "Natural-language database querying. Plain English in, optimized SQL out.",
+        line: "Ask questions in plain English and turn them into optimized database queries across PostgreSQL, MySQL, and MongoDB.",
         banner: "/projects/querymate/banner.webp",
         video: "/projects/querymate/demo.mp4",
 

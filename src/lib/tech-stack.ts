@@ -2,50 +2,58 @@ import type { IconType } from "react-icons";
 import {
     SiNextdotjs,
     SiTypescript,
-    SiPostgresql,
     SiDrizzle,
     SiReact,
     SiMongodb,
     SiNodedotjs,
     SiTailwindcss,
 } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 
-export type TechStack = {
-    name: string;
+
+type TechStack = {
     icon: IconType;
+    className: string;
 };
 
 export const techStack: Record<string, TechStack> = {
     "Next.js": {
-        name: "Next.js",
         icon: SiNextdotjs,
+        className: "text-black dark:text-white",
     },
+
     TypeScript: {
-        name: "TypeScript",
         icon: SiTypescript,
+        className: " text-blue-600",
     },
+
     PostgreSQL: {
-        name: "PostgreSQL",
-        icon: SiPostgresql,
+        icon: BiLogoPostgresql,
+        className: "text-blue-600",
     },
+
     Drizzle: {
-        name: "Drizzle",
         icon: SiDrizzle,
+        className: "text-green-700",
     },
+
     React: {
-        name: "React",
         icon: SiReact,
+        className: " text-cyan-600",
     },
+
     MongoDB: {
-        name: "MongoDB",
         icon: SiMongodb,
+        className: " text-green-700",
     },
+
     "Node.js": {
-        name: "Node.js",
         icon: SiNodedotjs,
+        className: " text-green-700",
     },
+
     Tailwind: {
-        name: "Tailwind CSS",
         icon: SiTailwindcss,
+        className: "text-cyan-600",
     },
 };

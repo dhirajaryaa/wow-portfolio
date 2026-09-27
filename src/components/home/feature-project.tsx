@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/project/project-card";
 
 export const FeatureProject = () => {
     return (
-        <section className="flex flex-col gap-6 justify-center">
+        <section className="flex flex-col gap-6 justify-center py-10 md:py-14">
             {/* heading  */}
             <div className="flex flex-row items-center justify-between gap-4">
                 <div className="flex gap-2 items-center">
@@ -23,7 +23,7 @@ export const FeatureProject = () => {
                     </Link>
                 </Button>
             </div>
-            <div className="flex flex-col md:flex-row gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.slice(0, 2).map((project: Project) => (
                     <ProjectCard key={project.name} project={project} />
                 ))}

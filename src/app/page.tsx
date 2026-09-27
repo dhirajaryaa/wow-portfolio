@@ -9,7 +9,9 @@ export default function HomePage() {
       
      <HeroSection />
      <AboutSection />
+      <hr />
      <FeatureProject />
+      <hr />
     </Container>
   )
 }
