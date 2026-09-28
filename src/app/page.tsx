@@ -5,6 +5,7 @@ import { FeatureProject } from "@/components/home/feature-project";
 import { FeatureTool } from "@/components/home/feature-tool";
 import { GithubActivity } from "@/components/home/github-activity";
 import { HeroSection } from "@/components/home/hero";
+import { WritingSection } from "@/components/home/writing";
 
 export default function HomePage() {
   return (
@@ -18,7 +19,9 @@ export default function HomePage() {
       <FeatureTool />
       <hr />
       <GithubActivity />
-      <hr />
+       <hr />
+      <WritingSection />
+       <hr />
       <BeyondCode />
     </Container>
   )
