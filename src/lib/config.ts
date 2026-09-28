@@ -511,7 +511,7 @@ export const tools: Tool[] = [
     {
         slug: "snapshot",
         name: "Snapshot",
-        href: "https//snapshot.dhirajarya.in",
+        href: "https://snapshot.dhirajarya.in",
         line: "Turn screenshots into share-ready graphics with custom backgrounds and frames.",
         detail:
             "A screenshot is not a post. Snapshot takes the capture and composes it into something worth publishing — custom backgrounds, frames, shadows, all processed locally in the browser.",
