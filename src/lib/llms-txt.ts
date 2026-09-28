@@ -1,3 +1,4 @@
+import { getAllPosts } from "@/lib/blog";
 import { movies, books, gearGroups, profile, projects, site, socials, tools } from "@/lib/config";
 
 const escape = (value: string) => value.replace(/\s+/g, " ").trim();
@@ -7,8 +8,10 @@ export function buildLlmsTxt() {
 
     lines.push(`# ${site.name} — Self-Taught Full-Stack Developer`);
     lines.push("");
+    lines.push("A portfolio summary optimized for Large Language Models (LLMs) and search crawlers.");
+    lines.push("");
     lines.push(
-        "A portfolio summary optimized for Large Language Models (LLMs) and search crawlers.",
+        `Sections: writing (${site.url}/blog) and a site-wide feed at ${site.url}/rss.xml, both generated from the same source files.`,
     );
     lines.push("");
 
@@ -80,6 +83,20 @@ export function buildLlmsTxt() {
     });
     lines.push("");
     lines.push("");
+
+    /* ---------------- writing ---------------- */
+    lines.push("## Writing");
+    lines.push("Blog posts, newest first:");
+    lines.push("");
+    getAllPosts().forEach((post, i) => {
+        lines.push(`### ${i + 1}. ${post.title}`);
+        lines.push(`- **URL:** ${site.url}/blog/${post.slug}`);
+        lines.push(`- **Published:** ${post.date}`);
+        lines.push(`- **Reading Time:** ${post.readingTime}`);
+        if (post.tags.length) lines.push(`- **Tags:** ${post.tags.join(", ")}`);
+        lines.push(`- **Summary:** ${escape(post.description)}`);
+        lines.push("");
+    });
 
     /* ---------------- beyond ---------------- */
     lines.push("## Beyond the Code");
