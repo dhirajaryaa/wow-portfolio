@@ -8,6 +8,9 @@ type PageHeaderProps = {
     description: string;
     /** count rendered next to the title, e.g. "4 projects" */
     count?: string;
+    /** where the back arrow points — posts send you back to their index */
+    backHref?: string;
+    backLabel?: string;
     children?: ReactNode;
 };
 
@@ -15,6 +18,8 @@ export const PageHeader = ({
     title,
     description,
     count,
+    backHref = "/",
+    backLabel = "back home",
     children,
 }: PageHeaderProps) => {
     return (
@@ -22,7 +27,7 @@ export const PageHeader = ({
             {/* back + theme  */}
             <div className="flex items-center justify-between gap-4">
                 <Link
-                    href="/"
+                    href={backHref}
                     className="text-muted-foreground hover:text-foreground group inline-flex items-center gap-1.5 text-xs transition-colors"
                 >
                     <ArrowLeft
@@ -30,7 +35,7 @@ export const PageHeader = ({
                         size={14}
                         className="transition-transform duration-200 group-hover:-translate-x-0.5"
                     />
-                    back home
+                    {backLabel}
                 </Link>
                 <ThemeToggle />
             </div>
