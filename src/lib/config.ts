@@ -267,7 +267,7 @@ export const projects: Project[] = [
         },
 
         status: "Ongoing",
-        year: "2025 — now",
+        year: "June,2026 — now",
         role: "Solo — design, backend, frontend",
         features: [
             "Aggregates 100+ engineering blogs into one chronological feed",
@@ -315,7 +315,7 @@ export const projects: Project[] = [
         },
 
         status: "Completed",
-        year: "2025",
+        year: "March,2026",
         role: "Solo — design, backend, frontend",
         features: [
             "Natural language to query across PostgreSQL, MySQL, SQLite and MongoDB",
@@ -357,7 +357,7 @@ export const projects: Project[] = [
         },
 
         status: "Completed",
-        year: "2025",
+        year: "2026",
         role: "Solo — design, extension, AI layer",
         features: [
             "Automatic detection and classification of form fields on any page",
@@ -397,7 +397,7 @@ export const projects: Project[] = [
         },
 
         status: "Completed",
-        year: "2024",
+        year: "Dec,2025",
         role: "Solo — design, backend, frontend",
         features: [
             "Drag-and-drop canvas for composing forms without touching code",
