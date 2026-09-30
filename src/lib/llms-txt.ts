@@ -8,8 +8,6 @@ export function buildLlmsTxt() {
 
     lines.push(`# ${site.name} — Self-Taught Full-Stack Engineer`);
     lines.push("");
-    lines.push("A portfolio summary optimized for Large Language Models (LLMs) and search crawlers.");
-    lines.push("");
     lines.push(
         `Sections: writing (${site.url}/blog) and a site-wide feed at ${site.url}/rss.xml, both generated from the same source files.`,
     );
