@@ -42,7 +42,7 @@ const DetailList = ({
             {items.map((item) => (
                 <li
                     key={item}
-                    className="text-muted-foreground flex items-start gap-2 text-[13px] leading-[1.5]"
+                    className="text-muted-foreground flex items-start gap-2 text-[13px] leading-normal"
                 >
                     <span className="bg-muted-foreground/40 mt-[0.45em] size-1 shrink-0 rounded-full" />
                     {item}
@@ -118,7 +118,7 @@ export const ProjectDetailCard = ({
                                     {project.year}
                                 </span>
                             </div>
-                            <p className="text-muted-foreground line-clamp-2 text-sm leading-[1.5] font-normal">
+                            <p className="text-muted-foreground line-clamp-2 text-[13px] leading-normal font-normal">
                                 {project.line}
                             </p>
                         </div>
@@ -162,14 +162,14 @@ export const ProjectDetailCard = ({
                     <div className="flex flex-col gap-5 px-2 pt-4 pb-2">
                         {/* banner, same parallax reveal as the home page */}
                         {project.banner && (
-                            <div className="bg-linear-to-br from-white to-rose-500 group/collapsible relative aspect-video overflow-hidden rounded-xl">
+                            <div className={cn("bg-linear-to-br from-white to-rose-500 group/collapsible relative aspect-video overflow-hidden rounded-xl",project.bannerBg)}>
                                 <div className="absolute inset-0 translate-x-10 translate-y-10 overflow-hidden rounded-xl border-4 border-white/30 transition-transform duration-700 ease-out group-hover/collapsible:translate-x-0 group-hover/collapsible:translate-y-0">
                                     <Image
                                         alt={`${project.name} banner`}
                                         src={project.banner}
                                         width={1200}
                                         height={720}
-                                        className="rounded-md object-cover"
+                                        className="rounded-md aspect-video object-cover overflow-hidden"
                                     />
                                 </div>
                             </div>

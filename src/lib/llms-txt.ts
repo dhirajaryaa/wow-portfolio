@@ -6,7 +6,7 @@ const escape = (value: string) => value.replace(/\s+/g, " ").trim();
 export function buildLlmsTxt() {
     const lines: string[] = [];
 
-    lines.push(`# ${site.name} — Self-Taught Full-Stack Developer`);
+    lines.push(`# ${site.name} — Self-Taught Full-Stack Engineer`);
     lines.push("");
     lines.push("A portfolio summary optimized for Large Language Models (LLMs) and search crawlers.");
     lines.push("");

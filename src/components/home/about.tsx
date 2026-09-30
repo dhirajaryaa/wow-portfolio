@@ -64,10 +64,10 @@ export const AboutSection = () => {
         .
       </p>
 
-      <p>I like computers, learning, and shipping small things.</p>
+      <p>I like computers, learning, and <span className="underline">shipping</span> small things.</p>
 
       <p>
-        Open to interesting projects, collaborations, or just a good
+        Open to <span className="text-foreground ">interesting projects</span>, <span className="underline">collaborations</span>, or just a good
         conversation.
       </p>
 
@@ -90,7 +90,7 @@ export const AboutSection = () => {
           <IoDocumentText className="text-foreground/80 size-[0.9em]" />
           <span className="sr-only">Resume</span>
         </LinkIconBadge>
-        grab my resume .
+       grab my resume .
       </div>
 
       <p className="text-muted-foreground mt-2">~ still learning...</p>

@@ -26,14 +26,14 @@ export const ProjectCard = ({
         >
             {/* image  */}
             {project.banner ? (
-                <div className="relative aspect-video overflow-hidden rounded-xl bg-linear-to-br from-white to-rose-500">
+                <div className={cn("relative aspect-video overflow-hidden rounded-xl bg-linear-to-br from-white to-rose-500",project.bannerBg)}>
                     <div className="absolute inset-0 translate-x-10 translate-y-10 overflow-hidden rounded-xl border-4 border-white/30 transition-transform duration-700 ease-out group-hover:translate-x-0 group-hover:translate-y-0">
                         <Image
                             alt={project.name}
                             src={project.banner}
                             width={1200}
                             height={720}
-                            className="rounded-md object-cover"
+                            className="rounded-md aspect-video object-cover"
                         />
                     </div>
                 </div>
