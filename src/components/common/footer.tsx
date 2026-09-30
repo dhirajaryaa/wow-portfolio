@@ -11,6 +11,7 @@ export const Footer = () => {
     const navLinks = [
         { href: "/", label: "Home", external: false },
         { href: "/projects", label: "Work", external: false },
+        { href: "/blog", label: "Blog", external: false },
         { href: "/tools", label: "Tools", external: false },
         { href: "/gears", label: "Gears", external: false },
         { href: "/setup", label: "Setup", external: false },
