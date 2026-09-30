@@ -38,12 +38,12 @@ export const GearSection = ({ group }: { group: GearGroup }) => {
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="border-muted hover:bg-muted/40 flex items-center justify-between gap-2 rounded-lg border-b border-dashed p-2 transition-all duration-200 group md:px-4"
+                                    className="border-muted hover:bg-muted/40 flex items-center justify-between gap-2  border-b border-dashed p-2 transition-all duration-200 group md:px-4"
                                 >
                                     {body}
                                 </a>
                             ) : (
-                                <div className="border-muted hover:bg-muted/40 flex items-center justify-between gap-2 rounded-lg border-b border-dashed p-2 transition-all duration-200 group md:px-4">
+                                <div className="border-muted hover:bg-muted/40 flex items-center justify-between gap-2  border-b border-dashed p-2 transition-all duration-200 group md:px-4">
                                     {body}
                                 </div>
                             )}

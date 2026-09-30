@@ -10,7 +10,7 @@ export async function getGitHubActivity(username: string) {
         `https://github-contributions-api.jogruber.de/v4/${username}`,
         {
             next: {
-                revalidate: 7200, // 3 hour
+                revalidate: 14400, // 6 hour
             },
         },
     );

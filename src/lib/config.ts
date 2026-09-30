@@ -43,6 +43,7 @@ export type Project = {
     /** longer paragraph, only rendered when the card is unfolded */
     overview: string;
     banner?: string;
+    bannerBg?:string;
     video?: string;
     tags: string[];
     links: {
@@ -103,7 +104,7 @@ export const profile = {
     name: "Dhiraj Arya",
     role: "Self-taught Engineer",
     email: "dhirajarya.ptn@gmail.com",
-    professionEmail: "dhirajkum4580@gmail.com",
+    professionEmail: "hello@dhirajarya.in",
     site: "https://dhirajarya.in",
 };
 
@@ -137,15 +138,7 @@ export const statusStyles: Record<Status, string> = {
     Discontinue: "bg-amber-400 text-amber-700",
 };
 
-/* ------------------------------------------------------------------ */
-/* site + seo                                                          */
-/* ------------------------------------------------------------------ */
-
-/**
- * Absolute origin, normalised (no trailing slash, protocol guaranteed).
- * Set NEXT_PUBLIC_SITE_URL in .env.local — used for canonical tags, sitemap,
- * robots Host, OpenGraph URLs and llm.txt so the origin is never hardcoded.
- */
+// site metadata 
 const siteUrl = (() => {
     const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://dhirajarya.in";
     const withProtocol = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
@@ -155,18 +148,18 @@ const siteUrl = (() => {
 export const site = {
     url: siteUrl,
     name: "Dhiraj Arya",
-    title: "Dhiraj Arya – A self-taught developer",
+    title: "Dhiraj Arya – A self-taught engineer",
     shortTitle: "Dhiraj Arya",
     role: "Self-taught Engineer",
     description:
-        "Dhiraj Arya is a self-taught full-stack web developer specializing in Next.js, MERN stack, and modern SaaS applications. I build fast, scalable, and user-focused web products.",
+        "Dhiraj Arya is a self-taught full-stack web engineer specializing in Next.js, MERN stack, and modern SaaS applications. I build fast, scalable, and user-focused web products.",
     shortDescription:
-        "A self-taught developer building modern web apps with Next.js, TypeScript and the MERN stack.",
+        "A self-taught engineer building modern web apps with Next.js, TypeScript and the MERN stack.",
     locale: "en_US",
     language: "en",
     keywords: [
         "Dhiraj Arya",
-        "self-taught developer",
+        "self-taught engineer",
         "full stack developer",
         "Next.js developer",
         "MERN stack developer",
@@ -181,13 +174,7 @@ export const site = {
 
 export type Quote = { text: string; author: string };
 
-/**
- * Social preview image. PNG only, on purpose: some scrapers and networks
- * still choke on webp, and a missing preview is worse than a heavier file.
- * Kept as an array because that is what Next.js `images` expects. Spread into
- * every page's own openGraph block, because a page-level openGraph replaces
- * the layout one wholesale instead of merging with it.
- */
+
 export const ogImages = [
     {
         url: "/og/og.png",
@@ -205,247 +192,260 @@ export const quotes = {
     },
 };
 
-export const legacyQuotes = {
-    projects: {
-        text: "All that we are is the result of what we have thought.",
-        author: "Gautama Buddha",
-    },
-    gears: {
-        text: "Dream, dream, dream. Dreams transform into thoughts, and thoughts result in action.",
-        author: "Dr. A.P.J. Abdul Kalam",
-    },
-    books: {
-        text: "Education is the most powerful weapon which you can use to change the world.",
-        author: "Nelson Mandela",
-    },
-    movies: {
-        text: "Success comes to those who dare and act.",
-        author: "Ratan Tata",
-    },
-    tools: {
-        text: "The best way to predict the future is to create it.",
-        author: "Peter Drucker",
-    },
-    setup: {
-        text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-        author: "Nelson Mandela",
-    },
-    contact: {
-        text: "You must be the change you wish to see in the world.",
-        author: "Mahatma Gandhi",
-    },
-} satisfies Record<string, Quote>;
-
 export const projects: Project[] = [
-    {
-        slug: "blogdrop",
-        name: "BlogDrop",
-        line: "Engineering blog aggregator that fetches and reads 100+ top engineering blogs, then summarises them.",
-        overview:
-            "The internet writes the same twelve posts every week and I was tired of opening eleven tabs to catch up. BlogDrop pulls articles from 100+ engineering blogs, cleans the markup, and hands the text to Gemini for a summary. It is the project I actually open every morning, and it is still the one I keep extending.",
-        banner: "/projects/blogdrop/banner.webp",
-        video: "/projects/blogdrop/demo.mp4",
+  {
+    slug: "blogdrop",
+    name: "BlogDrop",
+    line: "Engineering blog aggregator that collects technical articles, extracts useful metadata with AI, and brings them into one feed.",
+    overview:
+      "I built BlogDrop to make keeping up with engineering blogs less repetitive. It collects articles from RSS sources, extracts and cleans article content, processes metadata with AI, and presents everything in a single reading-focused feed.",
 
-        tags: [
-            "Next.js",
-            "TypeScript",
-            "PostgreSQL",
-            "Drizzle",
-            "Tailwind",
-            "Shadcn UI",
-            "Better Auth",
-            "Inngest",
-            "Gemini AI",
-            "Zustand",
-            "React Query",
-            "Cheerio",
-        ],
+    banner: "/projects/blogdrop/banner.webp",
+    video: "/projects/blogdrop/demo.mp4",
+    bannerBg: "to-rose-500",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle",
+      "Tailwind",
+      "Shadcn UI",
+      "Better Auth",
+      "Inngest",
+      "Gemini AI",
+      "Zustand",
+      "React Query",
+      "Cheerio",
+    ],
 
-        links: {
-            live: "https://blogdrop.in",
-            repo: "https://github.com/dhirajaryaa/blogdrop",
-        },
-
-        status: "Ongoing",
-        year: "June,2026 — now",
-        role: "Solo — design, backend, frontend",
-        features: [
-            "Aggregates 100+ engineering blogs into one chronological feed",
-            "Gemini-generated summaries so you can skim before you read",
-            "Cheerio-based article extraction that strips trackers and boilerplate",
-            "Inngest background jobs keep ingestion off the request path",
-            "Drizzle ORM over PostgreSQL with full-text search and tagging",
-            "Better Auth accounts with saved topics, bookmarks and read state",
-            "Zustand for local feed state, React Query for server cache",
-        ],
-        challenges: [
-            "Every blog ships a different, slightly broken HTML shape",
-            "Be polite to 100+ origins — fetch budgets, caching and conditional requests",
-            "Deduplicating syndicated posts across dozens of feeds",
-        ],
-        learnings: [
-            "Long-running ingestion belongs in a job queue, not a request handler",
-            "Structured extraction beats asking a model to parse raw HTML",
-        ],
+    links: {
+      live: "https://blogdrop.in",
+      repo: "https://github.com/dhirajaryaa/blogdrop",
     },
 
-    {
-        slug: "querymate",
-        name: "QueryMate",
-        line: "Ask questions in plain English and turn them into optimized database queries across PostgreSQL, MySQL, and MongoDB.",
-        overview:
-            "Most people do not have a SQL problem, they have a question. QueryMate lets you type it the way you would ask a colleague, pulls in the schema for context, and streams back a query you can actually run. It supports PostgreSQL, MySQL, SQLite and MongoDB, which makes it a decent learning tool as well as a work one.",
-        banner: "/projects/querymate/banner.webp",
-        video: "/projects/querymate/demo.mp4",
+    status: "Ongoing",
+    year: "June 2026 — now",
+    role: "Solo — design, backend, frontend",
 
-        tags: [
-            "Next.js",
-            "TypeScript",
-            "PostgreSQL",
-            "Drizzle",
-            "Tailwind",
-            "Shadcn UI",
-            "Groq",
-            "Vercel AI SDK",
-        ],
+    features: [
+      "Collects engineering articles from RSS sources into one feed",
+      "AI-generated summaries and article metadata",
+      "Article extraction and cleanup before AI processing",
+      "Inngest background jobs for feed ingestion and AI processing",
+      "PostgreSQL database with Drizzle ORM",
+      "Authentication, saved articles and reading state",
+      "Search, tags and categories for organizing articles",
+    ],
 
-        links: {
-            live: "https://querymate.dhirajarya.in",
-            repo: "https://github.com/dhirajaryaa/querymate",
-        },
+    challenges: [
+      "Handling different HTML structures across engineering blogs",
+      "Keeping feed ingestion reliable without blocking user requests",
+      "Removing duplicate articles from multiple sources",
+    ],
 
-        status: "Completed",
-        year: "March,2026",
-        role: "Solo — design, backend, frontend",
-        features: [
-            "Natural language to query across PostgreSQL, MySQL, SQLite and MongoDB",
-            "Schema-aware context so the generated SQL matches your actual tables",
-            "Streaming responses through the Vercel AI SDK on Groq for fast output",
-            "Copy-ready output with the query kept readable and commented",
-            "Session history so you can iterate on a question without losing it",
-        ],
-        challenges: [
-            "A wrong column name makes a perfect query useless — schema context is not optional",
-            "Dialects diverge enough that one prompt does not fit all four databases",
-        ],
-        learnings: [
-            "Fewer, faster tokens beat a bigger model for structured code generation",
-        ],
+    learnings: [
+      "Long-running ingestion work belongs in background jobs rather than request handlers",
+      "Cleaning and structuring content before sending it to an AI model produces more reliable metadata",
+    ],
+  },
+
+  {
+    slug: "querymate",
+    name: "QueryMate",
+    line: "AI database assistant that lets you ask questions in plain English and generate SQL for your database.",
+    overview:
+      "QueryMate lets users connect a database, ask questions in natural language, and generate SQL using database schema as context. The project focuses on making database querying easier without hiding the underlying SQL.",
+
+    banner: "/projects/querymate/banner.webp",
+    video: "/projects/querymate/demo.mp4",
+      bannerBg: "to-green-500",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle",
+      "Tailwind",
+      "Shadcn UI",
+      "Groq",
+      "Vercel AI SDK",
+      "Better Auth",
+    ],
+
+    links: {
+      live: "https://querymate.dhirajarya.in",
+      repo: "https://github.com/dhirajaryaa/querymate",
     },
 
-    {
-        slug: "smartform",
-        name: "SmartForm",
-        line: "Chrome extension that fills long application forms with contextual AI.",
-        overview:
-            "Job applications want the same information in eight different boxes, and every one of them has its own idea of the format. SmartForm reads the form it is on, works out what each field is really asking for, and fills it in with Gemini — so you paste your details once instead of forty times.",
-        video: "/projects/smartform/demo.mp4",
+    status: "Completed",
+    year: "March 2026",
+    role: "Solo — design, backend, frontend",
 
-        tags: [
-            "TypeScript",
-            "React",
-            "WXT",
-            "Chrome Extension",
-            "Tailwind",
-            "Gemini AI",
-            "Zod",
-        ],
+    features: [
+      "Natural-language questions converted into SQL",
+      "PostgreSQL and MySQL database connections",
+      "Database schema context for SQL generation",
+      "Read-only query execution",
+      "Streaming AI responses using the Vercel AI SDK and Groq",
+      "Chat history and multiple database connections",
+    ],
 
-        links: {
-            live: "https://www.youtube.com/watch?v=Wan9QWfXF-Y",
-            repo: "https://github.com/dhirajaryaa/smartform",
-        },
+    challenges: [
+      "Generated SQL is only useful when it matches the actual database schema",
+      "Supporting different SQL dialects requires database-specific handling",
+      "Keeping AI-generated queries restricted to safe, read-only operations",
+    ],
 
-        status: "Completed",
-        year: "2026",
-        role: "Solo — design, extension, AI layer",
-        features: [
-            "Automatic detection and classification of form fields on any page",
-            "Context-aware Gemini generation so answers fit the field, not the label",
-            "One saved profile reused across every application you fill",
-            "Built on WXT with a React popup and content script",
-            "Zod-validated responses before anything is written into the DOM",
-        ],
-        challenges: [
-            "Every site ships a different, hostile DOM — no shared contract to code against",
-            "Filling a form the user did not ask you to fill is a trust problem, not a technical one",
-        ],
-        learnings: [
-            "Browser extensions are the only place the problem lives, and the only place you can fix it",
-        ],
+    learnings: [
+      "Schema context is essential for reliable database query generation",
+      "Structured constraints are important when letting an AI model generate executable code",
+    ],
+  },
+
+  {
+    slug: "smartform",
+    name: "SmartForm",
+    line: "AI-powered Chrome extension that detects form fields and fills them with context-aware generated data.",
+    overview:
+      "SmartForm is a browser extension built to reduce repetitive form filling. It detects form fields, understands their context, and uses an AI provider to generate appropriate values while keeping the user in control of the final submission.",
+
+    video: "/projects/smartform/demo.mp4",
+
+    tags: [
+      "TypeScript",
+      "React",
+      "WXT",
+      "Chrome Extension",
+      "Tailwind",
+      "Gemini AI",
+      "Groq",
+    ],
+
+    links: {
+      live: "https://www.youtube.com/watch?v=Wan9QWfXF-Y",
+      repo: "https://github.com/dhirajaryaa/smartform",
     },
 
-    {
-        slug: "quickformx",
-        name: "QuickFormX",
-        line: "Drag-and-drop form builder with custom components, schema validation and API integrations.",
-        overview:
-            "A full MERN form builder: drag fields onto a canvas, wire them to a backend, and let Zod enforce the shape. The interesting part is custom components — you can define a field once and reuse it everywhere, which is what makes it usable for real internal tools instead of demos.",
-        tags: [
-            "React",
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "Tailwind",
-            "Gemini AI",
-            "Zod",
-        ],
+    status: "Completed",
+    year: "Jan 2026",
+    role: "Solo — design, extension, AI layer",
 
-        links: {
-            live: "https://quickformx.dhirajarya.in",
-            repo: "https://github.com/dhirajaryaa/quickFormx",
-        },
+    features: [
+      "One-click form filling",
+      "Automatic detection of visible input fields",
+      "Support for input, textarea and select elements",
+      "Context-aware field matching",
+      "Groq and Google Gemini AI providers",
+      "No automatic form submission",
+      "Local storage for settings and API keys",
+    ],
 
-        status: "Completed",
-        year: "Dec,2025",
-        role: "Solo — design, backend, frontend",
-        features: [
-            "Drag-and-drop canvas for composing forms without touching code",
-            "Custom component system so a field is defined once and reused",
-            "Zod schema generation and validation shared between client and server",
-            "REST API integrations to push submissions anywhere",
-            "Gemini-assisted field suggestions while you are building",
-        ],
-        challenges: [
-            "Keeping the drag state, the rendered form and the validation schema from drifting apart",
-        ],
-        learnings: [
-            "One schema should drive the form, the API and the database — otherwise they lie to each other",
-        ],
+    challenges: [
+      "Different websites expose form fields with different structures and labels",
+      "Generated values need to match the context of each field",
+      "Keeping user data and API credentials local to the browser",
+    ],
+
+    learnings: [
+      "Browser extensions require careful handling of arbitrary page structures",
+      "Giving users control over AI-generated actions is important for extension UX",
+    ],
+  },
+
+  {
+    slug: "quickformx",
+    name: "QuickFormX",
+    line: "Developer-friendly form builder and submission dashboard.",
+    overview:
+      "QuickFormX is an early SaaS form-builder MVP focused on creating forms and managing submissions. The project helped me work with client-side state, form validation, API communication and data fetching.",
+
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "TanStack Query",
+      "Zustand",
+      "Tailwind",
+      "React Hook Form",
+      "Zod",
+    ],
+
+    links: {
+      live: "https://quickformx.dhirajarya.in",
+      repo: "https://github.com/dhirajaryaa/quickFormx",
     },
 
-    {
-        slug: "resucraft",
-        name: "ResuCraft",
-        line: "AI-powered resume builder with smart content suggestions.",
-        overview:
-            "ResuCraft helps you build a professional resume with AI-suggested content, customisable templates and live preview. I stopped working on it once the focus shifted to larger SaaS products, but the template and PDF pipeline were the most useful thing I learned that year.",
-        video: "/projects/resucraft/demo.mp4",
+    status: "Completed",
+    year: "Dec 2025",
+    role: "Solo — frontend",
 
-        tags: ["React", "Firebase", "React Hook Form", "Tailwind"],
+    features: [
+      "Form builder interface",
+      "Submission dashboard",
+      "Form validation with React Hook Form and Zod",
+      "Client-side state management with Zustand",
+      "Server data fetching and caching with TanStack Query",
+      "REST API integration",
+    ],
 
-        links: {
-            live: "https://ai-resume-builder-dhirajaryaa.vercel.app/",
-            repo: "https://github.com/dhirajaryaa/AI-Resume-Builder",
-        },
+    challenges: [
+      "Keeping form state and validation consistent across the builder",
+      "Managing server state separately from local UI state",
+    ],
 
-        status: "Discontinue",
-        year: "2024",
-        role: "Frontend Developer — solo",
-        features: [
-            "Resume templates with live preview as you type",
-            "AI-suggested content for every section",
-            "One-click PDF export",
-        ],
-        challenges: [
-            "Template rendering across a handful of fixed layouts",
-            "Getting PDF export to reproduce the on-screen design exactly",
-        ],
-        learnings: [
-            "Firebase, React Hook Form, and how to build a template system",
-        ],
+    learnings: [
+      "TanStack Query and Zustand solve different state-management problems",
+      "A clear separation between form state, UI state and server state makes the frontend easier to maintain",
+    ],
+  },
+
+  {
+    slug: "resucraft",
+    name: "ResuCraft",
+    line: "AI-powered resume builder with customizable templates and content suggestions.",
+    overview:
+      "ResuCraft is an earlier resume-builder project where I experimented with AI-assisted content generation, customizable resume templates, authentication and persistent user data.",
+
+    video: "/projects/resucraft/demo.mp4",
+
+    tags: [
+      "React",
+      "Firebase",
+      "React Hook Form",
+      "Tailwind",
+      "shadcn/ui",
+    ],
+
+    links: {
+      live: "https://ai-resume-builder-dhirajaryaa.vercel.app/",
+      repo: "https://github.com/dhirajaryaa/AI-Resume-Builder",
     },
+
+    status: "Discontinue",
+    year: "Sep 2025",
+    role: "Frontend Developer — solo",
+
+    features: [
+      "Customizable resume templates",
+      "AI-assisted content suggestions",
+      "Live resume editing",
+      "Firebase authentication",
+      "Firestore data storage",
+      "Resume download and sharing",
+    ],
+
+    challenges: [
+      "Keeping different resume templates consistent with the same data structure",
+      "Building an editing experience that updates the resume preview in real time",
+    ],
+
+    learnings: [
+      "Firebase authentication and Firestore",
+      "Building reusable resume templates with React",
+      "Managing complex form state in a document-style editor",
+    ],
+  },
 ];
+
 
 export const tools: Tool[] = [
     {
@@ -570,7 +570,7 @@ export const gearGroups: GearGroup[] = [
         items: [
             {
                 name: "SmartForm",
-                note: "AI form filler",
+                note: "owned : AI form filler",
                 icon: SiGooglegemini,
                 href: "https://github.com/dhirajaryaa/smartform",
             },
@@ -634,27 +634,7 @@ export const setupGroups: SetupGroup[] = [
             { key: "Menu Bar Visibility", value: "compact" },
             { key: "Chat Session Orientation", value: "stacked" },
         ],
-    },
-    {
-        id: "git",
-        title: "Git",
-        items: [
-            { key: "Auto Fetch", value: "Enabled" },
-            { key: "Confirm Sync", value: "Disabled" },
-            { key: "Open in Parent Folders", value: "never" },
-        ],
-    },
-    {
-        id: "extensions",
-        title: "Extensions",
-        items: [
-            { key: "GitHub Copilot", value: "5 keybindings" },
-            { key: "Copilot Next Edit", value: "Disabled" },
-            { key: "CSpell", value: "7 dictionaries" },
-            { key: "Code Runner", value: "Enabled" },
-            { key: "Claude Code Location", value: "panel" },
-        ],
-    },
+    }
 ];
 
 export type PdfCategory = {
