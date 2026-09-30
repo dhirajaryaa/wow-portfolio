@@ -90,7 +90,7 @@ export default function RootLayout({
           <ThemeShortcut />
           {/* footer is global — mounted once here instead of per page */}
           <div className="mx-auto w-full max-w-3xl px-10 pb-10">
-            <hr />
+            <hr className="mt-4" />
             <Footer />
           </div>
           <script

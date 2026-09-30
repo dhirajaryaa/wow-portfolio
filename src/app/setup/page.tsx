@@ -35,11 +35,11 @@ export default function SetupPage() {
                 description="My VSCode configuration and dev environment preferences. Synced from my local config — no secrets, just the settings I actually use."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             {setupGroups.map((group, index) => (
                 <div key={group.id}>
-                    {index > 0 && <hr />}
+                    {index > 0 && <hr className="mt-4" />}
                     <section className="flex flex-col justify-center gap-4 py-8 md:py-10">
                         <SectionHeading
                             title={group.title}

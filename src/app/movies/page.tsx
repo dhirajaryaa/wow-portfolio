@@ -36,7 +36,7 @@ export default function MoviesPage() {
                 description="Films that left an impression on me. No ratings, no essays — just the list and a sentence each."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* recommendations  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">
