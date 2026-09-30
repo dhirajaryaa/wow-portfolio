@@ -41,7 +41,7 @@ export default function BooksPage() {
                 description="Books that shaped my thinking. I keep the list short because a long one is just a list."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* reading list  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">

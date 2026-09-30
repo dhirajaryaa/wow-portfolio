@@ -39,18 +39,16 @@ export default function GearsPage() {
                 description="Beyond the code. The machine, the setup and the extensions I reach for daily — collected because friends keep asking."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             {gearGroups.map((group, index) => (
                 <div key={group.id}>
-                    {index > 0 && <hr />}
+                    {index > 0 && <hr className="mt-4" />}
                     <GearSection group={group} />
                 </div>
             ))}
 
-            <hr />
-
-            <hr />
+            <hr className="mt-4" />
 
             {/* setup cross-link  */}
             <section className="flex flex-col justify-center gap-3 py-10 md:py-14">

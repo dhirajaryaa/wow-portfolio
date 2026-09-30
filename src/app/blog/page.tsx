@@ -58,7 +58,7 @@ export default function BlogPage() {
                 description="Notes on building for the web — the parts that worked, the parts that did not, and why this site looks the way it does."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* posts  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">
@@ -80,7 +80,7 @@ export default function BlogPage() {
                 )}
             </section>
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* tags  */}
             {tags.length > 0 && (
@@ -105,7 +105,7 @@ export default function BlogPage() {
                 </section>
             )}
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* note  */}
             <section className="flex flex-col justify-center gap-3 py-10 md:py-14">
@@ -136,7 +136,7 @@ export default function BlogPage() {
                 </div>
             </section>
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* back out  */}
             <section className="flex flex-col justify-center gap-2 py-10 md:py-14">

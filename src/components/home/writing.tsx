@@ -30,7 +30,7 @@ export const WritingSection = () => {
                     <li key={post.slug}>
                         <Link
                             href={`/blog/${post.slug}`}
-                            className="border-muted hover:bg-muted/40 group flex items-center justify-between gap-3 rounded-lg border-b border-dashed px-2 py-2.5 transition-colors duration-200 md:px-4"
+                            className="border-muted hover:bg-muted/40 group flex items-center justify-between gap-3 border-b border-dashed px-2 py-2.5 transition-colors duration-200 md:px-4"
                         >
                             <span className="text-foreground group-hover:underline truncate text-[13px] font-medium">
                                 {post.title}

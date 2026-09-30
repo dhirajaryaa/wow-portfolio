@@ -48,7 +48,7 @@ export default function ToolsPage() {
                 description="Small utilities I built for a problem I kept hitting. No accounts, no tracking, no catch — just open and use them."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* utility box  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">
@@ -67,7 +67,7 @@ export default function ToolsPage() {
                 </div>
             </section>
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* pdfany breakdown  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">
@@ -90,7 +90,7 @@ export default function ToolsPage() {
                             {category.tools.map((t) => (
                                 <li
                                     key={t.name}
-                                    className="border-muted hover:bg-muted/40 flex flex-col gap-0.5 rounded-lg border-b border-dashed px-2 py-2 transition-colors duration-200 md:flex-row md:items-center md:justify-between md:gap-4 md:px-4"
+                                    className="border-muted hover:bg-muted/40 flex flex-col gap-0.5  border-b border-dashed px-2 py-2 transition-colors duration-200 md:flex-row md:items-center md:justify-between md:gap-4 md:px-4"
                                 >
                                     <span className="text-foreground text-[13px] font-medium">
                                         {t.name}
@@ -118,7 +118,7 @@ export default function ToolsPage() {
                 </div>
             </section>
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* note  */}
             <section className="flex flex-col justify-center gap-3 py-10 md:py-14">

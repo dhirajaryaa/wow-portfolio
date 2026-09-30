@@ -27,7 +27,7 @@ export default function NotFound() {
                 description="That link does not lead anywhere. The post may have been renamed, the url picked up a typo, or it never existed in the first place."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">
                 <SectionHeading title="Where To" hint="none of these are 404." />

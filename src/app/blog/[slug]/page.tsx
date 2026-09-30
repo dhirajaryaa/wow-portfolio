@@ -175,12 +175,12 @@ export default async function PostPage({ params }: PostPageProps) {
                 </div>
             </PageHeader>
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* body — every element is mapped in components/blog/mdx-components  */}
             <article className="py-8 md:py-10">{content}</article>
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* pager  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">

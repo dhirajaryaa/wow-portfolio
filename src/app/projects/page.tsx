@@ -62,7 +62,7 @@ export default function ProjectsPage() {
                 description="Things I built because I wanted them to exist. Unfold a card for the story behind it — the stack, the hard part, and what I learned."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* proof of work  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
                 </div>
             </section>
 
-            <hr />
+            <hr className="mt-4" />
 
             {/* stack  */}
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">

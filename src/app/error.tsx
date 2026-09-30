@@ -29,7 +29,7 @@ export default function Error({
                 description="The page hit an error while rendering. It is not you — retrying usually clears it, and if it does not the note below identifies the exact render."
             />
 
-            <hr />
+            <hr className="mt-4" />
 
             <section className="flex flex-col justify-center gap-4 py-10 md:py-14">
                 <SectionHeading title="Try Again" hint="same page, fresh attempt." />
