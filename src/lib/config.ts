@@ -224,8 +224,8 @@ export const projects: Project[] = [
     },
 
     status: "Completed",
-    year: "June 2026 — now",
-    role: "Solo — design, backend, frontend",
+    year: "June 2026 — Oct 2026",
+    role: "Solo — design, frontend, backend",
 
     features: [
       "Collects engineering articles from RSS sources into one feed",
@@ -252,10 +252,19 @@ export const projects: Project[] = [
   {
     slug: "querymate",
     name: "QueryMate",
-    line: "AI database assistant that lets you ask questions in plain English and generate SQL for your database.",
-    overview:
-      "QueryMate lets users connect a database, ask questions in natural language, and generate SQL using database schema as context. The project focuses on making database querying easier without hiding the underlying SQL.",
+    line: "AI database assistant that lets you ask questions in plain English and get answers from your database.",
 
+overview:
+  "QueryMate lets users connect a database and ask questions in natural language. It uses the database schema to generate SQL, runs safe read-only queries, and shows the results directly in the chat.",
+
+features: [
+  "Ask database questions using natural language",
+  "PostgreSQL and MySQL database connections",
+  "Database schema context for accurate queries",
+  "Safe read-only query execution",
+  "SQL generation and streaming AI responses",
+  "Chat history and multiple database connections",
+],
     banner: "/projects/querymate/banner.webp",
     video: "/projects/querymate/demo.mp4",
       bannerBg: "to-green-500",
@@ -277,17 +286,9 @@ export const projects: Project[] = [
     },
 
     status: "Completed",
-    year: "March 2026",
-    role: "Solo — design, backend, frontend",
+    year: "Feb 2026 — June 2026",
 
-    features: [
-      "Natural-language questions converted into SQL",
-      "PostgreSQL and MySQL database connections",
-      "Database schema context for SQL generation",
-      "Read-only query execution",
-      "Streaming AI responses using the Vercel AI SDK and Groq",
-      "Chat history and multiple database connections",
-    ],
+    role: "Solo — design, frontend, backend",
 
     challenges: [
       "Generated SQL is only useful when it matches the actual database schema",
