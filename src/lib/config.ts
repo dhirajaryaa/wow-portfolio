@@ -195,7 +195,7 @@ export const quotes = {
 export const projects: Project[] = [
   {
     slug: "blogdrop",
-    name: "BlogDrop",
+    name: "BlogDrop v1.2",
     line: "Engineering blog aggregator that collects technical articles, extracts useful metadata with AI, and brings them into one feed.",
     overview:
       "I built BlogDrop to make keeping up with engineering blogs less repetitive. It collects articles from RSS sources, extracts and cleans article content, processes metadata with AI, and presents everything in a single reading-focused feed.",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
       repo: "https://github.com/dhirajaryaa/blogdrop",
     },
 
-    status: "Ongoing",
+    status: "Completed",
     year: "June 2026 — now",
     role: "Solo — design, backend, frontend",
 
