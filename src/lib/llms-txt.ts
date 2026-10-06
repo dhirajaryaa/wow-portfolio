@@ -20,6 +20,7 @@ export function buildLlmsTxt() {
     lines.push(`- **GitHub:** ${links.github}`);
     lines.push(`- **Twitter:** ${links.x}`);
     lines.push(`- **LinkedIn:** ${links.linkedin}`);
+    lines.push(`- **Telegram:** ${links.telegram}`);
     lines.push(`- **YouTube:** ${links.youtube}`);
     lines.push(`- **Instagram:** ${links.instagram}`);
     lines.push(`- **Resume:** ${site.url}/resume.pdf | ${links.resume}`);
