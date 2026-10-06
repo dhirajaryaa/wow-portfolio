@@ -12,7 +12,7 @@ export const AboutSection = () => {
   return (
     <section className="text-foreground/70 flex flex-col gap-4 py-10 text-sm leading-[1.55] md:pt-14 md:text-[15px]">
       <p>
-        I&rsquo;m a self-taught developer. I learn by building,{" "}
+        I&rsquo;m a self-taught engineer. I learn by building,{" "}
         <span className="line-through">breaking</span>, and figuring things out.
         My <span className="underline">degree</span> so far is from{" "}
         <IconBadge className="mx-[0.2em]">

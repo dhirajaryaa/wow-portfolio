@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { LiveCurrentTime } from "@/components/common/live-comp";
 import { CurvedArrow } from "@/components/home/arrow";
-import { profile, quotes, socials } from "@/lib/config";
+import { contact, profile, quotes, socials } from "@/lib/config";
 import { QuoteBlock } from "@/components/common/quote";
-import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTelegramPlane, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
@@ -25,7 +25,8 @@ export const Footer = () => {
         { href: socials.linkedin, label: "LinkedIn", icon: FaLinkedin },
         { href: socials.x, label: "Twitter", icon: FaXTwitter },
         { href: socials.youtube, label: "Youtube", icon: FaYoutube },
-        { href: "mailto:hello@dhirajarya.in", label: "Email", icon: MdEmail },
+        { href: socials.telegram, label: "Telegram", icon: FaTelegramPlane },
+        { href: contact.emailHref, label: "Email", icon: MdEmail },
     ];
 
     return (

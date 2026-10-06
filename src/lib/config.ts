@@ -112,6 +112,7 @@ export const socials = {
     github: "https://github.com/dhirajaryaa",
     x: "https://twitter.com/dhirajarya01",
     linkedin: "https://linkedin.com/in/dhirajarya01",
+    telegram: "https://t.me/dhirajarya01",
     youtube: "https://youtube.com/@dhirajaryaa",
     instagram: "https://instagram.com/dhirajarya01",
 };
@@ -123,11 +124,14 @@ export const links = {
 
 export const contact = {
     text: "Open to interesting projects, collaborations, or a good argument about code.",
-    email: profile.email,
-    emailHref: `mailto:${profile.email}`,
+    email: profile.professionEmail,
+    emailHref: `mailto:${profile.professionEmail}`,
     mentions: [
         { label: "GitHub", href: socials.github },
         { label: "X", href: socials.x },
+        { label: "LinkedIn", href: socials.linkedin },
+        { label: "Telegram", href: socials.telegram },
+        { label: "Email", href: `mailto:${profile.professionEmail}` },
     ] as const,
 };
 
@@ -160,11 +164,12 @@ export const site = {
     keywords: [
         "Dhiraj Arya",
         "self-taught engineer",
-        "full stack developer",
-        "Next.js developer",
-        "MERN stack developer",
-        "React developer",
-        "TypeScript developer",
+        "self-taught full stack engineer",
+        "full stack engineer",
+        "Next.js engineer",
+        "MERN stack engineer",
+        "React engineer",
+        "TypeScript engineer",
         "portfolio",
         "web developer India",
         "freelance web developer",

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         "book recommendations",
         "Ikigai",
         "programming books",
-        "self-taught developer",
+        "self-taught engineer",
     ],
     alternates: { canonical: "/books" },
     openGraph: {

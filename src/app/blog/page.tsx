@@ -10,7 +10,7 @@ import { ogImages, site } from "@/lib/config";
 import type { Metadata } from "next";
 
 const description =
-    "Notes on building for the web — Next.js, React, TypeScript and the design decisions behind them. Written by a self-taught developer, published when there is something worth saying.";
+    "Notes on building for the web — Next.js, React, TypeScript and the design decisions behind them. Written by a self-taught engineer, published when there is something worth saying.";
 
 export const metadata: Metadata = {
     title: "Blog",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         "Next.js articles",
         "React articles",
         "TypeScript blog",
-        "self-taught developer writing",
+        "self-taught engineer writing",
         "software engineering notes",
         "MDX",
     ],

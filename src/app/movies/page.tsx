@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         "Interstellar",
         "The Social Network",
         "LifeHack",
-        "web developer",
+        "self-taught engineer",
     ],
     alternates: { canonical: "/movies" },
     openGraph: {
