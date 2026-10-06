@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/blog";
-import { movies, books, gearGroups, profile, projects, site, socials, tools } from "@/lib/config";
+import { movies, books, gearGroups, profile, projects, site, tools, links } from "@/lib/config";
 
 const escape = (value: string) => value.replace(/\s+/g, " ").trim();
 
@@ -17,11 +17,12 @@ export function buildLlmsTxt() {
     lines.push("## Contact & Socials");
     lines.push(`- **Email:** ${profile.email} / ${profile.professionEmail}`);
     lines.push(`- **Website:** ${site.url}`);
-    lines.push(`- **GitHub:** ${socials.github}`);
-    lines.push(`- **Twitter:** ${socials.x}`);
-    lines.push(`- **LinkedIn:** ${socials.linkedin}`);
-    lines.push(`- **YouTube:** ${socials.youtube}`);
-    lines.push(`- **Instagram:** ${socials.instagram}`);
+    lines.push(`- **GitHub:** ${links.github}`);
+    lines.push(`- **Twitter:** ${links.x}`);
+    lines.push(`- **LinkedIn:** ${links.linkedin}`);
+    lines.push(`- **YouTube:** ${links.youtube}`);
+    lines.push(`- **Instagram:** ${links.instagram}`);
+    lines.push(`- **Resume:** ${site.url}/resume.pdf | ${links.resume}`);
     lines.push("");
 
     /* ---------------- stack ---------------- */
