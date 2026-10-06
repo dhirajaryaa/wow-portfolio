@@ -59,9 +59,9 @@ export const RenderActivity = ({ data }: { data: ActivityData }) => {
   return (
     <div className="flex flex-col gap-3">
       {/* Activity Graph */}
-      <div className="w-full overflow-x-auto scrollbar-none">
+      <div className="w-full overflow-x-auto">
         <ActivityCalendar
-        className="w-full mx-auto"
+          className="w-full mx-auto"
           data={filteredContributions}
           blockSize={isSmallScreen ? 6 : 9}
           blockMargin={isSmallScreen ? 2 : 4}
