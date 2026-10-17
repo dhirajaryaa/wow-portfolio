@@ -45,6 +45,7 @@ export type Project = {
     banner?: string;
     bannerBg?:string;
     video?: string;
+    blurDataURL?: string;
     tags: string[];
     links: {
         live?: string;
@@ -198,6 +199,46 @@ export const quotes = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "hackmeet",
+    name: "HackMeet beta",
+    line: "Real-time 1:1 networking for developers — connect, skip, and find your next collaborator in one click.",
+    overview:
+      "HackMeet is a developer networking platform in development that connects developers through real-time one-to-one conversations. It uses Socket.IO for matchmaking and signaling, WebRTC for peer-to-peer media, and a simple skip-to-next-developer flow for low-friction networking. Built with a shared TypeScript types package between client and server, PostgreSQL for profiles, and GitHub OAuth for sign-in.",
+
+    banner: "/projects/hackmeet/banner.webp",
+    bannerBg: "to-blue-500",
+    blurDataURL: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoIAAQAAgA0JaACdLoB+AADsAD+7NWeVf/VofLQ+Wh+59/8KtwxDJ0AAAA=",
+    tags: ["Next.js", "TypeScript","Express", "Node.js","Socket.io", "WebRTC", "Drizzle", "PostgreSQL"],
+
+    links: {
+      live: "https://hackmeet.dhirajarya.in",
+    },
+
+    status: "Ongoing",
+    year: "Oct 2026 - ongoing",
+    role: "Solo — frontend, backend, real-time systems",
+
+    features: [
+      "Queue-based 1:1 developer matchmaking with waiting state",
+      "Room creation and lifecycle management (matched → offer/answer → disconnect cleanup)",
+      "Socket.IO event coordination for WebRTC offer-answer signaling",
+      "Disconnect handling that re-queues the remaining partner",
+      "GitHub OAuth via better-auth, PostgreSQL profiles with Drizzle ORM",
+    ],
+
+    challenges: [
+      "Coordinating Socket.IO signaling events with WebRTC offer/answer exchange across two peers",
+      "Handling disconnects mid-call without leaving orphaned rooms or stranded users",
+      "Keeping client and server event shapes in sync through a shared types package",
+    ],
+
+    learnings: [
+      "Real-time matchmaking needs a clear queue + room lifecycle, not just a socket connection",
+      "Shared TypeScript types between client and server prevent signaling mismatches in WebRTC flows",
+    ],
+  },
+
   {
     slug: "blogdrop",
     name: "BlogDrop v1.2",

@@ -170,6 +170,12 @@ export const ProjectDetailCard = ({
                                         width={1200}
                                         height={720}
                                         className="rounded-md aspect-video object-cover overflow-hidden"
+                                        {...(project.blurDataURL
+                                            ? {
+                                                  placeholder: "blur",
+                                                  blurDataURL: project.blurDataURL,
+                                              }
+                                            : {})}
                                     />
                                 </div>
                             </div>
