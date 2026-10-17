@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ImageWithLoader } from "@/components/common/image-loader";
 import { ThemeToggle } from "@/components/common/theme-toggle";
 import { CurvedArrow } from "@/components/home/arrow";
 import { profile } from "@/lib/config";
@@ -11,12 +11,13 @@ export const HeroSection = () => {
         <div className="flex items-center justify-between h-fit flex-1 relative" >
             <div className="flex gap-4 items-center relative">
                 <div className="flex items-center justify-center size-14 md:size-18 p-0.5 ring-2 ring-primary rounded-2xl overflow-hidden ">
-                    <Image
+                    <ImageWithLoader
                         src={"/logo.webp"}
                         alt="Logo - Dhraj Arya"
                         width={150}
                         height={150}
                         className="object-cover rounded-2xl w-full h-full"
+                        wrapperClassName="size-full rounded-2xl"
                     />
                 </div>
                 <div className="flex flex-col">

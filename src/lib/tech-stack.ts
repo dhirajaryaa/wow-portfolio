@@ -19,6 +19,8 @@ import {
     SiPostgresql,
     SiSqlite,
     SiGooglechrome,
+    SiRedis,
+    SiFramer,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { TbCode } from "react-icons/tb";
@@ -132,5 +134,15 @@ export const techStack: Record<string, TechStack> = {
     SQLite: {
         icon: SiSqlite,
         className: "text-sky-600",
+    },
+
+    Redis: {
+        icon: SiRedis,
+        className: "text-red-600",
+    },
+
+    "Framer Motion": {
+        icon: SiFramer,
+        className: "text-pink-600",
     },
 };

@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 import { CodeBlock } from "@/components/blog/code-block";
+import { MdxImage } from "@/components/blog/mdx-image";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------------ */
@@ -138,17 +139,7 @@ export const mdxComponents: MDXComponents = {
 
     hr: (props) => <hr className="my-10 border-dashed" {...props} />,
 
-    img: ({ alt = "", className, ...props }) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-            alt={alt}
-            className={cn(
-                "border-muted my-6 h-auto w-full rounded-xl border border-dashed",
-                className,
-            )}
-            {...props}
-        />
-    ),
+    img: MdxImage,
 
     /* inline code only — anything inside a <pre> is fenced by CodeBlock */
     code: ({ className, ...props }) => {

@@ -1,6 +1,6 @@
 import { statusStyles, type Project } from "@/lib/config";
 import { cn } from "cn";
-import Image from "next/image";
+import { ImageWithLoader } from "@/components/common/image-loader";
 import {
     Tooltip,
     TooltipContent,
@@ -28,12 +28,14 @@ export const ProjectCard = ({
             {project.banner ? (
                 <div className={cn("relative aspect-video overflow-hidden rounded-xl bg-linear-to-br from-white to-rose-500",project.bannerBg)}>
                     <div className="absolute inset-0 translate-x-10 translate-y-10 overflow-hidden rounded-xl border-4 border-white/30 transition-transform duration-700 ease-out group-hover:translate-x-0 group-hover:translate-y-0">
-                        <Image
+                        <ImageWithLoader
                             alt={project.name}
                             src={project.banner}
                             width={1200}
                             height={720}
                             className="rounded-md aspect-video object-cover"
+                            wrapperClassName="rounded-md"
+                            blurDataURL={project.blurDataURL}
                         />
                     </div>
                 </div>
