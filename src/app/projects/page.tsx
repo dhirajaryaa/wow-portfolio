@@ -1,7 +1,7 @@
 import { Container } from "@/components/common/container";
 import { PageHeader } from "@/components/common/page-header";
 import { SectionHeading } from "@/components/common/section-heading";
-import { ProjectDetailCard } from "@/components/project/project-detail-card";
+import { ProjectsAccordion } from "@/components/project/projects-accordion";
 import { ogImages, projects } from "@/lib/config";
 import { techStack } from "@/lib/tech-stack";
 import { cn } from "@/lib/utils";
@@ -72,12 +72,7 @@ export default function ProjectsPage() {
                     hint={`${projects.length - ongoing} shipped, ${ongoing} still cooking.`}
                 />
                 <div className="flex flex-col gap-2">
-                    {projects.map((project) => (
-                        <ProjectDetailCard
-                            key={project.slug}
-                            project={project}
-                        />
-                    ))}
+                    <ProjectsAccordion projects={projects} />
                 </div>
             </section>
 

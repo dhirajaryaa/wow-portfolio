@@ -135,6 +135,44 @@
   }
 }
 
+/* image loader shimmer — sweep used by ImagePlaceholder */
+@keyframes image-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* collapsible open/close — used by the project accordion */
+@theme inline {
+  --animate-collapsible-down: collapsible-down 300ms ease-out;
+  --animate-collapsible-up: collapsible-up 300ms ease-out;
+}
+
+@keyframes collapsible-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes collapsible-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
 /* for custom tooltip  */
 /* Adapt to your needs */
 .react-activity-calendar__tooltip {

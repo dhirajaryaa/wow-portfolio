@@ -1,3 +1,4 @@
+import { ImageWithLoader } from "@/components/common/image-loader";
 import { Button } from "@/components/ui/button";
 import {
     Collapsible,
@@ -20,7 +21,6 @@ import {
     Play,
     User,
 } from "lucide-react";
-import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 
 /* small labelled list used inside the unfolded card */
@@ -70,14 +70,23 @@ const TechChip = ({ tag }: { tag: string }) => {
 export const ProjectDetailCard = ({
     className,
     project,
+    open,
+    onOpenChange,
 }: {
     className?: string;
     project: Project;
+    /* when provided, the parent controls the fold (one card open at a time) */
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
 }) => {
     const isChromeDemo = project.links.live?.includes("youtube");
 
     return (
-        <Collapsible className="group/collapsible">
+        <Collapsible
+            className="group/collapsible"
+            open={open}
+            onOpenChange={onOpenChange}
+        >
             <article
                 className={cn(
                     "border-muted bg-background w-full rounded-xl border border-dashed p-2 transition-all duration-300 group-data-[state=open]/collapsible:bg-gray-50 dark:group-data-[state=open]/collapsible:bg-foreground/5",
@@ -164,18 +173,14 @@ export const ProjectDetailCard = ({
                         {project.banner && (
                             <div className={cn("bg-linear-to-br from-white to-rose-500 group/collapsible relative aspect-video overflow-hidden rounded-xl",project.bannerBg)}>
                                 <div className="absolute inset-0 translate-x-10 translate-y-10 overflow-hidden rounded-xl border-4 border-white/30 transition-transform duration-700 ease-out group-hover/collapsible:translate-x-0 group-hover/collapsible:translate-y-0">
-                                    <Image
+                                    <ImageWithLoader
                                         alt={`${project.name} banner`}
                                         src={project.banner}
                                         width={1200}
                                         height={720}
                                         className="rounded-md aspect-video object-cover overflow-hidden"
-                                        {...(project.blurDataURL
-                                            ? {
-                                                  placeholder: "blur",
-                                                  blurDataURL: project.blurDataURL,
-                                              }
-                                            : {})}
+                                        wrapperClassName="rounded-md"
+                                        blurDataURL={project.blurDataURL}
                                     />
                                 </div>
                             </div>
