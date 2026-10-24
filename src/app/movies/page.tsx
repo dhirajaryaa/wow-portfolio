@@ -48,7 +48,7 @@ export default function MoviesPage() {
                 <ul className="flex flex-col">
                     {movies.map((movie) => (
                         <li key={movie.slug}>
-                            <article className="group border-muted hover:bg-muted/40 flex items-start gap-3 rounded-lg border-b border-dashed p-3 transition-all duration-200 md:px-4">
+                            <article className="group border-muted hover:bg-muted/40 flex items-start gap-3 border-b border-dashed p-3 transition-all duration-200 md:px-4">
                                 <Clapperboard className="text-muted-foreground mt-0.5 size-4 shrink-0" />
 
                                 <div className="flex min-w-0 flex-col gap-1">

@@ -50,7 +50,7 @@ export default function SetupPage() {
                             {group.items.map(({ key, value }) => (
                                 <div
                                     key={key}
-                                    className="border-muted hover:bg-muted/40 flex items-center justify-between gap-4 rounded-lg border-b border-dashed px-2 py-2 transition-colors duration-200 md:px-4"
+                                    className="border-muted hover:bg-muted/40 flex items-center justify-between gap-4 border-b border-dashed px-2 py-2 transition-colors duration-200 md:px-4"
                                 >
                                     <dt className="text-muted-foreground text-[13px]">
                                         {key}
