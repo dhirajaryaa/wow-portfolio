@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Rss } from "lucide-react";
 import Link from "next/link";
 import { getAllPosts, getAllTags } from "@/lib/blog";
-import { ogImages, site } from "@/lib/config";
+import { site } from "@/lib/config";
 import type { Metadata } from "next";
 
 const description =
@@ -34,14 +34,12 @@ export const metadata: Metadata = {
         title: "Blog — Dhiraj Arya",
         description,
         url: "/blog",
-        images: [...ogImages],
     },
     twitter: {
         card: "summary_large_image",
         title: "Blog — Dhiraj Arya",
         description,
         creator: site.twitter,
-        images: ["/og/og.png", "/og/og.webp"],
     },
 };
 
