@@ -16,7 +16,7 @@ import {
     getPostSource,
     type Post,
 } from "@/lib/blog";
-import { ogImages, profile, site } from "@/lib/config";
+import { profile, site } from "@/lib/config";
 import type { Metadata } from "next";
 
 type PostPageProps = {
@@ -58,14 +58,12 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
             modifiedTime: post.updated || post.date,
             authors: [site.url],
             tags: [...post.tags],
-            images: [...ogImages],
         },
         twitter: {
             card: "summary_large_image",
             title: post.title,
             description: post.description,
             creator: site.twitter,
-            images: ["/og/og.png", "/og/og.webp"],
         },
     };
 }
@@ -138,7 +136,7 @@ export default async function PostPage({ params }: PostPageProps) {
             url: site.url,
             image: `${site.url}/logo.webp`,
         },
-        image: ogImages.map((image) => `${site.url}${image.url}`),
+        image: `${site.url}/blog/${post.slug}/opengraph-image`,
         articleSection: post.tags[0] ?? "Writing",
     };
 
