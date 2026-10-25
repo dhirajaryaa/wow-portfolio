@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useSyncExternalStore, useMemo } from "react";
-import { ActivityCalendar } from "react-activity-calendar";
-import { useIsSmallScreen } from "@/hooks/use-mobile";
-import { GitHubContribution } from "@/lib/fetch-activity";
+import { useMemo, useState, useSyncExternalStore } from "react";
+import { ActivityCalendar, type ThemeInput } from "react-activity-calendar";
 import { useTheme } from "next-themes";
+import { useIsSmallScreen } from "@/hooks/use-mobile";
+import type { GitHubActivity } from "@/lib/fetch-activity";
 import { Button } from "../ui/button";
 
 const subscribe = () => () => {};
@@ -16,58 +16,66 @@ const useIsMounted = () =>
     () => false,
   );
 
-type ActivityData = {
-  total: Record<string, number>;
-  contributions: GitHubContribution[];
+/** theme-matched neutral scale — foreground shades with clear contrast */
+const activityTheme: ThemeInput = {
+  light: ["#ececec", "#c7c7c7", "#8a8a8a", "#454545", "#171717"],
+  dark: ["#2a2a2a", "#565656", "#909090", "#c4c4c4", "#fafafa"],
 };
 
-export const RenderActivity = ({ data }: { data: ActivityData }) => {
+export const RenderActivity = ({ data }: { data: GitHubActivity }) => {
   const isSmallScreen = useIsSmallScreen();
   const mounted = useIsMounted();
   const { resolvedTheme } = useTheme();
 
   const currentYear = new Date().getFullYear();
 
-  // Available individual years sorted descending
+  // available years sorted descending
   const availableYears = useMemo(() => {
-    const years = Object.keys(data?.total || {}).sort(
-      (a, b) => Number(b) - Number(a)
-    );
-    if (years.length === 0) return [String(currentYear)];
-    return years;
-  }, [data?.total, currentYear]);
+    const years = Object.keys(data.total).sort((a, b) => Number(b) - Number(a));
 
-  // Default to current year (e.g. 2026)
-  const [selectedYear, setSelectedYear] = useState<string>(
-    String(currentYear)
+    return years.length > 0 ? years : [String(currentYear)];
+  }, [data.total, currentYear]);
+
+  // default to the current year, falling back to the most recent one
+  const [selectedYear, setSelectedYear] = useState<string>(() =>
+    availableYears.includes(String(currentYear))
+      ? String(currentYear)
+      : availableYears[0],
   );
 
-  // Filter contributions for selected year
-  const filteredContributions = useMemo(() => {
-    const contributions = data?.contributions || [];
-    return contributions.filter((item) =>
-      item.date.startsWith(selectedYear)
-    );
-  }, [data?.contributions, selectedYear]);
+  // filter contributions for the selected year
+  const filteredContributions = useMemo(
+    () =>
+      data.contributions.filter((item) => item.date.startsWith(selectedYear)),
+    [data.contributions, selectedYear],
+  );
+
+  const totalContributions =
+    data.total[selectedYear] ??
+    filteredContributions.reduce((sum, item) => sum + item.count, 0);
 
   if (!mounted) {
-    return (
-      <div className="h-28 w-full animate-pulse rounded-lg bg-muted" />
-    );
+    return <div className="bg-muted h-32 w-full animate-pulse rounded-lg" />;
   }
 
   return (
     <div className="flex flex-col gap-3">
-      {/* Activity Graph */}
-      <div className="w-full overflow-x-auto">
+      {/* activity graph */}
+      <div
+        className="scrollbar-none w-full overflow-x-auto"
+        role="img"
+        aria-label={`GitHub contribution activity for ${selectedYear}`}
+      >
         <ActivityCalendar
-          className="w-full mx-auto"
+          className="mx-auto w-full"
           data={filteredContributions}
           blockSize={isSmallScreen ? 6 : 9}
           blockMargin={isSmallScreen ? 2 : 4}
           fontSize={isSmallScreen ? 10 : 12}
           showMonthLabels={false}
           showTotalCount={false}
+          theme={activityTheme}
+          colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
           tooltips={{
             activity: {
               text: (activity) => {
@@ -83,8 +91,10 @@ export const RenderActivity = ({ data }: { data: ActivityData }) => {
 
                 const countText =
                   activity.count === 0
-                    ? "no activities"
-                    : `${activity.count} ${activity.count === 1 ? "activity" : "activities"}`;
+                    ? "no activity"
+                    : `${activity.count} ${
+                        activity.count === 1 ? "activity" : "activities"
+                      }`;
 
                 return `${countText} on ${dateStr}`;
               },
@@ -97,24 +107,25 @@ export const RenderActivity = ({ data }: { data: ActivityData }) => {
               withArrow: true,
             },
           }}
-          colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
         />
       </div>
 
-      <div className="flex flex-col justify-center items-center md:flex-row md:justify-between gap-2 pt-1 text-xs text-muted-foreground">
-        <span className="hidden md:inline">My first commit on 16 apr 2024</span>
+      <div className="text-muted-foreground flex flex-col items-center justify-center gap-2 pt-1 text-xs md:flex-row md:justify-between">
+        <span className="hidden md:inline">My first commit on 16 Apr 2024</span>
 
         <div className="flex items-center gap-1.5">
-          <span className="mr-1 hidden md:inline">Year:</span>
-          {availableYears.slice(0, 4).map((yr) => (
+          <span className="mr-1 tabular-nums">
+            {totalContributions.toLocaleString("en-US")} contributions
+          </span>
+          {availableYears.slice(0, 4).map((year) => (
             <Button
-              key={yr}
+              key={year}
               type="button"
               size="xs"
-              variant={selectedYear === yr ? "default" : "outline"}
-              onClick={() => setSelectedYear(yr)}
+              variant={selectedYear === year ? "default" : "outline"}
+              onClick={() => setSelectedYear(year)}
             >
-              {yr}
+              {year}
             </Button>
           ))}
         </div>

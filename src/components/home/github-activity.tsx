@@ -1,34 +1,59 @@
 import { Suspense } from "react";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
+import { SectionHeading } from "@/components/common/section-heading";
 import { getGitHubActivity } from "@/lib/fetch-activity";
 import { RenderActivity } from "./render-activity";
 
-export const GithubActivity = async () => {
-  const data = await getGitHubActivity("dhirajaryaa");
-  const currentYear = new Date().getFullYear();
+const GITHUB_USERNAME = "dhirajaryaa";
+const GITHUB_PROFILE = `https://github.com/${GITHUB_USERNAME}`;
 
+const ActivitySkeleton = () => (
+  <div className="bg-muted h-32 w-full animate-pulse rounded-lg" />
+);
+
+const ActivityContent = async () => {
+  const data = await getGitHubActivity(GITHUB_USERNAME);
+
+  if (!data) {
+    return (
+      <p className="text-muted-foreground text-xs">
+        GitHub activity is unavailable right now.{" "}
+        <a
+          href={GITHUB_PROFILE}
+          target="_blank"
+          rel="noreferrer"
+          className="text-foreground underline underline-offset-[3px]"
+        >
+          See it on GitHub
+        </a>
+        .
+      </p>
+    );
+  }
+
+  return <RenderActivity data={data} />;
+};
+
+export const GithubActivity = () => {
   return (
     <section className="flex flex-col justify-center gap-6 py-10 md:py-14">
-      {/* header */}
-      <div className="flex flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <h2 className="text-foreground font-serif text-lg font-medium">
-            # Github Activity
-          </h2>
-          <p className="text-muted-foreground hidden pl-2 text-xs tracking-wider md:block">
-            some green squares and late night cooking.
-          </p>
-        </div>
-        <Button
-          variant={"link"}
-          className="hover:text-foreground text-muted-foreground truncate"
+      <SectionHeading
+        title="GitHub Activity"
+        hint="some squares and late night cooking."
+      >
+        <a
+          href={GITHUB_PROFILE}
+          target="_blank"
+          rel="noreferrer"
+          className="text-muted-foreground hover:text-foreground inline-flex shrink-0 items-center gap-1 text-xs transition-colors hover:underline"
         >
-          {data?.total?.[currentYear] ?? 0} contr. on {currentYear}
-        </Button>
-      </div>
+          @{GITHUB_USERNAME}
+          <ArrowUpRight className="size-3" />
+        </a>
+      </SectionHeading>
 
-      <Suspense fallback={<div className="h-28 w-full animate-pulse rounded-lg bg-muted" />}>
-        <RenderActivity data={data} />
+      <Suspense fallback={<ActivitySkeleton />}>
+        <ActivityContent />
       </Suspense>
     </section>
   );
