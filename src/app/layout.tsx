@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { ThemeShortcut } from "@/components/common/theme-shortcut";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SearchProvider, SearchDialog } from "@/components/search";
+import { ChatProvider, ChatTrigger, ChatWindow } from "@/components/chat";
 import { Footer } from "@/components/common/footer";
 import { ogImages, profile, site, socials } from "@/lib/config";
 import Script from "next/script";
@@ -80,56 +81,62 @@ export default function RootLayout({
           "font-brand min-h-screen w-full relative bg-background text-foreground",
           schibstedGrotesk.variable,
         )}
-      >
+        >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <SearchProvider>
-            <TooltipProvider>{children}</TooltipProvider>
-            <SearchDialog />
-          </SearchProvider>
-          <ThemeShortcut />
-          {/* footer is global — mounted once here instead of per page */}
-          <div className="mx-auto w-full max-w-3xl px-10 pb-10">
-            <hr className="mt-4" />
-            <Footer />
-          </div>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Person",
-                name: site.name,
-                url: site.url,
-                image: `${site.url}/logo.webp`,
-                email: `mailto:${profile.professionEmail}`,
-                jobTitle: site.role,
-                description: site.shortDescription,
-                sameAs: [
-                  socials.github,
-                  socials.x,
-                  socials.linkedin,
-                  socials.telegram,
-                  socials.youtube,
-                  socials.instagram,
-                ],
-                knowsAbout: [
-                  "Next.js",
-                  "React",
-                  "TypeScript",
-                  "Node.js",
-                  "PostgreSQL",
-                  "MongoDB",
-                  "Tailwind CSS",
-                ],
-              }),
-            }}
-          />
+          <TooltipProvider>
+            <SearchProvider>
+              <ChatProvider>
+                {children}
+                <SearchDialog />
+                <ChatWindow />
+                <ChatTrigger />
+              </ChatProvider>
+            </SearchProvider>
+            <ThemeShortcut />
+            {/* footer is global — mounted once here instead of per page */}
+            <div className="mx-auto w-full max-w-3xl px-10 pb-10">
+              <hr className="mt-4" />
+              <Footer />
+            </div>
+          </TooltipProvider>
         </ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: site.name,
+              url: site.url,
+              image: `${site.url}/logo.webp`,
+              email: `mailto:${profile.professionEmail}`,
+              jobTitle: site.role,
+              description: site.shortDescription,
+              sameAs: [
+                socials.github,
+                socials.x,
+                socials.linkedin,
+                socials.telegram,
+                socials.youtube,
+                socials.instagram,
+              ],
+              knowsAbout: [
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Node.js",
+                "PostgreSQL",
+                "MongoDB",
+                "Tailwind CSS",
+              ],
+            }),
+          }}
+        />
         <Script id="clarity-script" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
