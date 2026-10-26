@@ -270,8 +270,8 @@ export const projects: Project[] = [
     },
 
     status: "Completed",
-    year: "June 2026 — Oct 2026",
-    role: "Solo — design, frontend, backend",
+    year: "June 2026 — Sep 2026",
+    role: "Solo — design, backend, frontend",
 
     features: [
       "Collects engineering articles from RSS sources into one feed",

@@ -149,6 +149,32 @@
 @theme inline {
   --animate-collapsible-down: collapsible-down 300ms ease-out;
   --animate-collapsible-up: collapsible-up 300ms ease-out;
+  --animate-chat-shake: chat-shake 3s ease-in-out infinite;
+}
+
+/* subtle shake animation for chat bubble every 2.5-3 seconds when closed */
+@keyframes chat-shake {
+  0%, 78%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  81% {
+    transform: rotate(-10deg) scale(1.06);
+  }
+  85% {
+    transform: rotate(10deg) scale(1.06);
+  }
+  89% {
+    transform: rotate(-7deg) scale(1.03);
+  }
+  93% {
+    transform: rotate(7deg) scale(1.03);
+  }
+  96% {
+    transform: rotate(-3deg) scale(1.01);
+  }
+  98% {
+    transform: rotate(2deg) scale(1.01);
+  }
 }
 
 @keyframes collapsible-down {
