@@ -10,6 +10,8 @@ import { ChatProvider, ChatTrigger, ChatWindow } from "@/components/chat";
 import { Footer } from "@/components/common/footer";
 import { ogImages, profile, site, socials } from "@/lib/config";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -157,6 +159,8 @@ export default function RootLayout({
             gtag('config', 'G-F7KTJ9FCBK');
           `}
         </Script>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Copy, Check, ExternalLink } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ChatLink } from "./chat-link";
 
 interface ChatMarkdownProps {
   content: string;
@@ -213,12 +214,11 @@ function TextBlock({ text }: { text: string }) {
 }
 
 // ---------------- Inline Formatter ----------------
-// Parses: **bold**, *italic*, `code`, and [link](url)
+// Parses: **bold**, *italic*, `code`, [link](url), raw URLs, and site paths
 function renderInline(text: string): React.ReactNode[] {
   const parts: React.ReactNode[] = [];
-  // Tokenizer regex matching bold, italic, inline code, and links
   const tokenRegex =
-    /(\*\*.*?\*\*|\*.*?\*|`[^`]+`|\[.*?\]\(.*?\))/g;
+    /(\*\*.*?\*\*|\*.*?\*|`[^`]+`|\[.*?\]\(.*?\)|\bhttps?:\/\/[^\s)]+|\b\/(?:projects|blog|tools|setup|books|gears|movies|about)(?:\/[^\s)]*)?|\b#[a-zA-Z0-9_-]+)/g;
 
   let lastIndex = 0;
   let match: RegExpExecArray | null;
@@ -261,21 +261,29 @@ function renderInline(text: string): React.ReactNode[] {
     else if (token.startsWith("[") && token.includes("](")) {
       const linkMatch = /^\[(.*?)\]\((.*?)\)$/.exec(token);
       if (linkMatch) {
-        const href = linkMatch[2];
-        const isExternal = href.startsWith("http") || href.startsWith("mailto:");
         parts.push(
-          <a
-            key={match.index}
-            href={href}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-0.5 font-medium text-foreground underline underline-offset-2 hover:opacity-80"
-          >
-            <span>{linkMatch[1]}</span>
-            {isExternal && <ExternalLink className="size-2.5 opacity-60" />}
-          </a>
+          <ChatLink key={match.index} href={linkMatch[2]}>
+            {linkMatch[1]}
+          </ChatLink>
         );
+      } else {
+        parts.push(token);
       }
+    }
+    // Raw URL or site path/hash
+    else if (
+      token.startsWith("http://") ||
+      token.startsWith("https://") ||
+      token.startsWith("/") ||
+      token.startsWith("#")
+    ) {
+      parts.push(
+        <ChatLink key={match.index} href={token}>
+          {token}
+        </ChatLink>
+      );
+    } else {
+      parts.push(token);
     }
 
     lastIndex = tokenRegex.lastIndex;
