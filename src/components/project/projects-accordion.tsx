@@ -1,12 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectDetailCard } from "@/components/project/project-detail-card";
 import type { Project } from "@/lib/config";
 
-/* one card open at a time — opening a card closes the previous one */
+/* multiple cards can be opened at the same time */
 export const ProjectsAccordion = ({ projects }: { projects: Project[] }) => {
-    const [openSlug, setOpenSlug] = useState<string | null>(null);
+    const [openSlugs, setOpenSlugs] = useState<Set<string>>(() => new Set());
+
+    useEffect(() => {
+        if (typeof window !== "undefined" && window.location.hash) {
+            const hash = window.location.hash.slice(1);
+            if (hash) {
+                setOpenSlugs((prev) => new Set(prev).add(hash));
+            }
+        }
+    }, []);
+
+    const toggleSlug = (slug: string, open: boolean) => {
+        setOpenSlugs((prev) => {
+            const next = new Set(prev);
+            if (open) {
+                next.add(slug);
+            } else {
+                next.delete(slug);
+            }
+            return next;
+        });
+    };
 
     return (
         <div className="flex flex-col gap-2">
@@ -14,10 +35,8 @@ export const ProjectsAccordion = ({ projects }: { projects: Project[] }) => {
                 <ProjectDetailCard
                     key={project.slug}
                     project={project}
-                    open={openSlug === project.slug}
-                    onOpenChange={(open) =>
-                        setOpenSlug(open ? project.slug : null)
-                    }
+                    open={openSlugs.has(project.slug)}
+                    onOpenChange={(open) => toggleSlug(project.slug, open)}
                 />
             ))}
         </div>

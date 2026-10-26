@@ -260,7 +260,7 @@ export const SearchDialog = () => {
             {/* Results List */}
             <div
               ref={listRef}
-              className="max-h-[380px] overflow-y-auto p-2 scroll-smooth"
+              className="max-h-95 overflow-y-auto p-2 scroll-smooth"
             >
               {filteredItems.length === 0 ? (
                 <div className="py-12 text-center">
