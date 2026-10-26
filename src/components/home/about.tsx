@@ -86,11 +86,11 @@ export const AboutSection = () => {
           <span className="sr-only">Linkedin</span>
         </LinkIconBadge>
         You can also
-        <LinkIconBadge link={links.resume} className="px-0.5">
+        <LinkIconBadge link={links.resume} className="pl-1">
           <IoDocumentText className="text-foreground/80 size-[0.9em]" />
           <span className="sr-only">Resume</span>
         </LinkIconBadge>
-       grab my resume .
+        grab my resume .
       </div>
 
       <p className="text-muted-foreground mt-2">~ still learning...</p>
