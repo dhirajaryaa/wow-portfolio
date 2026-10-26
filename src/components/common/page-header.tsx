@@ -1,4 +1,5 @@
 import { ThemeToggle } from "@/components/common/theme-toggle";
+import { SearchBar } from "@/components/search";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -24,7 +25,7 @@ export const PageHeader = ({
 }: PageHeaderProps) => {
     return (
         <section className="flex flex-col gap-4 sm:gap-6">
-            {/* back + theme  */}
+            {/* back + search + theme  */}
             <div className="flex items-center justify-between gap-4">
                 <Link
                     href={backHref}
@@ -37,7 +38,10 @@ export const PageHeader = ({
                     />
                     {backLabel}
                 </Link>
-                <ThemeToggle />
+                <div className="flex items-center gap-3">
+                    <SearchBar />
+                    <ThemeToggle />
+                </div>
             </div>
 
             {/* title + desc  */}

@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ThemeShortcut } from "@/components/common/theme-shortcut";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { SearchProvider, SearchDialog } from "@/components/search";
 import { Footer } from "@/components/common/footer";
 import { ogImages, profile, site, socials } from "@/lib/config";
 import Script from "next/script";
@@ -86,7 +87,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider >{children}</TooltipProvider>
+          <SearchProvider>
+            <TooltipProvider>{children}</TooltipProvider>
+            <SearchDialog />
+          </SearchProvider>
           <ThemeShortcut />
           {/* footer is global — mounted once here instead of per page */}
           <div className="mx-auto w-full max-w-3xl px-10 pb-10">
