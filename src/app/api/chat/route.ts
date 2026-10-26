@@ -9,8 +9,8 @@ import type { ChatRequest } from "@/components/chat/types";
 export const runtime = "nodejs";
 
 const DEFAULT_GROQ_MODEL = "openai/gpt-oss-20b";
-const MAX_MESSAGE_LENGTH = 1500;
-const MAX_HISTORY_MESSAGES = 8;
+const MAX_MESSAGE_LENGTH = 3000;
+const MAX_HISTORY_MESSAGES = 3;
 
 // Rate limiting setup (in-memory sliding window per IP)
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
@@ -188,8 +188,7 @@ export async function POST(req: NextRequest) {
         { role: "system", content: systemPrompt },
         ...sanitizedHistory,
       ],
-      temperature: 0.3,
-      max_tokens: 800,
+      max_tokens: 2000,
       stream: true,
     };
 
