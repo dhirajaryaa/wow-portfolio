@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { SearchProvider, SearchDialog } from "@/components/search";
 import { ChatProvider, ChatTrigger, ChatWindow } from "@/components/chat";
 import { Footer } from "@/components/common/footer";
+import { SpiderWaveAmbient } from "@/components/home/spider-wave";
 import { ogImages, profile, site, socials } from "@/lib/config";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
@@ -80,10 +81,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
       <body
         className={cn(
-          "font-brand min-h-screen w-full relative bg-background text-foreground",
+          "font-brand min-h-screen w-full relative bg-background text-foreground isolate",
           schibstedGrotesk.variable,
         )}
         >
+        <SpiderWaveAmbient />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

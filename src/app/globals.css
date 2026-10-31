@@ -226,3 +226,54 @@
     }
   }
 }
+
+.spider-wave {
+  --spider-web: oklch(0.28 0.02 60 / 0.34);
+  --spider-web-soft: oklch(0.28 0.02 60 / 0.16);
+  --spider-ink: oklch(0.18 0.01 60 / 0.66);
+  --spider-hot: oklch(0.68 0.17 64 / 0.68);
+  --spider-glow: oklch(0.8 0.16 70 / 0.13);
+}
+
+.dark .spider-wave {
+  --spider-web: oklch(0.97 0 0 / 0.3);
+  --spider-web-soft: oklch(0.97 0 0 / 0.14);
+  --spider-ink: oklch(0.98 0 0 / 0.78);
+  --spider-hot: oklch(0.87 0.16 72 / 0.95);
+  --spider-glow: oklch(0.82 0.16 70 / 0.1);
+}
+
+.spider-wave-glow {
+  background:
+    radial-gradient(circle at 100% 0%, var(--spider-glow) 0%, transparent 26%),
+    radial-gradient(circle at 0% 100%, var(--spider-glow) 0%, transparent 22%);
+}
+
+.spider-wave-vignette {
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    transparent 45%,
+    rgb(0 0 0 / 0.1) 100%
+  );
+}
+
+.spider-bob {
+  animation: spider-bob 6s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  will-change: transform;
+}
+
+@keyframes spider-bob {
+  0%,
+  100% {
+    transform: translateY(-1.9%);
+  }
+  50% {
+    transform: translateY(1.9%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spider-bob {
+    animation: none;
+  }
+}
